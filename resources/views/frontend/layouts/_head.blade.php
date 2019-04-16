@@ -16,33 +16,33 @@
     <title>Pinlist - Multipurpose listing,Classifieds and Directory usages Big Bundle HTML Template</title>
 
     <!-- Bootstrap Css -->
-    <link href="../assets/plugins/bootstrap-4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Dashboard Css -->
-    <link href="../assets/css/dashboard.css" rel="stylesheet" />
+    <link href="/assets/css/dashboard.css" rel="stylesheet" />
 
     <!-- Font-awesome  Css -->
-    <link rel="stylesheet" href="../assets/fonts/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/fonts/fonts/font-awesome.min.css">
 
     <!--Horizontal Menu-->
-    <link href="../assets/plugins/Horizontal2/Horizontal-menu/dropdown-effects/fade-down.css" rel="stylesheet" />
-    <link href="../assets/plugins/Horizontal2/Horizontal-menu/horizontal.css" rel="stylesheet" />
-    <link href="../assets/plugins/Horizontal2/Horizontal-menu/color-skins/color.css" rel="stylesheet" />
+    <link href="/assets/plugins/Horizontal2/Horizontal-menu/dropdown-effects/fade-down.css" rel="stylesheet" />
+    <link href="/assets/plugins/Horizontal2/Horizontal-menu/horizontal.css" rel="stylesheet" />
+    <link href="/assets/plugins/Horizontal2/Horizontal-menu/color-skins/color.css" rel="stylesheet" />
 
     <!--Select2 Plugin -->
-    <link href="../assets/plugins/select2/select2.min.css" rel="stylesheet" />
+    <link href="/assets/plugins/select2/select2.min.css" rel="stylesheet" />
 
     <!-- Cookie css -->
-    <link href="../assets/plugins/cookie/cookie.css" rel="stylesheet">
+    <link href="/assets/plugins/cookie/cookie.css" rel="stylesheet">
 
     <!-- Owl Theme css-->
-    <link href="../assets/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" />
+    <link href="/assets/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" />
 
     <!-- Custom scroll bar css-->
-    <link href="../assets/plugins/scroll-bar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+    <link href="/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css" rel="stylesheet" />
 
     <!--Font icons-->
-    <link href="../assets/plugins/iconfonts/plugin.css" rel="stylesheet">
-    <link href="../assets/plugins/iconfonts/icons.css" rel="stylesheet">
+    <link href="/assets/plugins/iconfonts/plugin.css" rel="stylesheet">
+    <link href="/assets/plugins/iconfonts/icons.css" rel="stylesheet">
 
 </head>

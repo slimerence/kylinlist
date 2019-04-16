@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zxx" dir="ltr">
+<html lang="en" dir="ltr">
 @include(_get_frontend_layout_path('_head'))
 <body>
 <!--Loader-->
