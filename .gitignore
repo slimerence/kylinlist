@@ -12,3 +12,5 @@ npm-debug.log
 yarn-error.log
 _ide_helper.php
 package-lock.json
+/public/assets/images
+/resources/assets

@@ -87,11 +87,25 @@ if(!function_exists('_get_frontend_theme_prefix')){
         return $finalPath;
     }
 
+    function _get_frontend_element($path){
+        // 检查文件是否存在
+        $filename = resource_path('views/frontend/elements').str_replace('.','/',$path).'.blade.php';
 
+        $finalPath = 'frontend.elements.'.$path;
+        if(file_exists($filename)){
+            $finalPath = 'frontend.elements.'.$path;
+        }
+
+        if(env('APP_DEBUG', false)){
+            // Log layout path file if in APP_DEBUG mode
+            \Illuminate\Support\Facades\Log::info('Theme: '.$path, ['location'=>$finalPath]);
+        }
+
+        return $finalPath;
+    }
 }
 
 if(!function_exists('_get_backend_theme_prefix')){
-
 
     function _get_backend_path($path){
         // 检查文件是否存在
