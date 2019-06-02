@@ -12,3 +12,25 @@
 */
 
 Route::get('/', 'Frontend\PageController@index');
+Route::get('/coming-soon', 'Frontend\PageController@coming');
+Route::get('/about', 'Frontend\PageController@about');
+Route::get('/contact', 'Frontend\PageController@contact');
+Route::get('/pricing', 'Frontend\PageController@pricing');
+Route::get('/support-faq', 'Frontend\PageController@faq');
+
+Route::get('/category-list', 'Frontend\SupplierController@category_list');
+Route::get('/categories', 'Frontend\SupplierController@category');
+Route::get('/supplier', 'Frontend\SupplierController@supplier');
+Route::get('/supplier/join-us', 'Frontend\SupplierController@supplier_join');
+Route::get('/suppliers', 'Frontend\SupplierController@category_supplier');
+Route::get('/supplier-login', 'Frontend\SupplierController@login');
+
+Route::get('/post-request', 'Frontend\SourceController@index');
+Route::get('/source-list', 'Frontend\SourceController@list');
+
+
+Route::get('/industry', 'Frontend\PageController@blog_list');
+Route::get('/industry/detail', 'Frontend\PageController@blog_detail');
+
+
+

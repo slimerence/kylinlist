@@ -24,6 +24,7 @@
     <!-- Font-awesome  Css -->
     <link rel="stylesheet" href="/assets/fonts/fonts/font-awesome.min.css">
 
+
     <!--Horizontal Menu-->
     <link href="/assets/plugins/Horizontal2/Horizontal-menu/dropdown-effects/fade-down.css" rel="stylesheet" />
     <link href="/assets/plugins/Horizontal2/Horizontal-menu/horizontal.css" rel="stylesheet" />
@@ -34,6 +35,9 @@
 
     <!-- Cookie css -->
     <link href="/assets/plugins/cookie/cookie.css" rel="stylesheet">
+
+    <!-- Countdown css-->
+    <link href="../assets/plugins/count-down/flipclock.css" rel="stylesheet" />
 
     <!-- Owl Theme css-->
     <link href="/assets/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" />

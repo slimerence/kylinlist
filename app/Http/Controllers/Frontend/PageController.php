@@ -12,5 +12,40 @@ class PageController extends Controller
         return view('frontend.home',$this->data_view);
     }
 
+    public function about(){
 
+        return view('frontend.about',$this->data_view);
+
+    }
+
+    public function faq(){
+
+        return view('frontend.pages.faq');
+    }
+
+    public function contact(){
+
+        return view('frontend.contact',$this->data_view);
+
+    }
+
+    public function coming(){
+
+        return view('frontend.pages.construction');
+    }
+
+    public function pricing(){
+
+        return view('frontend.pages.pricing');
+    }
+
+    public function blog_list(){
+
+        return view('frontend.blog.blog-list');
+    }
+
+    public function blog_detail(){
+
+        return view('frontend.blog.detail');
+    }
 }

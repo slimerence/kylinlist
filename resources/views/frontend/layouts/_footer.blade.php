@@ -5,34 +5,34 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-2 col-md-12">
-                        <h6>Business Directory</h6>
+                        <h6>For Buyer</h6>
                         <ul class="list-unstyled mb-0">
-                            <li><a href="#">Company</a></li>
-                            <li><a href="#">Colleges</a></li>
-                            <li><a href="#">Hospital</a></li>
-                            <li><a href="#">Factories</a></li>
+                            <li><a href="{{ url('category-list') }}">Category List</a></li>
+                            <li><a href="{{ url('categories') }}">Product Directory</a></li>
+                            <li><a href="{{ url('suppliers') }}">Supplier Discovery</a></li>
+                            <li><a href="{{ url('post-request') }}">Post Sourcing Request</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-2 col-md-12">
-                        <h6>Classifieds</h6>
+                        <h6>For Supplier</h6>
                         <ul class="list-unstyled mb-0">
-                            <li><a href="#">Real Estate</a></li>
-                            <li><a href="#">Computer</a></li>
-                            <li><a href="#">Clothing</a></li>
-                            <li><a href="#">Jobs</a></li>
+                            <li><a href="{{ url('supplier/join-us') }}">Join Us</a></li>
+                            <li><a href="{{ url('suppliers') }}">Chinese Market</a></li>
+                            <li><a href="{{ url('pricing') }}">Price and Plan</a></li>
+                            <li><a href="{{ url('source-list') }}">Search Sourcing Requests</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-2 col-md-12">
                         <h6>Resources</h6>
                         <ul class="list-unstyled mb-0">
-                            <li><a href="#">Support</a></li>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">Terms of Service</a></li>
-                            <li><a href="#">Contact Details</a></li>
+                            <li><a href="{{ url('about') }}">About Us </a></li>
+                            <li><a href="{{ url('support-faq') }}">FAQ</a></li>
+                            <li><a href="#">Terms & Conditions </a></li>
+                            <li><a href="#">Privacy Policy</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-12">
-                        <h6>Popular Ads</h6>
+                        <h6>Useful Links</h6>
                         <ul class="list-unstyled mb-0">
                             <li><a href="#">Educational college Ads</a></li>
                             <li><a href="#">Free Lancer for Web Developer</a></li>
@@ -76,7 +76,7 @@
             <div class="container">
                 <div class="row d-flex">
                     <div class="col-lg-8 col-sm-12  mt-2 mb-2 text-left ">
-                        Copyright © 2019 <a href="#" class="fs-14 text-primary">Pinlist</a>. Designed by <a href="#" class="fs-14 text-primary">Spruko</a> All rights reserved.
+                        Copyright © 2019 <a href="#" class="fs-14 text-primary">Kylinlist</a>. All rights reserved.
                     </div>
                     <div class="col-lg-4 col-sm-12 ml-auto mb-2 mt-2">
                         <ul class="social mb-0">
@@ -103,21 +103,7 @@
                 </div>
             </div>
         </div>
-        <div class="bg-dark text-white p-0 border-top">
-            <div class="container">
-                <div class="p-2 text-center footer-links">
-                    <a href="#" class="btn btn-link">How It Works</a>
-                    <a href="#" class="btn btn-link">About Us</a>
-                    <a href="#" class="btn btn-link">Pricing</a>
-                    <a href="#" class="btn btn-link">Ads Categories</a>
-                    <a href="#" class="btn btn-link">Privacy Policy</a>
-                    <a href="#" class="btn btn-link">Terms Of Conditions</a>
-                    <a href="#" class="btn btn-link">Blog</a>
-                    <a href="#" class="btn btn-link">Contact Us</a>
-                    <a href="#" class="btn btn-link">Premium Ad</a>
-                </div>
-            </div>
-        </div>
+
     </footer>
 </section>
 <!--/Footer Section-->

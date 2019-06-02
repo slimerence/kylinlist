@@ -23,6 +23,10 @@
 <script src="/assets/plugins/counters/counterup.min.js"></script>
 <script src="/assets/plugins/counters/waypoints.min.js"></script>
 
+<!--Counters -->
+<script src="/assets/plugins/count-down/countdown-timer.js"></script>
+<script src="/assets/plugins/count-down/countdown.js"></script>
+
 <!--JQuery TouchSwipe js-->
 <script src="/assets/js/jquery.touchSwipe.min.js"></script>
 
@@ -33,6 +37,11 @@
 <!-- Cookie js -->
 <script src="/assets/plugins/cookie/jquery.ihavecookies.js"></script>
 <script src="/assets/plugins/cookie/cookie.js"></script>
+
+<!-- Form wizard js -->
+<script src="../assets/plugins/bootstrap-wizard/jquery.bootstrap.wizard.js"></script>
+<script src="../assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="../assets/js/wizard.js"></script>
 
 <!-- Count Down-->
 <script src="/assets/plugins/count-down/jquery.lwtCountdown-1.0.js"></script>
