@@ -1,63 +1,11 @@
 @extends(_get_frontend_layout_path('temp'))
 
 @section('content')
-    
     @include('frontend.sections.search')
     @include('frontend.sections.sliders')
     @include('frontend.sections.postrequest')
-    @include('frontend.unused.featured')
+    @include('frontend.sections.featured')
 
-<!--Featured Ads-->
-<section class="sptb">
-    <div class="container">
-        <div class="section-title center-block text-center">
-            <h1>Featured Ads</h1>
-            <p>Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula</p>
-        </div>
-        <div id="feature-carousel" class="owl-carousel owl-carousel-icons">
-            @for($i=0;$i<5;$i++)
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="arrow-ribbon {{ $i%2==1? 'bg-danger':'bg-info' }}">Open</div>
-                        <div class="item-card7-imgs">
-                            <a href="business.html"></a>
-                            <img src="../assets/images/products/products/b3.jpg" alt="img" class="cover-image">
-                        </div>
-                        <div class="item-card7-overlaytext">
-                            <a href="business.html" class="text-white"> Beauty & Spa </a>
-                        </div>
-                        <div class="card-body">
-                            <div class="item-card7-desc">
-                                <div class="item-card7-text">
-                                    <a href="business.html" class="text-dark"><h4 class="font-weight-semibold">Golik Beauty & Spa</h4></a>
-                                </div>
-                                <ul class="d-flex">
-                                    <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i> USA</a></li>
-                                    <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i>1 min ago</a></li>
-                                    <li class=""><a href="#" class="icons"><i class="si si-phone text-muted mr-1"></i> 14 675 65430</a></li>
-                                </ul>
-                                <p class="mb-0">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="footerimg d-md-flex mt-0 mb-0">
-                                <div class="d-flex footerimg-l mb-0">
-                                    <img src="../assets/images/faces/female/18.jpg" alt="image" class="avatar brround  mr-2">
-                                    <h5 class="time-title text-muted p-0 leading-normal mt-2 mb-0">Boris	Nash <i class="si si-check text-success fs-12 ml-1" data-toggle="tooltip" data-placement="top" title="verified"></i></h5>
-                                </div>
-                                <div class="mt-2 footerimg-r ml-auto">
-                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Comments"><span class="text-muted mr-2"><i class="fa fa-comment-o"></i> 16</span></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Views"><span class="text-muted"><i class="fa fa-eye"></i> 22</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endfor
-        </div>
-    </div>
-</section>
-<!--/Featured Ads-->
 <!--Categories-->
 <section class="sptb bg-white">
     <div class="container">
@@ -251,80 +199,7 @@
     </div>
 </section>
 <!--/Featured Locations-->
-
-<!--Latest Ads-->
-<section class="sptb bg-white">
-    <div class="container">
-        <div class="section-title center-block text-center">
-            <h1>Latest Ads</h1>
-            <p>Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula</p>
-        </div>
-        <div id="Latest-carousel" class="owl-carousel Card-owlcarousel owl-carousel-icons">
-            @for($i=0;$i<5;$i++)
-                <div class="item">
-                    <div class="card mb-0">
-                        @if($i%3==1)
-                        <div class="power-ribbon power-ribbon-top-left text-warning"><span class="bg-warning"><i class="fa fa-bolt"></i></span></div>
-                        @endif
-                        <div class="item-card2-img">
-                            <a href="business.html"></a>
-                            <img src="../assets/images/products/products/f1.jpg" alt="img" class="cover-image">
-                        </div>
-                        <div class="item-card2-icons">
-                            <a href="#" class="item-card2-icons-l bg-primary"> <i class="fa fa-cutlery"></i></a>
-                            <a href="#" class="item-card2-icons-r bg-pink"><i class="fa fa fa-heart-o"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <div class="item-card2">
-                                <div class="item-card2-desc">
-                                    <ul class="d-flex">
-                                        <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i> USA</a></li>
-                                        <li class=""><a href="#" class="icons"><i class="si si-phone text-muted mr-1"></i> 78 675 65430</a></li>
-                                        <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i> 5 hours ago</a></li>
-                                    </ul>
-                                    <div class="item-card2-text">
-                                        <a href="business.html" class="text-dark"><h4 class="fs-20">Somik Restaurant</h4></a>
-                                    </div>
-                                    <p class="">Ut enim ad minima veniam, quis exercitationem ullam corporis suscipit laboriosam</p>
-                                    <div class="item-card2-rating mb-0">
-                                        <div class="rating-stars d-inline-flex" >
-                                            <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value"  value="3">
-                                            <div class="rating-stars-container">
-                                                <div class="rating-star sm">
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <div class="rating-star sm">
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <div class="rating-star sm">
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <div class="rating-star sm">
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <div class="rating-star sm">
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                            </div> (76)
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="item-card2-footer">
-                                <div class="item-card2-footer-u">
-                                    <div class="icons text-dark"><i class="si si-user  text-muted mr-1"></i> Anna Dickens <a href="#" class="ml-1" ><i class="si si-check text-success fs-12" data-toggle="tooltip" data-placement="top" title="Verified"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endfor
-        </div>
-    </div>
-</section>
-<!--/Latest Ads-->
+@include('frontend.sections.latestad')
 
 <!--Testimonials-->
 <section class="sptb">

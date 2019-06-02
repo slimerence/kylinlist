@@ -1,50 +1,18 @@
 <!--Nav-->
 <nav class="horizontalMenu clearfix d-md-flex ml-auto">
     <ul class="horizontalMenu-list">
-        <li aria-haspopup="true"><a href="#" class="active">Home <span class="fa fa-caret-down m-0"></span></a>
-            <div class="horizontal-megamenu clearfix">
-                <div class="container">
-                    <div class="megamenu-content">
-                        <div class="row">
-                            <ul class="col link-list">
-                                <li aria-haspopup="true"><a href="index.html">Classifieds</a></li>
-                                <li aria-haspopup="true"><a href="index2.html">Real Estate</a></li>
-                                <li aria-haspopup="true"><a href="index3.html">Education</a></li>
-                                <li aria-haspopup="true"><a href="index4.html">Jobs</a></li>
-                                <li aria-haspopup="true"><a href="index5.html">Business Directory</a></li>
-                            </ul>
-                            <ul class="col link-list">
-                                <li aria-haspopup="true"><a href="index6.html">Coupons</a></li>
-                                <li aria-haspopup="true"><a href="index7.html">Cars</a></li>
-                                <li aria-haspopup="true"><a href="index8.html">E-Commerce</a></li>
-                                <li aria-haspopup="true"><a href="index9.html">Market Place</a></li>
-                                <li aria-haspopup="true"><a href="index10.html">Auction</a></li>
-                            </ul>
-                            <ul class="col link-list">
-                                <li aria-haspopup="true"><a href="index11.html">Tours & Travels</a></li>
-                                <li aria-haspopup="true"><a href="index12.html">Domains</a></li>
-                                <li aria-haspopup="true"><a href="index13.html">Books</a></li>
-                                <li aria-haspopup="true"><a href="index14.html">Doctors</a></li>
-                                <li aria-haspopup="true"><a href="index15.html">Rating & Reviews</a></li>
-                            </ul>
-                            <ul class="col link-list">
-                                <li aria-haspopup="true"><a href="index16.html">ICO List</a></li>
-                                <li aria-haspopup="true"><a href="index17.html">Wedding</a></li>
-                                <li aria-haspopup="true"><a href="index18.html">Knowledge Base</a></li>
-                                <li aria-haspopup="true"><a href="index19.html">Softwares</a></li>
-                                <li aria-haspopup="true"><a href="index20.html">Video List</a></li>
-                            </ul>
-                            <ul class="col link-list">
-                                <li aria-haspopup="true"><a href="banner.html">Banner</a></li>
-                                <li aria-haspopup="true"><a href="domain-search.html">Video Banner</a></li>
-                                <li aria-haspopup="true"><a href="slider.html">Image Slider</a></li>
-                                <li aria-haspopup="true"><a href="intro-page.html">Intro Page</a></li>
-                                <li aria-haspopup="true"><a href="popup-login.html">Pop-up login</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <li aria-haspopup="true"><a href="javascript:void(0)">For Buyer<span class="fa fa-caret-down m-0"></span></a>
+            <ul class="sub-menu link-list">
+                <li aria-haspopup="true"><a href="{{ url('categories') }}">Product Directory</a></li>
+                <li aria-haspopup="true"><a href="{{ url('suppliers') }}">Supplier Discovery</a></li>
+                <li aria-haspopup="true"><a href="{{ url('post-request') }}">Post Sourcing Request</a></li>
+            </ul>
+        </li>
+        <li aria-haspopup="true"><a href="javascript:void(0)">For Supplier<span class="fa fa-caret-down m-0"></span></a>
+            <ul class="sub-menu link-list">
+                <li aria-haspopup="true"><a href="{{ url('suppliers') }}">Join Us</a></li>
+                <li aria-haspopup="true"><a href="{{ url('categories') }}">Search Sourcing Requests</a></li>
+            </ul>
         </li>
         <li aria-haspopup="true"><a href="about.html">About Us </a></li>
         <li aria-haspopup="true"><a href="widgets.html">Widgets</a></li>
