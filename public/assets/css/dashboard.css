@@ -14171,11 +14171,11 @@ a.icon:hover {
 
 .thumbnail {
 	display: block;
-	padding: 4px;
+	padding: 20px;
 	margin-bottom: 20px;
 	line-height: 1.42857143;
 	background-color: #fff;
-	border:1px solid #e8ebf3;
+	border:5px solid #e8ebf3;
 	border-radius: 4px;
 	-webkit-transition: border .2s ease-in-out;
 	-o-transition: border .2s ease-in-out;
@@ -26296,6 +26296,8 @@ h1.animated-text {
     background-image: none;
     border-color: #ff382b;
 }
-.fa{
-    font-size: 21px;
+.fa-arrow-circle-right:before {
+
+    font-size: 32px;
+    color: #ff382b;
 }
