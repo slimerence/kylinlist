@@ -1,5 +1,5 @@
 
-<section>
+<section class="sptb bg-white">
     <div class="container">
         <div class="postrequest">
             <div class="section-title">
@@ -24,8 +24,7 @@
                             Connecting Buyers with Australian Suppliers.
                             Global Business Resources Platform. </p>
 
-                        <a href="#" class="btn btn-outline-danger">Post Sourcing Request</a>
-                        <i class="fa fa-arrow-circle-right" data-toggle="tooltip" title="" data-original-title="fa fa-arrow-circle-right"></i>
+                        <a href="#" class="btn btn-outline-danger">Post Sourcing Request  <i class="fa fa-arrow-circle-right" data-toggle="tooltip" title="" data-original-title="fa fa-arrow-circle-right"></i></a>
 
                     </div>
                 </div>

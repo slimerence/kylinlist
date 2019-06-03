@@ -1,4 +1,4 @@
-<section>
+<section class="sptb bg-white">
     <div class="container">
         <div class="section-title">
             <h2>Our<span class="kylin-title"> PARTNER</span></h2>

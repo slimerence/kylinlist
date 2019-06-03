@@ -9,11 +9,6 @@
     @include('frontend.sections.partner')
     @include('frontend.sections.ourservices')
 
-
-
-
-
-
 <!--Testimonials-->
 <section class="sptb">
     <div class="container">
@@ -69,50 +64,8 @@
     </div>
 </section>
 <!--/Testimonials-->
-
-<!--App Store-->
-<section class="sptb bg-white">
-    <div class="container">
-        <div class="section-title center-block text-center">
-            <h1>Available on App store</h1>
-            <p>Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula</p>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="center-block text-center app-btn">
-                    <a href="#" class="btn btn-lg  btn-info"><i class="fa fa-windows fa-1x"></i> Windows Store</a>
-                    <a href="#" class="btn btn-lg btn-primary"><i class="fa fa-apple fa-1x"></i> Apple Store</a>
-                    <a href="#" class="btn btn-lg btn-pink"><i class="fa fa-android fa-1x"></i> Android Store</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--/App Store-->
-
-
-<!--Newsletter-->
-<section class="sptb bg-white border-top">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-7 col-xl-6 col-md-12">
-                <div class="sub-newsletter">
-                    <h3 class="mb-2"><i class="fa fa-paper-plane-o mr-2"></i> Subscribe To Our Newsletter</h3>
-                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-                </div>
-            </div>
-            <div class="col-lg-5 col-xl-6 col-md-12">
-                <div class="input-group sub-input mt-1">
-                    <input type="text" class="form-control input-lg " placeholder="Enter your Email">
-                    <div class="input-group-append ">
-                        <button type="button" class="btn btn-primary btn-lg br-tr-7 br-br-7">
-                            Subscribe
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--/Newsletter-->
+@if(false)
+    @include('frontend.unused.app_store')
+@endif
+@include('frontend.sections.news_letter')
 @endsection
