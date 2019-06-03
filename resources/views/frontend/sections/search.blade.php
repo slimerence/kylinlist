@@ -4,7 +4,11 @@
             <div class="header-text mb-0">
             <div class="container">
                 <div class="text-center text-white ">
-                    <h1 class="">Global Business Resources Platform</h1>
+                    <h1>
+                        <a href="" class="typewrite" data-period="2000" data-type='[ "Global Business Resources Platform" ]'>
+                            <span class="wrap"></span>
+                        </a>
+                    </h1>
                     <p>It is a long established fact that a reader will be distracted by the readable content of a page.</p>
                 </div>
                 <div class="row">

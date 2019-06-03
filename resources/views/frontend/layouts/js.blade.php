@@ -30,6 +30,11 @@
 <!--JQuery TouchSwipe js-->
 <script src="/assets/js/jquery.touchSwipe.min.js"></script>
 
+<!-- Google Maps Plugin -->
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyAykAdIIsNMu0V2wyGOMQcguo8zKngWlyM"></script>
+<script src="/assets/plugins/maps-google/jquery.googlemap.js"></script>
+<script src="/assets/plugins/maps-google/map.js"></script>
+
 <!--Select2 js -->
 <script src="/assets/plugins/select2/select2.full.min.js"></script>
 <script src="/assets/js/select2.js"></script>
@@ -37,6 +42,10 @@
 <!-- Cookie js -->
 <script src="/assets/plugins/cookie/jquery.ihavecookies.js"></script>
 <script src="/assets/plugins/cookie/cookie.js"></script>
+
+<!--Zoom js -->
+<script src="../assets/plugins/ecomerce/jquery.exzoom.js"></script>
+<script src="../assets/plugins/ecomerce/exzoom.js"></script>
 
 <!-- Form wizard js -->
 <script src="../assets/plugins/bootstrap-wizard/jquery.bootstrap.wizard.js"></script>
@@ -51,6 +60,9 @@
 
 <!-- Swipe Js-->
 <script src="/assets/js/swipe.js"></script>
+
+<!-- Typewritter Js-->
+<script src="/assets/js/typewritter.js"></script>
 
 <!-- Custom Js-->
 <script src="/assets/js/custom.js"></script>

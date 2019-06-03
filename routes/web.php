@@ -21,13 +21,13 @@ Route::get('/support-faq', 'Frontend\PageController@faq');
 Route::get('/category-list', 'Frontend\SupplierController@category_list');
 Route::get('/categories', 'Frontend\SupplierController@category');
 Route::get('/supplier', 'Frontend\SupplierController@supplier');
+Route::get('/product', 'Frontend\SupplierController@product');
 Route::get('/supplier/join-us', 'Frontend\SupplierController@supplier_join');
 Route::get('/suppliers', 'Frontend\SupplierController@category_supplier');
 Route::get('/supplier-login', 'Frontend\SupplierController@login');
 
 Route::get('/post-request', 'Frontend\SourceController@index');
 Route::get('/source-list', 'Frontend\SourceController@list');
-
 
 Route::get('/industry', 'Frontend\PageController@blog_list');
 Route::get('/industry/detail', 'Frontend\PageController@blog_detail');

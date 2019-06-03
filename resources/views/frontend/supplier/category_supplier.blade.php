@@ -117,7 +117,7 @@
                                                     <div class="item-card9-img">
                                                         <div class="item-card9-imgs">
                                                             <a href="{{ url('supplier') }}"></a>
-                                                            <img src="../assets/images/products/pe1.png" alt="img" class="cover-image">
+                                                            <img src="{{ asset('images/categories/categories0'.($i+1).'.jpg') }}" alt="img" class="cover-image">
                                                         </div>
                                                         <div class="item-card9-icons">
                                                             <a href="#" class="item-card9-icons1 wishlist {{ $i%4 == 0? 'active':'' }}"> <i class="fa fa fa-heart-o"></i></a>
@@ -174,7 +174,7 @@
                                                             <div class="arrow-ribbon bg-primary">Rent</div>
                                                             <div class="item-card9-imgs">
                                                                 <a href="{{ url('supplier') }}"></a>
-                                                                <img src="../assets/images/products/h4.png" alt="img" class="cover-image">
+                                                                <img src="{{ asset('images/categories/categories0'.($i+1).'.jpg') }}" alt="img" class="cover-image">
                                                             </div>
                                                             <div class="item-card9-icons">
                                                                 <a href="#" class="item-card9-icons1 wishlist"> <i class="fa fa fa-heart-o"></i></a>

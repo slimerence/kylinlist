@@ -38,4 +38,9 @@ class SupplierController extends Controller
         return view('frontend.supplier.join_us');
     }
 
+    public function product(){
+
+        return view('frontend.supplier.product');
+    }
+
 }

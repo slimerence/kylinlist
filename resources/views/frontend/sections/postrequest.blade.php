@@ -24,7 +24,7 @@
                             Connecting Buyers with Australian Suppliers.
                             Global Business Resources Platform. </p>
 
-                        <a href="#" class="btn btn-outline-danger">Post Sourcing Request  <i class="fa fa-arrow-circle-right" data-toggle="tooltip" title="" data-original-title="fa fa-arrow-circle-right"></i></a>
+                        <a href="#" class="btn btn-danger">Post Sourcing Request  <i class="fa fa-arrow-right"></i></a>
 
                     </div>
                 </div>

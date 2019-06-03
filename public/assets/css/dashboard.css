@@ -76,6 +76,21 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700');
 
+@font-face {
+    font-family: 'rajdhaniregular';
+    src: url('../../fonts/rajdhani-regular-webfont.woff2') format('woff2'),
+    url('../../fonts/rajdhani-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'rajdhanimedium';
+    src: url('../../fonts/rajdhani-medium-webfont.woff2') format('woff2'),
+    url('../../fonts/rajdhani-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /*-------- Bootstrap Framework -------*/
 
 :root {
@@ -379,8 +394,7 @@ template {
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	margin-bottom: 0.66em;
-	font-family: 'Quicksand', sans-serif;
-	font-weight: 500;
+	font-family: 'rajdhanimedium';
 	line-height: 1.1;
 }
 h1, .h1 {
@@ -26293,7 +26307,6 @@ h1.animated-text {
     margin-right: 1em;
 }
 
-
 .btn-outline-danger {
     color: #605e7e;
     background-color: transparent;
@@ -26306,4 +26319,6 @@ h1.animated-text {
     color: #ff382b;
 }
 
+.feature .feature-icon{
 
+}

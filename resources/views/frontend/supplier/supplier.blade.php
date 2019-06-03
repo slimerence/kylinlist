@@ -30,7 +30,7 @@
                         </div>
                         <div class="card-body  item-user">
                             <div class="profile-pic mb-0">
-                                <img src="../assets/images/faces/male/25.jpg" class="brround avatar-xxl" alt="user">
+                                <img src="{{ asset('images/others/portrait02.jpg') }}" class="brround avatar-xxl" alt="user">
                                 <div class="">
                                     <a href="userprofile.html" class="text-dark"><h4 class="mt-3 mb-1 font-weight-semibold">Robert McLean</h4></a>
                                     <span class="text-gray">Business Director</span><br>
@@ -131,203 +131,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card mb-lg-0">
-                        <div class="card-header">
-                            <h3 class="card-title">Latest Business Ads</h3>
-                        </div>
-                        <div class="card-body">
-                            <div id="myCarousel4" class="owl-carousel testimonial-owl-carousel2">
-                                <!-- Wrapper for carousel items -->
-
-                                <div class="item">
-                                    <div class="card mb-0">
-                                        <div class="item-card7-imgs">
-                                            <span class="bdir label label-primary mb-0">Restaurant</span>
-                                            <a href="business.html"></a>
-                                            <img src="../assets/images/products/products/f1.jpg" alt="img" class="cover-image">
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="item-card7-desc">
-                                                <a href="business.html" class="text-dark"><h4 class="font-weight-semibold">Globex</h4></a>
-                                            </div>
-                                            <div class="item-card7-text">
-                                                <ul class="icon-card mb-0">
-                                                    <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i>  Los Angles</a></li>
-                                                    <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i> 5 hours ago</a></li>
-                                                    <li class="mb-0"><a href="#" class="icons"><i class="si si-user text-muted mr-1"></i> Sally Peake</a></li>
-                                                    <li class="mb-0"><a href="#" class="icons"><i class="si si-phone text-muted mr-1"></i> 5-67987608</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item mb-0">
-                                    <div class="card mb-0">
-                                        <div class="item-card7-imgs">
-                                            <span class="bdir label label-pink mb-0">Beauty & Spa</span>
-                                            <a href="business.html"></a>
-                                            <img src="../assets/images/products/products/b2.jpg" alt="img" class="cover-image">
-                                        </div>
-                                        <div class="item-card7-overlaytext">
-                                            <h4  class="font-weight-semibold mb-0">$854</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="item-card7-desc">
-                                                <a href="business.html" class="text-dark"><h4 class="font-weight-semibold">hair Care & Styling</h4></a>
-                                            </div>
-                                            <div class="item-card7-text">
-                                                <ul class="icon-card mb-0">
-                                                    <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i>  Los Angles</a></li>
-                                                    <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i> 5 hours ago</a></li>
-                                                    <li class="mb-0"><a href="#" class="icons"><i class="si si-user text-muted mr-1"></i> Sally Peake</a></li>
-                                                    <li class="mb-0"><a href="#" class="icons"><i class="si si-phone text-muted mr-1"></i> 5-67987608</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="card mb-0">
-                                        <div class="item-card7-imgs">
-                                            <span class="bdir label label-info mb-0">IT Services</span>
-                                            <a href="business.html"></a>
-                                            <img src="../assets/images/products/products/j3.jpg" alt="img" class="cover-image">
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="item-card7-desc">
-                                                <a href="business.html" class="text-dark"><h4 class="font-weight-semibold">Acme Corporation</h4></a>
-                                            </div>
-                                            <div class="item-card7-text">
-                                                <ul class="icon-card mb-0">
-                                                    <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i>  Los Angles</a></li>
-                                                    <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i> 5 hours ago</a></li>
-                                                    <li class="mb-0"><a href="#" class="icons"><i class="si si-user text-muted mr-1"></i> Sally Peake</a></li>
-                                                    <li class="mb-0"><a href="#" class="icons"><i class="si si-phone text-muted mr-1"></i> 5-67987608</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="card mb-0">
-                                        <div class="item-card7-imgs">
-                                            <span class="bdir label label-info mb-0">IT Services</span>
-                                            <a href="business.html"></a>
-                                            <img src="../assets/images/products/products/j2.jpg" alt="img" class="cover-image">
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="item-card7-desc">
-                                                <a href="business.html" class="text-dark"><h4 class="font-weight-semibold">Soylent Corp</h4></a>
-                                            </div>
-                                            <div class="item-card7-text">
-                                                <ul class="icon-card mb-0">
-                                                    <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i>  Los Angles</a></li>
-                                                    <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i> 5 hours ago</a></li>
-                                                    <li class="mb-0"><a href="#" class="icons"><i class="si si-user text-muted mr-1"></i> Sally Peake</a></li>
-                                                    <li class="mb-0"><a href="#" class="icons"><i class="si si-phone text-muted mr-1"></i> 5-67987608</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="card mb-0">
-                                        <div class="item-card7-imgs">
-                                            <span class="bdir label label-primary mb-0">Restaurant</span>
-                                            <a href="business.html"></a>
-                                            <img src="../assets/images/products/products/f2.jpg" alt="img" class="cover-image">
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="item-card7-desc">
-                                                <a href="business.html" class="text-dark"><h4 class="font-weight-semibold">Globex</h4></a>
-                                            </div>
-                                            <div class="item-card7-text">
-                                                <ul class="icon-card mb-0">
-                                                    <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i>  Los Angles</a></li>
-                                                    <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i> 5 hours ago</a></li>
-                                                    <li class="mb-0"><a href="#" class="icons"><i class="si si-user text-muted mr-1"></i> Sally Peake</a></li>
-                                                    <li class="mb-0"><a href="#" class="icons"><i class="si si-phone text-muted mr-1"></i> 5-67987608</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="card mb-0">
-                                        <div class="item-card7-imgs">
-                                            <span class="bdir label label-pink mb-0">Beauty & Spa</span>
-                                            <a href="business.html"></a>
-                                            <img src="../assets/images/products/products/b1.jpg" alt="img" class="cover-image">
-                                        </div>
-                                        <div class="item-card7-overlaytext">
-                                            <h4  class="font-weight-semibold mb-0">$854</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="item-card7-desc">
-                                                <a href="business.html" class="text-dark"><h4 class="font-weight-semibold">hair Care & Styling</h4></a>
-                                            </div>
-                                            <div class="item-card7-text">
-                                                <ul class="icon-card mb-0">
-                                                    <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i>  Los Angles</a></li>
-                                                    <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i> 5 hours ago</a></li>
-                                                    <li class="mb-0"><a href="#" class="icons"><i class="si si-user text-muted mr-1"></i> Sally Peake</a></li>
-                                                    <li class="mb-0"><a href="#" class="icons"><i class="si si-phone text-muted mr-1"></i> 5-67987608</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="card mb-0">
-                                        <div class="item-card7-imgs">
-                                            <span class="bdir label label-info mb-0">IT Services</span>
-                                            <a href="business.html"></a>
-                                            <img src="../assets/images/products/products/j1.jpg" alt="img" class="cover-image">
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="item-card7-desc">
-                                                <a href="business.html" class="text-dark"><h4 class="font-weight-semibold">Acme Corporation</h4></a>
-                                            </div>
-                                            <div class="item-card7-text">
-                                                <ul class="icon-card mb-0">
-                                                    <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i>  Los Angles</a></li>
-                                                    <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i> 5 hours ago</a></li>
-                                                    <li class="mb-0"><a href="#" class="icons"><i class="si si-user text-muted mr-1"></i> Sally Peake</a></li>
-                                                    <li class="mb-0"><a href="#" class="icons"><i class="si si-phone text-muted mr-1"></i> 5-67987608</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="card mb-0">
-                                        <div class="item-card7-imgs">
-                                            <span class="bdir label label-pink mb-0">Beauty & Spa</span>
-                                            <a href="business.html"></a>
-                                            <img src="../assets/images/products/products/b3.jpg" alt="img" class="cover-image">
-                                        </div>
-                                        <div class="item-card7-overlaytext">
-                                            <h4  class="font-weight-semibold mb-0">$854</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="item-card7-desc">
-                                                <a href="business.html" class="text-dark"><h4 class="font-weight-semibold">hair Care & Styling</h4></a>
-                                            </div>
-                                            <div class="item-card7-text">
-                                                <ul class="icon-card mb-0">
-                                                    <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i>  Los Angles</a></li>
-                                                    <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i> 5 hours ago</a></li>
-                                                    <li class="mb-0"><a href="#" class="icons"><i class="si si-user text-muted mr-1"></i> Sally Peake</a></li>
-                                                    <li class="mb-0"><a href="#" class="icons"><i class="si si-phone text-muted mr-1"></i> 5-67987608</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                    @include('frontend.supplier.elements.latest_ads')
                 </div>
                 <!--/Left Side Content-->
 
@@ -378,17 +182,9 @@
                                 <div id="carousel" class="carousel slide" data-ride="carousel">
                                     <div class="arrow-ribbon bg-primary">Open</div>
                                     <div class="carousel-inner">
-
-                                        <div class="carousel-item active"> <img src="../assets/images/products/products/f4.jpg" alt="img"> </div>
-                                        <div class="carousel-item"> <img src="../assets/images/products/products/f2.jpg" alt="img"> </div>
-                                        <div class="carousel-item"> <img src="../assets/images/products/products/f1.jpg" alt="img"> </div>
-                                        <div class="carousel-item"> <img src="../assets/images/products/products/f4.jpg" alt="img"> </div>
-                                        <div class="carousel-item"> <img src="../assets/images/products/products/f3.jpg" alt="img"> </div>
-                                        <div class="carousel-item"> <img src="../assets/images/products/products/f4.jpg" alt="img"> </div>
-                                        <div class="carousel-item"> <img src="../assets/images/products/products/f2.jpg" alt="img"> </div>
-                                        <div class="carousel-item"> <img src="../assets/images/products/products/f1.jpg" alt="img"> </div>
-                                        <div class="carousel-item"> <img src="../assets/images/products/products/f4.jpg" alt="img"> </div>
-                                        <div class="carousel-item"> <img src="../assets/images/products/products/f3.jpg" alt="img"> </div>
+                                        @for($i=0;$i<6;$i++)
+                                            <div class="carousel-item {{ $i==0?'active':'' }}"> <img src="{{ asset('images/products/TP0'.($i%4+1).'.jpg') }}" alt="img"> </div>
+                                        @endfor
                                     </div>
                                     <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
                                         <i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -397,6 +193,7 @@
                                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                                     </a>
                                 </div>
+                                @if(false)
                                 <div class="clearfix">
                                     <div id="thumbcarousel" class="carousel slide" data-interval="false">
                                         <div class="carousel-inner">
@@ -423,6 +220,7 @@
                                         </a>
                                     </div>
                                 </div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -457,197 +255,35 @@
                     </div>
                     <!--/Business Description-->
 
-                    <h3 class="mb-5 mt-4">Related Posts</h3>
+                    <h3 class="mb-5 mt-4">Recommended Products</h3>
 
                     <!--Related Posts-->
                     <div id="myCarousel5" class="owl-carousel owl-carousel-icons3">
                         <!-- Wrapper for carousel items -->
-
-                        <div class="item">
-                            <div class="card">
-                                <div class="item-card7-imgs">
-                                    <span class="bdir label label-primary mb-0">Restaurant</span>
-                                    <a href="business.html"></a>
-                                    <img src="../assets/images/products/products/f1.jpg" alt="img" class="cover-image">
-                                </div>
-                                <div class="card-body">
-                                    <div class="item-card7-desc">
-                                        <a href="business.html" class="text-dark"><h4 class="font-weight-semibold">Globex</h4></a>
+                        @for($i=0;$i<5;$i++)
+                            <div class="item">
+                                <div class="card">
+                                    <div class="item-card7-imgs">
+                                        <span class="bdir label label-primary mb-0">Restaurant</span>
+                                        <a href="business.html"></a>
+                                        <img src="{{ asset('images/categories/products0'.($i+1).'.jpg') }}" alt="img" class="cover-image">
                                     </div>
-                                    <div class="item-card7-text">
-                                        <ul class="icon-card mb-0">
-                                            <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i>  Los Angles</a></li>
-                                            <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i> 5 hours ago</a></li>
-                                            <li class="mb-0"><a href="#" class="icons"><i class="si si-user text-muted mr-1"></i> Sally Peake</a></li>
-                                            <li class="mb-0"><a href="#" class="icons"><i class="si si-phone text-muted mr-1"></i> 5-67987608</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="card">
-                                <div class="item-card7-imgs">
-                                    <span class="bdir label label-pink mb-0">Beauty & Spa</span>
-                                    <a href="business.html"></a>
-                                    <img src="../assets/images/products/products/b2.jpg" alt="img" class="cover-image">
-                                </div>
-                                <div class="item-card7-overlaytext">
-                                    <h4  class="font-weight-semibold mb-0">$854</h4>
-                                </div>
-                                <div class="card-body">
-                                    <div class="item-card7-desc">
-                                        <a href="business.html" class="text-dark"><h4 class="font-weight-semibold">hair Care & Styling</h4></a>
-                                    </div>
-                                    <div class="item-card7-text">
-                                        <ul class="icon-card mb-0">
-                                            <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i>  Los Angles</a></li>
-                                            <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i> 5 hours ago</a></li>
-                                            <li class="mb-0"><a href="#" class="icons"><i class="si si-user text-muted mr-1"></i> Sally Peake</a></li>
-                                            <li class="mb-0"><a href="#" class="icons"><i class="si si-phone text-muted mr-1"></i> 5-67987608</a></li>
-                                        </ul>
+                                    <div class="card-body">
+                                        <div class="item-card7-desc">
+                                            <a href="business.html" class="text-dark"><h4 class="font-weight-semibold">Globex</h4></a>
+                                        </div>
+                                        <div class="item-card7-text">
+                                            <ul class="icon-card mb-0">
+                                                <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i>  Los Angles</a></li>
+                                                <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i> 5 hours ago</a></li>
+                                                <li class="mb-0"><a href="#" class="icons"><i class="si si-user text-muted mr-1"></i> Sally Peake</a></li>
+                                                <li class="mb-0"><a href="#" class="icons"><i class="si si-phone text-muted mr-1"></i> 5-67987608</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="card">
-                                <div class="item-card7-imgs">
-                                    <span class="bdir label label-info mb-0">IT Services</span>
-                                    <a href="business.html"></a>
-                                    <img src="../assets/images/products/products/j3.jpg" alt="img" class="cover-image">
-                                </div>
-                                <div class="card-body">
-                                    <div class="item-card7-desc">
-                                        <a href="business.html" class="text-dark"><h4 class="font-weight-semibold">Acme Corporation</h4></a>
-                                    </div>
-                                    <div class="item-card7-text">
-                                        <ul class="icon-card mb-0">
-                                            <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i>  Los Angles</a></li>
-                                            <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i> 5 hours ago</a></li>
-                                            <li class="mb-0"><a href="#" class="icons"><i class="si si-user text-muted mr-1"></i> Sally Peake</a></li>
-                                            <li class="mb-0"><a href="#" class="icons"><i class="si si-phone text-muted mr-1"></i> 5-67987608</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="card">
-                                <div class="item-card7-imgs">
-                                    <span class="bdir label label-info mb-0">IT Services</span>
-                                    <a href="business.html"></a>
-                                    <img src="../assets/images/products/products/j2.jpg" alt="img" class="cover-image">
-                                </div>
-                                <div class="card-body">
-                                    <div class="item-card7-desc">
-                                        <a href="business.html" class="text-dark"><h4 class="font-weight-semibold">Soylent Corp</h4></a>
-                                    </div>
-                                    <div class="item-card7-text">
-                                        <ul class="icon-card mb-0">
-                                            <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i>  Los Angles</a></li>
-                                            <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i> 5 hours ago</a></li>
-                                            <li class="mb-0"><a href="#" class="icons"><i class="si si-user text-muted mr-1"></i> Sally Peake</a></li>
-                                            <li class="mb-0"><a href="#" class="icons"><i class="si si-phone text-muted mr-1"></i> 5-67987608</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="card">
-                                <div class="item-card7-imgs">
-                                    <span class="bdir label label-primary mb-0">Restaurant</span>
-                                    <a href="business.html"></a>
-                                    <img src="../assets/images/products/products/f2.jpg" alt="img" class="cover-image">
-                                </div>
-                                <div class="card-body">
-                                    <div class="item-card7-desc">
-                                        <a href="business.html" class="text-dark"><h4 class="font-weight-semibold">Globex</h4></a>
-                                    </div>
-                                    <div class="item-card7-text">
-                                        <ul class="icon-card mb-0">
-                                            <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i>  Los Angles</a></li>
-                                            <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i> 5 hours ago</a></li>
-                                            <li class="mb-0"><a href="#" class="icons"><i class="si si-user text-muted mr-1"></i> Sally Peake</a></li>
-                                            <li class="mb-0"><a href="#" class="icons"><i class="si si-phone text-muted mr-1"></i> 5-67987608</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="card">
-                                <div class="item-card7-imgs">
-                                    <span class="bdir label label-pink mb-0">Beauty & Spa</span>
-                                    <a href="business.html"></a>
-                                    <img src="../assets/images/products/products/b1.jpg" alt="img" class="cover-image">
-                                </div>
-                                <div class="item-card7-overlaytext">
-                                    <h4  class="font-weight-semibold mb-0">$854</h4>
-                                </div>
-                                <div class="card-body">
-                                    <div class="item-card7-desc">
-                                        <a href="business.html" class="text-dark"><h4 class="font-weight-semibold">hair Care & Styling</h4></a>
-                                    </div>
-                                    <div class="item-card7-text">
-                                        <ul class="icon-card mb-0">
-                                            <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i>  Los Angles</a></li>
-                                            <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i> 5 hours ago</a></li>
-                                            <li class="mb-0"><a href="#" class="icons"><i class="si si-user text-muted mr-1"></i> Sally Peake</a></li>
-                                            <li class="mb-0"><a href="#" class="icons"><i class="si si-phone text-muted mr-1"></i> 5-67987608</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="card">
-                                <div class="item-card7-imgs">
-                                    <span class="bdir label label-info mb-0">IT Services</span>
-                                    <a href="business.html"></a>
-                                    <img src="../assets/images/products/products/j1.jpg" alt="img" class="cover-image">
-                                </div>
-                                <div class="card-body">
-                                    <div class="item-card7-desc">
-                                        <a href="business.html" class="text-dark"><h4 class="font-weight-semibold">Acme Corporation</h4></a>
-                                    </div>
-                                    <div class="item-card7-text">
-                                        <ul class="icon-card mb-0">
-                                            <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i>  Los Angles</a></li>
-                                            <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i> 5 hours ago</a></li>
-                                            <li class="mb-0"><a href="#" class="icons"><i class="si si-user text-muted mr-1"></i> Sally Peake</a></li>
-                                            <li class="mb-0"><a href="#" class="icons"><i class="si si-phone text-muted mr-1"></i> 5-67987608</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="card">
-                                <div class="item-card7-imgs">
-                                    <span class="bdir label label-pink mb-0">Beauty & Spa</span>
-                                    <a href="business.html"></a>
-                                    <img src="../assets/images/products/products/b3.jpg" alt="img" class="cover-image">
-                                </div>
-                                <div class="item-card7-overlaytext">
-                                    <h4  class="font-weight-semibold mb-0">$854</h4>
-                                </div>
-                                <div class="card-body">
-                                    <div class="item-card7-desc">
-                                        <a href="business.html" class="text-dark"><h4 class="font-weight-semibold">hair Care & Styling</h4></a>
-                                    </div>
-                                    <div class="item-card7-text">
-                                        <ul class="icon-card mb-0">
-                                            <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i>  Los Angles</a></li>
-                                            <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i> 5 hours ago</a></li>
-                                            <li class="mb-0"><a href="#" class="icons"><i class="si si-user text-muted mr-1"></i> Sally Peake</a></li>
-                                            <li class="mb-0"><a href="#" class="icons"><i class="si si-phone text-muted mr-1"></i> 5-67987608</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endfor
                     </div>
                     <!--/Related Posts-->
 
