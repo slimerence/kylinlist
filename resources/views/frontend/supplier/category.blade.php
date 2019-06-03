@@ -116,7 +116,7 @@
                                                 <div class="d-md-flex">
                                                     <div class="item-card9-img">
                                                         <div class="item-card9-imgs">
-                                                            <a href="classified.html"></a>
+                                                            <a href="{{ url('supplier') }}"></a>
                                                             <img src="../assets/images/products/pe1.png" alt="img" class="cover-image">
                                                         </div>
                                                         <div class="item-card9-icons">
@@ -126,8 +126,8 @@
                                                     <div class="card mb-0 border-0">
                                                         <div class="card-body ">
                                                             <div class="item-card9">
-                                                                <a href="classified.html">Animals</a>
-                                                                <a href="classified.html" class="text-dark"><h4 class="font-weight-semibold mt-1">kenco petcenter</h4></a>
+                                                                <a href="{{ url('supplier') }}">Animals</a>
+                                                                <a href="{{ url('supplier') }}" class="text-dark"><h4 class="font-weight-semibold mt-1">kenco petcenter</h4></a>
                                                                 <p class="mb-0 leading-tight">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit</p>
                                                             </div>
                                                         </div>
@@ -182,8 +182,8 @@
                                                         </div>
                                                         <div class="card-body">
                                                             <div class="item-card9">
-                                                                <a href="classified.html">RealEstate</a>
-                                                                <a href="classified.html" class="text-dark mt-2"><h4 class="font-weight-semibold mt-1">2BK flat </h4></a>
+                                                                <a href="{{ url('supplier') }}">RealEstate</a>
+                                                                <a href="{{ url('supplier') }}" class="text-dark mt-2"><h4 class="font-weight-semibold mt-1">2BK flat </h4></a>
                                                                 <p>Ut enim ad minima veniamq nostrum exerci ullam orisin suscipit laboriosam</p>
                                                                 <div class="item-card9-desc">
                                                                     <a href="#" class="mr-4"><span class=""><i class="fa fa-map-marker text-muted mr-1"></i> USA</span></a>
