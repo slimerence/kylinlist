@@ -1,6 +1,6 @@
 <!--Sliders Section-->
 <section>
-    <div class="banner-1 cover-image sptb-2 bg-background2" data-image-src="../assets/images/banners/business.jpg">
+    <div class="banner-1 cover-image sptb-2 bg-background2" style="background-image: url(../assets/images/banners/kylin_banner02.jpg);" data-image-src="../assets/images/banners/kylin_banner02.jpg">
         <div class="header-text mb-0">
             <div class="container">
                 <div class="text-center text-white ">

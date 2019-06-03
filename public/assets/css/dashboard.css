@@ -25604,7 +25604,7 @@ footer .border-top{
 	top:0;
 }
 .bg-background2:before{
-	background:linear-gradient(to right, rgba(110, 199, 219, 1), rgb(105, 99, 255, 0.7));
+	/*background:linear-gradient(to right, rgba(110, 199, 219, 1), rgb(105, 99, 255, 0.7));*/
 	content:'';
 	position:absolute;
 	width:100%;
@@ -26301,3 +26301,5 @@ h1.animated-text {
     font-size: 32px;
     color: #ff382b;
 }
+
+
