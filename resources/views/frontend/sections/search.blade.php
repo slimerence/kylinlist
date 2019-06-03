@@ -1,7 +1,7 @@
 <!--Sliders Section-->
 <section>
-    <div class="banner-1 cover-image sptb-2 bg-background2" style="background-image: url(../assets/images/banners/kylin_banner02.jpg);" data-image-src="../assets/images/banners/kylin_banner02.jpg">
-        <div class="header-text mb-0">
+    <div class="banner-1 cover-image sptb-2 bg-background2" style="background-image:url("images/bg/banner02.jpg");" data-image-src="/images/bg/banner03.jpg">
+            <div class="header-text mb-0">
             <div class="container">
                 <div class="text-center text-white ">
                     <h1 class="">Global Business Resources Platform</h1>
@@ -40,7 +40,7 @@
                 </div>
 
                 <!-- /Search Tag -->
-                <div class="row">
+                {{--<div class="row">
                 <div class="col-xl-8 col-lg-12 col-md-12 d-block mx-auto my-3">
                     <div class="search-tag">
                         <span class="tag tag-azure">
@@ -85,7 +85,7 @@
 
                     </div>
                 </div>
-                </div>
+                </div>--}}
                 <!-- /Search Tag -->
             </div>
         </div><!-- /header-text -->

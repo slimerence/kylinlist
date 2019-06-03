@@ -25,7 +25,7 @@
                                 <div class="col-xl-8 col-md-12 d-block mx-auto">
                                     <div class="testimonia">
                                         <div class="testimonia-img mx-auto mb-3">
-                                            <img src="../assets/images/faces/female/11.jpg" class="img-thumbnail rounded-circle alt=" alt="">
+                                            <img src={{ asset('images/others/portrait0'.($i%2+5).'.jpg') }} class="img-thumbnail rounded-circle alt=" alt="">
                                         </div>
                                         <p>
                                             <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore cum accusamus eveniet molestias voluptatum inventore laboriosam labore sit, aspernatur praesentium iste impedit quidem dolor veniam.

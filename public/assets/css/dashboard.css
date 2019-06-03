@@ -24565,10 +24565,14 @@ footer .border-top{
 .banner-1 .header-text h1{
 	margin-bottom:.3rem;
 	font-weight: 400;
+    color:#504e70;
+
 }
 .banner-1 .header-text p{
 	margin-bottom:1.5rem;
 	font-size: 16px;
+    color:#504e70;
+
 }
 .banner-2{
 }

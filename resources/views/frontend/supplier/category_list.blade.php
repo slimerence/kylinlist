@@ -10,126 +10,23 @@
                 <p>Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula</p>
             </div>
             <div class="row">
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <div class="card">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href="#"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/h4.png" alt="img" class="br-tr-7 br-tl-7">
-                                </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">Home &amp; Furniture<span>(45)</span></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <div class="card">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href="#"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/j3.png" alt="img" class="br-tr-7 br-tl-7">
-                                </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">Jobs<span>(23)</span></h4>
+                @for($i=0;$i<9;$i++)
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="card">
+                            <div class="item-card">
+                                <div class="item-card-desc">
+                                    <a href="#"></a>
+                                    <div class="item-card-img">
+                                        <img src={{ asset('images/categories/categories0'.($i%9+1).'.jpg') }} alt="img" class="br-tr-7 br-tl-7">
+                                    </div>
+                                    <div class="item-card-text">
+                                        <h4 class="mb-0">Home &amp; Furniture<span>(45)</span></h4>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <div class="card">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href="#"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/b2.png" alt="img" class="br-tr-7 br-tl-7">
-                                </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">Beauty &amp; Spa<span>(48)</span></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <div class="card">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href="#"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/v2.png" alt="img" class="br-tr-7 br-tl-7">
-                                </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">Vehicles<span>(15)</span></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <div class="card mb-xl-0">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href="#"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/f2.png" alt="img" class="br-tr-7 br-tl-7">
-                                </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">Restaurant<span>(12)</span></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <div class="card mb-xl-0">
-                        <div class="item-card ">
-                            <div class="item-card-desc">
-                                <a href="#"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/e1.png" alt="img" class="br-tr-7 br-tl-7">
-                                </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">Electronics<span>(05)</span></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <div class="card mb-xl-0">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href="#"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/pe1.png" alt="img" class="br-tr-7 br-tl-7">
-                                </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">Animals<span>(09)</span></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <div class="card mb-0">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href="#"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/co1.png" alt="img" class="br-tr-7 br-tl-7">
-                                </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">Clothing<span>(65)</span></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endfor
             </div>
         </div>
     </section>
@@ -428,6 +325,8 @@
                         </div>
                     </div>
                 </div>
+
+
                 <div class="col-md-12 mt-5">
                     <div class="card">
                         <div class="card-body items-gallery">
@@ -444,237 +343,31 @@
                                         </ul>
                                     </div>
                                 </div>
+
+
                                 <div class="tab-content">
-                                    <div class="tab-pane active show" id="tab-1">
-                                        <div class="row">
-                                            <div class="col-xl-3 col-lg-6 col-md-12">
-                                                <div class="card mb-xl-0">
-                                                    <div class="item-card8-img  br-tr-7 br-tl-7">
-                                                        <img src="../assets/images/products/f3.png" alt="img" class="cover-image">
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <div class="item-card8-desc">
-                                                            <p class="text-muted">16 November 2018.</p>
-                                                            <h4 class="font-weight-semibold">Food &amp; Bar Restaurant</h4>
-                                                            <p class="mb-0">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam</p>
+                                    @for($i=1;$i<5;$i++)
+                                        <div class="tab-pane {{ $i==1?'active show':'' }}" id="{{ 'tab-'.$i }}">
+                                            <div class="row">
+                                                @for($j=0;$j<4;$j++)
+                                                    <div class="col-xl-3 col-lg-6 col-md-12">
+                                                        <div class="card mb-xl-0">
+                                                            <div class="item-card8-img  br-tr-7 br-tl-7">
+                                                                <img src="../assets/images/products/f3.png" alt="img" class="cover-image">
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <div class="item-card8-desc">
+                                                                    <p class="text-muted">16 November 2018.</p>
+                                                                    <h4 class="font-weight-semibold">Food &amp; Bar Restaurant</h4>
+                                                                    <p class="mb-0">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam</p>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3 col-lg-6 col-md-12">
-                                                <div class="card mb-xl-0">
-                                                    <div class="item-card8-img  br-tr-7 br-tl-7">
-                                                        <img src="../assets/images/products/h2.png" alt="img" class="cover-image">
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <div class="item-card8-desc">
-                                                            <p class="text-muted">16 November 2018.</p>
-                                                            <h4 class="font-weight-semibold">Food &amp; Bar Restaurant</h4>
-                                                            <p class="mb-0">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3 col-lg-6 col-md-12">
-                                                <div class="card mb-lg-0">
-                                                    <div class="item-card8-img  br-tr-7 br-tl-7">
-                                                        <img src="../assets/images/products/j1.png" alt="img" class="cover-image">
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <div class="item-card8-desc">
-                                                            <p class="text-muted">16 November 2018.</p>
-                                                            <h4 class="font-weight-semibold">Food &amp; Bar Restaurant</h4>
-                                                            <p class="mb-0">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3 col-lg-6 col-md-12">
-                                                <div class="card mb-0">
-                                                    <div class="item-card8-img  br-tr-7 br-tl-7">
-                                                        <img src="../assets/images/products/b1.png" alt="img" class="cover-image">
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <div class="item-card8-desc">
-                                                            <p class="text-muted">16 November 2018.</p>
-                                                            <h4 class="font-weight-semibold">Food &amp; Bar Restaurant</h4>
-                                                            <p class="mb-0">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                @endfor
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="tab-pane" id="tab-2">
-                                        <div class="row">
-                                            <div class="col-xl-4 col-lg-12 col-md-12">
-                                                <div class="card mb-xl-0">
-                                                    <div class="item-card8-img  br-tr-7 br-tl-7">
-                                                        <img src="../assets/images/products/j1.png" alt="img" class="cover-image">
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <div class="item-card8-desc">
-                                                            <p class="text-muted">16 November 2018.</p>
-                                                            <h4 class="font-weight-semibold">Food &amp; Bar Restaurant</h4>
-                                                            <p class="mb-0">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 col-lg-12 col-md-12">
-                                                <div class="card mb-xl-0">
-                                                    <div class="item-card8-img">
-                                                        <img src="../assets/images/products/j2.png" alt="img" class="cover-image">
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <div class="item-card8-desc">
-                                                            <p class="text-muted">16 November 2018.</p>
-                                                            <h4 class="font-weight-semibold">Food &amp; Bar Restaurant</h4>
-                                                            <p class="mb-0">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 col-lg-12 col-md-12">
-                                                <div class="card mb-0">
-                                                    <div class="item-card8-img">
-                                                        <img src="../assets/images/products/f3.png" alt="img" class="cover-image">
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <div class="item-card8-desc">
-                                                            <p class="text-muted">16 November 2018.</p>
-                                                            <h4 class="font-weight-semibold">Food &amp; Bar Restaurant</h4>
-                                                            <p class="mb-0">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="tab-3">
-                                        <div class="row">
-                                            <div class="col-xl-4 col-lg-12 col-md-12">
-                                                <div class="card mb-xl-0">
-                                                    <div class="item-card8-img  br-tr-7 br-tl-7">
-                                                        <img src="../assets/images/products/b1.png" alt="img" class="cover-image">
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <div class="item-card8-desc">
-                                                            <p class="text-muted">16 November 2018.</p>
-                                                            <h4 class="font-weight-semibold">Food &amp; Bar Restaurant</h4>
-                                                            <p class="mb-0">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 col-lg-12 col-md-12">
-                                                <div class="card mb-0">
-                                                    <div class="item-card8-img">
-                                                        <img src="../assets/images/products/b2.png" alt="img" class="cover-image">
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <div class="item-card8-desc">
-                                                            <p class="text-muted">16 November 2018.</p>
-                                                            <h4 class="font-weight-semibold">Food &amp; Bar Restaurant</h4>
-                                                            <p class="mb-0">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="tab-4">
-                                        <div class="row">
-                                            <div class="col-xl-4 col-lg-12 col-md-12">
-                                                <div class="card mb-xl-0">
-                                                    <div class="item-card8-img  br-tr-7 br-tl-7">
-                                                        <img src="../assets/images/products/h4.png" alt="img" class="cover-image">
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <div class="item-card8-desc">
-                                                            <p class="text-muted">16 November 2018.</p>
-                                                            <h4 class="font-weight-semibold">Food &amp; Bar Restaurant</h4>
-                                                            <p class="mb-0">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 col-lg-12 col-md-12">
-                                                <div class="card mb-xl-0">
-                                                    <div class="item-card8-img">
-                                                        <img src="../assets/images/products/h2.png" alt="img" class="cover-image">
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <div class="item-card8-desc">
-                                                            <p class="text-muted">16 November 2018.</p>
-                                                            <h4 class="font-weight-semibold">Food &amp; Bar Restaurant</h4>
-                                                            <p class="mb-0">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 col-lg-12 col-md-12">
-                                                <div class="card mb-0">
-                                                    <div class="item-card8-img">
-                                                        <img src="../assets/images/products/h3.png" alt="img" class="cover-image">
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <div class="item-card8-desc">
-                                                            <p class="text-muted">16 November 2018.</p>
-                                                            <h4 class="font-weight-semibold">Food &amp; Bar Restaurant</h4>
-                                                            <p class="mb-0">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="tab-5">
-                                        <div class="row">
-                                            <div class="col-xl-4 col-lg-12 col-md-12">
-                                                <div class="card mb-xl-0">
-                                                    <div class="item-card8-img  br-tr-7 br-tl-7">
-                                                        <img src="../assets/images/products/f4.png" alt="img" class="cover-image">
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <div class="item-card8-desc">
-                                                            <p class="text-muted">16 November 2018.</p>
-                                                            <h4 class="font-weight-semibold">Food &amp; Bar Restaurant</h4>
-                                                            <p class="mb-0">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 col-lg-12 col-md-12">
-                                                <div class="card mb-xl-0">
-                                                    <div class="item-card8-img">
-                                                        <img src="../assets/images/products/f3.png" alt="img" class="cover-image">
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <div class="item-card8-desc">
-                                                            <p class="text-muted">16 November 2018.</p>
-                                                            <h4 class="font-weight-semibold">Food &amp; Bar Restaurant</h4>
-                                                            <p class="mb-0">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 col-lg-12 col-md-12">
-                                                <div class="card mb-0">
-                                                    <div class="item-card8-img">
-                                                        <img src="../assets/images/products/f2.png" alt="img" class="cover-image">
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <div class="item-card8-desc">
-                                                            <p class="text-muted">16 November 2018.</p>
-                                                            <h4 class="font-weight-semibold">Food &amp; Bar Restaurant</h4>
-                                                            <p class="mb-0">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endfor
                                 </div>
                             </div>
                         </div>

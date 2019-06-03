@@ -10,8 +10,8 @@
             <div class="card">
                 <div class="card-body text-center">
                     <div class="feature">
-                        <div class="fa-stack fa-lg  fea-icon bg-success mb-3">
-                            <i class="fa fa-bullhorn  text-white"></i>
+                        <div class="fa-stack fa-lg  fea-icon mb-3">
+                            <img src={{ asset('images/icons/icons0'.($i%5+1).'.png') }} class="img-thumbnail alt=" alt="">
                         </div>
                         <h3>Provide Free Ads</h3>
                         <p>our being able to do what we like best, every pleasure is to be welcomed and every pain.</p>

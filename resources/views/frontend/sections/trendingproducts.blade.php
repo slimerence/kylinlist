@@ -13,7 +13,7 @@
                         <div class="arrow-ribbon {{ $i%2==1? 'bg-danger':'bg-info' }}">Open</div>
                         <div class="item-card7-imgs">
                             <a href="business.html"></a>
-                            <img src="../assets/images/products/products/b3.jpg" alt="img" class="cover-image">
+                            <img src={{ asset('images/products/TP0'.($i%4+1).'.jpg') }} alt="img" class="cover-image">
                         </div>
                         <div class="item-card7-overlaytext">
                             <a href="business.html" class="text-white"> Beauty & Spa </a>
@@ -34,7 +34,7 @@
                         <div class="card-footer">
                             <div class="footerimg d-md-flex mt-0 mb-0">
                                 <div class="d-flex footerimg-l mb-0">
-                                    <img src="../assets/images/faces/female/18.jpg" alt="image" class="avatar brround  mr-2">
+                                    <img src={{ asset('images/others/portrait0'.($i%6+1).'.jpg') }} alt="image" class="avatar brround  mr-2">
                                     <h5 class="time-title text-muted p-0 leading-normal mt-2 mb-0">Boris	Nash <i class="si si-check text-success fs-12 ml-1" data-toggle="tooltip" data-placement="top" title="verified"></i></h5>
                                 </div>
                                 <div class="mt-2 footerimg-r ml-auto">
