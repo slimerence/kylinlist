@@ -15,7 +15,7 @@
                     </div>
                     <div class="card-body">
                         <div class="item-card7-desc">
-                            <a href="business.html" class="text-dark"><h4 class="font-weight-semibold">Globex</h4></a>
+                            <a href="{{ url('supplier') }}" class="text-dark"><h4 class="font-weight-semibold">Globex</h4></a>
                         </div>
                         <div class="item-card7-text">
                             <ul class="icon-card mb-0">

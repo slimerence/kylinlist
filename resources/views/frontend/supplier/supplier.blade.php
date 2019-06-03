@@ -32,7 +32,7 @@
                             <div class="profile-pic mb-0">
                                 <img src="{{ asset('images/others/portrait02.jpg') }}" class="brround avatar-xxl" alt="user">
                                 <div class="">
-                                    <a href="userprofile.html" class="text-dark"><h4 class="mt-3 mb-1 font-weight-semibold">Robert McLean</h4></a>
+                                    <a href="{{ url('profile') }}" class="text-dark"><h4 class="mt-3 mb-1 font-weight-semibold">Robert McLean</h4></a>
                                     <span class="text-gray">Business Director</span><br>
                                     <span class="text-muted">Member Since November 2008</span>
                                     <h6 class="mt-2 mb-0"><a href="#" class="btn btn-primary btn-sm">See All Ads</a></h6>
@@ -265,12 +265,12 @@
                                 <div class="card">
                                     <div class="item-card7-imgs">
                                         <span class="bdir label label-primary mb-0">Restaurant</span>
-                                        <a href="business.html"></a>
+                                        <a href="{{ url('product') }}"></a>
                                         <img src="{{ asset('images/categories/products0'.($i+1).'.jpg') }}" alt="img" class="cover-image">
                                     </div>
                                     <div class="card-body">
                                         <div class="item-card7-desc">
-                                            <a href="business.html" class="text-dark"><h4 class="font-weight-semibold">Globex</h4></a>
+                                            <a href="{{ url('product') }}" class="text-dark"><h4 class="font-weight-semibold">Globex</h4></a>
                                         </div>
                                         <div class="item-card7-text">
                                             <ul class="icon-card mb-0">

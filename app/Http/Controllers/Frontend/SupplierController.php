@@ -43,4 +43,8 @@ class SupplierController extends Controller
         return view('frontend.supplier.product');
     }
 
+    public function profile(){
+
+        return view('frontend.profile.index');
+    }
 }

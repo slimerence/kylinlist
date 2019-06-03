@@ -31,7 +31,7 @@
                                     <option value="AL">Albania</option>
                                     <option value="AD">Andorra</option>
                                     <option value="AG">Antigua and Barbuda</option>
-                                    <option value="AU">Australia</option>
+                                    <option value="AU" selected>Australia</option>
                                     <option value="AM">Armenia</option>
                                     <option value="AO">Angola</option>
                                     <option value="AR">Argentina</option>

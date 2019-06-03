@@ -13,7 +13,7 @@
                         <img src="../assets/images/products/business2/hotel.png" class="imag-service" alt="Hotel">
                     </div>
                     <div class="item-all-text mt-3">
-                        <h5 class="mb-0 text-body">Hotel</h5>
+                        <h5 class="mb-0 text-body">Partner</h5>
                     </div>
                 </div>
             </div>

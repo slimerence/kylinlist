@@ -131,8 +131,8 @@
                                                 </dl>
                                             </div>
                                         </div>
-                                        <a href="#" class="btn  btn-info"> Contact Supplier </a>
-                                        <a href="#" class="btn  btn-success"> <i class="fa fa-shopping-cart"></i> Add to cart </a>
+                                        <a href="#quick-contact" class="btn  btn-info"> Contact Supplier </a>
+                                        <a href="{{ url('supplier') }}" class="btn  btn-success">View Supplier </a>
                                     </div>
                                 </div>
                             </div>
@@ -351,7 +351,7 @@
                     </div>
                     <!--/Comments-->
 
-                    <div class="card mb-0">
+                    <div class="card mb-0" id="quick-contact">
                         <div class="card-header">
                             <h3 class="card-title">Contact Supplier</h3>
                         </div>
