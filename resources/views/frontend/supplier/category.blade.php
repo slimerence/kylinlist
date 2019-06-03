@@ -116,8 +116,8 @@
                                                 <div class="d-md-flex">
                                                     <div class="item-card9-img">
                                                         <div class="item-card9-imgs">
-                                                            <a href="classified.html"></a>
-                                                            <img src="../assets/images/products/pe1.png" alt="img" class="cover-image">
+                                                            <a href="{{ url('supplier') }}"></a>
+                                                            <img src={{ asset('images/categories/products0'.($i%5+1).'.jpg') }} alt="img" class="cover-image">
                                                         </div>
                                                         <div class="item-card9-icons">
                                                             <a href="#" class="item-card9-icons1 wishlist {{ $i%4 == 0? 'active':'' }}"> <i class="fa fa fa-heart-o"></i></a>
@@ -126,8 +126,8 @@
                                                     <div class="card mb-0 border-0">
                                                         <div class="card-body ">
                                                             <div class="item-card9">
-                                                                <a href="classified.html">Animals</a>
-                                                                <a href="classified.html" class="text-dark"><h4 class="font-weight-semibold mt-1">kenco petcenter</h4></a>
+                                                                <a href="{{ url('supplier') }}">Animals</a>
+                                                                <a href="{{ url('supplier') }}" class="text-dark"><h4 class="font-weight-semibold mt-1">kenco petcenter</h4></a>
                                                                 <p class="mb-0 leading-tight">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit</p>
                                                             </div>
                                                         </div>
@@ -174,7 +174,7 @@
                                                             <div class="arrow-ribbon bg-primary">Rent</div>
                                                             <div class="item-card9-imgs">
                                                                 <a href="{{ url('supplier') }}"></a>
-                                                                <img src="../assets/images/products/h4.png" alt="img" class="cover-image">
+                                                                <img src={{ asset('images/categories/products0'.($i%5+1).'.jpg') }} alt="img" class="cover-image">
                                                             </div>
                                                             <div class="item-card9-icons">
                                                                 <a href="#" class="item-card9-icons1 wishlist"> <i class="fa fa fa-heart-o"></i></a>

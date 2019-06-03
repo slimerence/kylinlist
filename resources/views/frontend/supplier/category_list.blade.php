@@ -353,7 +353,7 @@
                                                     <div class="col-xl-3 col-lg-6 col-md-12">
                                                         <div class="card mb-xl-0">
                                                             <div class="item-card8-img  br-tr-7 br-tl-7">
-                                                                <img src="../assets/images/products/f3.png" alt="img" class="cover-image">
+                                                                <img src={{ asset('images/categories/news0'.($j%4+1).'.jpg') }} class="cover-image">
                                                             </div>
                                                             <div class="card-body">
                                                                 <div class="item-card8-desc">
