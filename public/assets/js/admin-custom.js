@@ -175,6 +175,24 @@
 	$('.counter').countUp();
 	
 	// ______________Dropdown
-	$('.dropdown-toggle').dropdown()
-	
+	$('.dropdown-toggle').dropdown();
+
+    if($('#mainmenu').length>0){
+        $('#mainmenu').on('change',function (e) {
+            //console.log(e);
+            var main_id = e.target.value;
+            if (main_id >1){
+                $.get('/api/subcategory/' + main_id, function (data) {
+                    //success
+                    $('#submenu').empty();
+                    $.each(data, function (index, subObj) {
+                        $('#submenu').append('<option value="' + subObj.id + '">' + subObj.name + ' (' + subObj.name_cn + ')' + '</option>');
+                    });
+                });
+            }
+        });
+    }
+
+
+
 })(jQuery);

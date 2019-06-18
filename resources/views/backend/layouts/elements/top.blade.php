@@ -27,38 +27,38 @@
                 </div>
                 <div class="dropdown d-none d-md-flex country-selector">
                     <a href="#" class="d-flex nav-link leading-none" data-toggle="dropdown">
-                        <img src="../assets/images/us_flag.jpg" alt="img" class="avatar avatar-xs mr-1 align-self-center">
+                        <img src="/assets/images/us_flag.jpg" alt="img" class="avatar avatar-xs mr-1 align-self-center">
                         <div>
                             <strong class="text-dark">English</strong>
                         </div>
                     </a>
                     <div class="language-width dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                         <a href="#" class="dropdown-item d-flex pb-3">
-                            <img src="../assets/images/french_flag.jpg"  alt="flag-img" class="avatar  mr-3 align-self-center" >
+                            <img src="/assets/images/french_flag.jpg"  alt="flag-img" class="avatar  mr-3 align-self-center" >
                             <div>
                                 <strong>French</strong>
                             </div>
                         </a>
                         <a href="#" class="dropdown-item d-flex pb-3">
-                            <img src="../assets/images/germany_flag.jpg"  alt="flag-img" class="avatar  mr-3 align-self-center" >
+                            <img src="/assets/images/germany_flag.jpg"  alt="flag-img" class="avatar  mr-3 align-self-center" >
                             <div>
                                 <strong>Germany</strong>
                             </div>
                         </a>
                         <a href="#" class="dropdown-item d-flex pb-3">
-                            <img src="../assets/images/italy_flag.jpg"  alt="flag-img" class="avatar  mr-3 align-self-center" >
+                            <img src="/assets/images/italy_flag.jpg"  alt="flag-img" class="avatar  mr-3 align-self-center" >
                             <div>
                                 <strong>Italy</strong>
                             </div>
                         </a>
                         <a href="#" class="dropdown-item d-flex pb-3">
-                            <img src="../assets/images/russia_flag.jpg"  alt="flag-img" class="avatar  mr-3 align-self-center" >
+                            <img src="/assets/images/russia_flag.jpg"  alt="flag-img" class="avatar  mr-3 align-self-center" >
                             <div>
                                 <strong>Russia</strong>
                             </div>
                         </a>
                         <a href="#" class="dropdown-item d-flex pb-3">
-                            <img src="../assets/images/spain_flag.jpg"  alt="flag-img" class="avatar  mr-3 align-self-center" >
+                            <img src="/assets/images/spain_flag.jpg"  alt="flag-img" class="avatar  mr-3 align-self-center" >
                             <div>
                                 <strong>Spain</strong>
                             </div>
@@ -120,30 +120,30 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                         <a href="#" class="dropdown-item d-flex pb-3">
-                            <img src="../assets/images/faces/male/41.jpg" alt="avatar-img" class="avatar brround mr-3 align-self-center">
+                            <img src="/assets/images/faces/male/41.jpg" alt="avatar-img" class="avatar brround mr-3 align-self-center">
                             <div>
-                                <strong>Blake</strong> I've finished it! See you so.......
+                                <strong>Blake</strong> I've finished it! See you so.
                                 <div class="small text-muted">30 mins ago</div>
                             </div>
                         </a>
                         <a href="#" class="dropdown-item d-flex pb-3">
-                            <img src="../assets/images/faces/female/1.jpg" alt="avatar-img" class="avatar brround mr-3 align-self-center">
+                            <img src="/assets/images/faces/female/1.jpg" alt="avatar-img" class="avatar brround mr-3 align-self-center">
                             <div>
-                                <strong>Caroline</strong> Just see the my Admin....
+                                <strong>Caroline</strong> Just see the my Admin
                                 <div class="small text-muted">12 mins ago</div>
                             </div>
                         </a>
                         <a href="#" class="dropdown-item d-flex pb-3">
-                            <img src="../assets/images/faces/male/18.jpg" alt="avatar-img" class="avatar brround mr-3 align-self-center">
+                            <img src="/assets/images/faces/male/18.jpg" alt="avatar-img" class="avatar brround mr-3 align-self-center">
                             <div>
-                                <strong>Jonathan</strong> Hi! I'am singer......
+                                <strong>Jonathan</strong> Hi! I'am singer
                                 <div class="small text-muted">1 hour ago</div>
                             </div>
                         </a>
                         <a href="#" class="dropdown-item d-flex pb-3">
-                            <img src="../assets/images/faces/female/18.jpg" alt="avatar-img" class="avatar brround mr-3 align-self-center">
+                            <img src="/assets/images/faces/female/18.jpg" alt="avatar-img" class="avatar brround mr-3 align-self-center">
                             <div>
-                                <strong>Emily</strong> Just a reminder that you have.....
+                                <strong>Emily</strong> Just a reminder that you have.
                                 <div class="small text-muted">45 mins ago</div>
                             </div>
                         </a>
@@ -201,7 +201,7 @@
                 </div>
                 <div class="dropdown ">
                     <a href="#" class="nav-link pr-0 leading-none user-img" data-toggle="dropdown">
-                        <img src="../assets/images/faces/male/25.jpg" alt="profile-img" class="avatar avatar-md brround">
+                        <img src="/assets/images/faces/male/25.jpg" alt="profile-img" class="avatar avatar-md brround">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow ">
                         <a class="dropdown-item" href="profile.html">

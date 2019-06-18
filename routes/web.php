@@ -40,10 +40,10 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     Route::get('/home', 'Backend\Home@index');
 
     Route::prefix('category')->group(function() {
-        Route::get('/list', 'Backend\Category@list');
-        Route::get('/create', 'Backend\Category@create');
-        Route::get('/edit/{id}', 'Backend\Category@edit');
-        Route::post('/save', 'Backend\Category@save');
+        Route::get('/list', 'Backend\CategoryController@list');
+        Route::get('/create', 'Backend\CategoryController@create');
+        Route::get('/edit/{id}', 'Backend\CategoryController@edit');
+        Route::post('/save', 'Backend\CategoryController@save');
 
     });
 });
@@ -52,3 +52,4 @@ Route::prefix('admin')->middleware('auth')->group(function() {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/api/subcategory/{id}','Backend\CategoryController@subcate');

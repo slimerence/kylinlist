@@ -15,29 +15,41 @@
 
     <!-- Title -->
     <title>Kylinlist Admin Dashboard Bootstrap 4  HTML Template</title>
-    <link rel="stylesheet" href="../assets/fonts/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/fonts/fonts/font-awesome.min.css') }}">
 
     <!-- Sidemenu Css -->
-    <link href="../assets/plugins/toggle-sidebar/sidemenu.css" rel="stylesheet" />
+    <link href="{{ asset('assets/plugins/toggle-sidebar/sidemenu.css') }}" rel="stylesheet" />
 
 
     <!-- Bootstrap Css -->
-    <link href="../assets/plugins/bootstrap-4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="{{ asset('assets/plugins/bootstrap-4.1.3/css/bootstrap.min.css') }}" rel="stylesheet" />
 
     <!-- Dashboard Css -->
-    <link href="../assets/css/dashboard.css" rel="stylesheet" />
-    <link href="../assets/css/admin-custom.css" rel="stylesheet" />
+    <link href="{{ asset('assets/css/dashboard.css') }}" rel="stylesheet" />
+    <link href="/assets/css/admin-custom.css" rel="stylesheet" />
+
+    <!-- c3.js Charts Plugin -->
+    <link href="/assets/plugins/charts-c3/c3-chart.css" rel="stylesheet" />
+
+    <!-- Data table css -->
+    <link href="/assets/plugins/datatable/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="/assets/plugins/datatable/jquery.dataTables.min.css" rel="stylesheet" />
+
+
+    <!-- Slect2 css -->
+    <link href="/assets/plugins/select2/select2.min.css" rel="stylesheet" />
+
 
     <!-- JQVMap -->
-    <link href="../assets/plugins/jqvmap/jqvmap.min.css" rel="stylesheet"/>
+    <link href="/assets/plugins/jqvmap/jqvmap.min.css" rel="stylesheet"/>
 
     <!-- Morris.js Charts Plugin -->
-    <link href="../assets/plugins/morris/morris.css" rel="stylesheet" />
+    <link href="/assets/plugins/morris/morris.css" rel="stylesheet" />
 
     <!-- Custom scroll bar css-->
-    <link href="../assets/plugins/scroll-bar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+    <link href="/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css" rel="stylesheet" />
 
     <!---Font icons-->
-    <link href="../assets/plugins/iconfonts/plugin.css" rel="stylesheet" />
+    <link href="/assets/plugins/iconfonts/plugin.css" rel="stylesheet" />
 
 </head>
