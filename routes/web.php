@@ -36,7 +36,19 @@ Route::get('/industry', 'Frontend\PageController@blog_list');
 Route::get('/industry/detail', 'Frontend\PageController@blog_detail');
 
 Route::get('/admin/login', 'Backend\Home@login')->name('login');
-Route::prefix('admin')/*->middleware('auth')*/->group(function() {
+Route::prefix('admin')->middleware('auth')->group(function() {
     Route::get('/home', 'Backend\Home@index');
+
+    Route::prefix('category')->group(function() {
+        Route::get('/list', 'Backend\Category@list');
+        Route::get('/create', 'Backend\Category@create');
+        Route::get('/edit/{id}', 'Backend\Category@edit');
+        Route::post('/save', 'Backend\Category@save');
+
+    });
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

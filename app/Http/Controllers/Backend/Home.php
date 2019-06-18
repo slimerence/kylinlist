@@ -15,4 +15,6 @@ class Home extends Controller
     public function login(){
         return view('backend.login');
     }
+
+
 }

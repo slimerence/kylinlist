@@ -19,7 +19,7 @@
                                 @csrf
                             <div class="form-group">
                                 <label class="form-label text-dark">Email address</label>
-                                <input type="email" class="form-control" name="email" placeholder="Enter email">
+                                <input type="email" class="form-control  {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" placeholder="Enter email" value="{{ old('email') }}" required autofocus>
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -28,7 +28,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label text-dark">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+                                <input type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" id="exampleInputPassword1" name="password" placeholder="Password" required>
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('password') }}</strong>
@@ -38,7 +38,7 @@
                             <div class="form-group">
                                 <label class="custom-control custom-checkbox">
                                     <a href="{{ route('password.request') }}" class="float-right small text-dark mt-1">I forgot password</a>
-                                    <input type="checkbox" class="custom-control-input">
+                                    <input type="checkbox" class="custom-control-input" name="remember">
                                     <span class="custom-control-label text-dark">Remember me</span>
                                 </label>
                             </div>
