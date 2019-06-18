@@ -35,5 +35,8 @@ Route::get('/source-list', 'Frontend\SourceController@list');
 Route::get('/industry', 'Frontend\PageController@blog_list');
 Route::get('/industry/detail', 'Frontend\PageController@blog_detail');
 
-
+Route::get('/admin/login', 'Backend\Home@login')->name('login');
+Route::prefix('admin')/*->middleware('auth')*/->group(function() {
+    Route::get('/home', 'Backend\Home@index');
+});
 
