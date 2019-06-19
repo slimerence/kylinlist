@@ -25,5 +25,35 @@ class Category extends Model
         return $children;
     }
 
+    /**
+     * @param $data
+     * @return mixed
+     * Function for save category data
+     */
+    public static function Persistent($data){
+        $info = [];
+        $info['name'] = $data['name'];
+        $info['name_cn'] = $data['name_cn'];
+        $info['url']= $data['url'];
+        $info['position'] = $data['position'];
+        $info['level'] = $data['level'];
+        $info['status'] = 0;
+        if($info['level']==1){
+            $info['parent_id']= 0;
+        }else{
+            $info['parent_id']= $data['main'];
+        }
+        if(isset($data['status'])){
+            $info['status'] = 1;
+        }
+        if(isset($data['id'])){
+            $category = Category::find($data['id']);
+            Category::where('id',$data['id'])->update($info);
+        }else{
+            $category = Category::create($info);
+        }
+
+        return $category;
+    }
 
 }

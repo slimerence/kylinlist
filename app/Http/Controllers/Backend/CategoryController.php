@@ -28,27 +28,8 @@ class CategoryController extends Controller
 
     public function save(Request $request){
         $data = $request->all();
-        if(isset($data['id'])){
-            $category = Category::find($data['id']);
-        }
-        $info = [];
-        $info['name'] = $data['name'];
-        $info['name_cn'] = $data['name_cn'];
-        $info['url']= $data['url'];
-        $info['position'] = $data['position'];
-        $info['level'] = $data['level'];
-        $info['status'] = 0;
-        if($info['level']==1){
-            $info['parent_id']= 0;
-        }else{
-            $info['parent_id']= $data['main'];
-        }
-        if(isset($data['status'])){
-            $info['status'] = 1;
-        }
-        //dd($info);
+        Category::Persistent($data);
 
-        Category::create($info);
         return redirect('admin/category/list');
     }
 
