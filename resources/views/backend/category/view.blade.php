@@ -77,7 +77,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Default</label>
+                                    @if($category->getImage())
                                     <input type="file" name="image" class="dropify" data-default-file="{{ asset($category->getImage()->url)}}" data-height="180"/>
+                                        @else
+                                        <input type="file" name="image" class="dropify" data-height="180"/>
+                                    @endif
                                 </div>
                                 <button type="submit" class="btn btn-primary ">Submit</button>
                             </form>
