@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Model\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class PageController extends Controller
 {
     public function index(){
-
+        $this->data_view['roots'] = Category::where('level',1)->orderby('position','asc')->get();
         return view('frontend.home',$this->data_view);
     }
 

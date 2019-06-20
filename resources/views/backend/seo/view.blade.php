@@ -17,19 +17,23 @@
                             <h3 class="card-title">Category</h3>
                         </div>
                         <div class="card-body">
-                            <form method="post" action="{{ url('admin/category/save') }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ url('admin/category/save') }}">
                                 @csrf
-                            @if($category->id != null)
+                                @if($category->id != null)
                                     <input type="hidden" name="id" value="{{ $category->id }}">
                                 @endif
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label class="form-label" for="name1">Name</label>
-                                        <input type="text" class="form-control" id="name1" name="name" placeholder="Name" required value="{{ $category->name }}">
+                                        <div class="form-group">
+                                            <label class="form-label" for="name1">Name</label>
+                                            <input type="text" class="form-control" id="name1" name="name" placeholder="Name" required value="{{ $category->name }}">
+                                        </div>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label class="form-label" for="name2">中文名称</label>
-                                        <input type="text" class="form-control" id="name2" name="name_cn" placeholder="Name in Chinese" value="{{ $category->name_cn }}">
+                                        <div class="form-group">
+                                            <label class="form-label" for="name2">中文名称</label>
+                                            <input type="text" class="form-control" id="name2" name="name_cn" placeholder="Name in Chinese" value="{{ $category->name_cn }}">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -68,16 +72,12 @@
                                     </div>--}}
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">Status</label>
+                                    <div class="form-label">Status</div>
                                     <label class="custom-switch">
                                         <input type="checkbox" name="status" class="custom-switch-input" {{ $category->status ==1?'checked':'' }}>
                                         <span class="custom-switch-indicator"></span>
                                         <span class="custom-switch-description">Active/Inactive</span>
                                     </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-form-label">Default</label>
-                                    <input type="file" name="image" class="dropify" data-default-file="{{ asset($category->getImage()->url)}}" data-height="180"/>
                                 </div>
                                 <button type="submit" class="btn btn-primary ">Submit</button>
                             </form>

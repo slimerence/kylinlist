@@ -22,7 +22,7 @@
 
 
     <!-- Bootstrap Css -->
-    <link href="{{ asset('assets/plugins/bootstrap-4.1.3/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Dashboard Css -->
     <link href="{{ asset('assets/css/dashboard.css') }}" rel="stylesheet" />
@@ -48,7 +48,8 @@
 
     <!-- Custom scroll bar css-->
     <link href="/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css" rel="stylesheet" />
-
+    <!-- file Uploads -->
+    <link href="/assets/plugins/fileuploads/css/dropify.css" rel="stylesheet" type="text/css" />
     <!---Font icons-->
     <link href="/assets/plugins/iconfonts/plugin.css" rel="stylesheet" />
 

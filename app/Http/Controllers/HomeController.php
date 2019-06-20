@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Category;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $this->data_view['roots'] = Category::where('level',1)->orderby('position','asc')->get();
+        return view('home',$this->data_view);
     }
 }

@@ -20,6 +20,9 @@ Route::get('/support-faq', 'Frontend\PageController@faq');
 
 Route::get('/category-list', 'Frontend\SupplierController@category_list');
 Route::get('/categories', 'Frontend\SupplierController@category');
+Route::get('/categories/{url}', 'Frontend\SupplierController@category_view');
+
+
 Route::get('/supplier', 'Frontend\SupplierController@supplier');
 Route::get('/product', 'Frontend\SupplierController@product');
 Route::get('/profile', 'Frontend\SupplierController@profile');
@@ -35,14 +38,15 @@ Route::get('/source-list', 'Frontend\SourceController@list');
 Route::get('/industry', 'Frontend\PageController@blog_list');
 Route::get('/industry/detail', 'Frontend\PageController@blog_detail');
 
-Route::get('/admin/login', 'Backend\Home@login')->name('login');
 Route::prefix('admin')->middleware('auth')->group(function() {
     Route::get('/home', 'Backend\Home@index');
+    Route::get('/seo', 'Backend\Home@index');
 
     Route::prefix('category')->group(function() {
         Route::get('/list', 'Backend\CategoryController@list');
         Route::get('/create', 'Backend\CategoryController@create');
         Route::get('/edit/{id}', 'Backend\CategoryController@edit');
+        Route::get('/delete/{id}', 'Backend\CategoryController@delete');
         Route::post('/save', 'Backend\CategoryController@save');
 
     });
@@ -50,6 +54,6 @@ Route::prefix('admin')->middleware('auth')->group(function() {
 
 
 Auth::routes();
-
+Route::get('/admin/login', 'Backend\Home@login');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/api/subcategory/{id}','Backend\CategoryController@subcate');

@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\Models\Media;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
@@ -23,6 +24,11 @@ class Category extends Model
     public function getChildren(){
         $children = self::where('parent_id',$this->id)->orderby('position','asc')->get();
         return $children;
+    }
+
+    public function getImage(){
+        $image = Media::where('for',2)->where('target_id',$this->id)->first();
+        return $image;
     }
 
     /**

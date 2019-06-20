@@ -6,23 +6,33 @@
             <p>Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula</p>
         </div>
         <div class="row">
-            @for($i=0;$i<8;$i++)
+            @foreach($roots as $key=>$root)
+                @if($key<8)
                 <div class="col-xl-3 col-lg-6 col-md-6">
                     <div class="card">
                         <div class="item-card">
                             <div class="item-card-desc">
-                                <a href="{{ url('/suppliers') }}"></a>
+                                <a href="{{ url('/categories/'.$root->url) }}"></a>
                                 <div class="item-card-img">
-                                    <img src={{ asset('images/categories/categories0'.($i%9+1).'.jpg') }} alt="img" class="br-tr-7 br-tl-7">
+                                    @php
+                                        $image = $root->getImage();
+                                        if($image){
+                                            $path = $image->url;
+                                        }else{
+                                            $path = 'images/categories/categories0'.($key%9+1).'.jpg';
+                                        }
+                                    @endphp
+                                    <img src={{ asset($path) }} alt="img" class="br-tr-7 br-tl-7">
                                 </div>
                                 <div class="item-card-text">
-                                    <h4 class="mb-0">{{ \App\Model\Category::$array_category[$i] }}<span>({{ $i*6 }})</span></h4>
+                                    <h4 class="mb-0">{{ $root->name }}<span>({{ $key*6 }})</span></h4>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            @endfor
+                @endif
+            @endforeach
         </div>
     </div>
 </section>

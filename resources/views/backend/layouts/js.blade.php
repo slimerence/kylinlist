@@ -1,7 +1,7 @@
 <!-- Dashboard Core -->
-<script src="/assets/js/vendors/jquery-3.2.1.min.js"></script>
-<script src="/assets/plugins/bootstrap-4.1.3/popper.min.js"></script>
-<script src="/assets/plugins/bootstrap-4.1.3/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="/assets/js/vendors/jquery.sparkline.min.js"></script>
 <script src="/assets/js/vendors/selectize.min.js"></script>
 <script src="/assets/js/vendors/jquery.tablesorter.min.js"></script>
@@ -19,17 +19,20 @@
 <!-- Select2 js -->
 <script src="/assets/plugins/select2/select2.full.min.js"></script>
 
+<script src="/assets/plugins/fileuploads/js/dropify.js"></script>
 <!-- Input Mask Plugin -->
 <script src="/assets/plugins/input-mask/jquery.mask.min.js"></script>
 
+@if(isset($vmap))
 <!-- JQVMap -->
 <script src="/assets/plugins/jqvmap/jquery.vmap.js"></script>
 <script src="/assets/plugins/jqvmap/maps/jquery.vmap.world.js"></script>
 <script src="/assets/plugins/jqvmap/jquery.vmap.sampledata.js"></script>
-
+@endif
+@if(isset($echart))
 <!-- ECharts Plugin -->
 <script src="/assets/plugins/echarts/echarts.js"></script>
-
+@endif
 <!-- jQuery Sparklines -->
 <script src="/assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
 
@@ -48,4 +51,4 @@
 <!-- Custom Js-->
 <script src="/assets/js/admin-custom.js"></script>
 
-<script src="/assets/js/index3.js"></script>
+

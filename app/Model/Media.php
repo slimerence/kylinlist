@@ -32,6 +32,7 @@ class Media extends Model
             }
 
             $dimension = self::getImageDimension($filePath);
+
             if($dimension){
                 return self::create([
                     'uuid'=>Uuid::uuid4()->toString(),
@@ -143,7 +144,8 @@ class Media extends Model
 
         $filePath = str_replace('/storage','',$filePath);
         $exist = Storage::exists($filePath);
-        if($exist){
+        //dd('app/public/storage/'.$filePath);
+        if(true){
             $image = Image::make(storage_path('app/public').'/'.$filePath);
             $size = MediaTool::GetFileSizeInKB($filePath);
             return [

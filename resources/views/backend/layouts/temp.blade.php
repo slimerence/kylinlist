@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row align-items-center flex-row-reverse">
                 <div class="col-md-12 col-sm-12 mt-3 mt-lg-0 text-center">
-                    Copyright © 2019 <a href="#">Kylinlist</a>. Designed by <a href="#">Kongfuseo</a> All rights reserved.
+                    Copyright © 2019 <a href="{{ url('/') }}">Kylinlist</a>. Designed by <a href="https://kongfuseo.com.au/">Kongfuseo</a> All rights reserved.
                 </div>
             </div>
         </div>
@@ -26,5 +26,6 @@
 <a href="#top" id="back-to-top" ><i class="fa fa-rocket"></i></a>
 
 @include('backend.layouts.js')
+@yield('js')
 </body>
 </html>

@@ -88,6 +88,7 @@ $(function() {
 
 	VectorMap.prototype.init = function() {
 		//various examples
+        if ($('#world-map-markers').length>0){
 		$('#world-map-markers').vectorMap({
 			map : 'world_en',
 			scaleColors : ['#5d61bf', '#f47b25'],
@@ -196,8 +197,8 @@ $(function() {
 				name : 'São Tomé and Príncipe'
 			}]
 		});
-
-	},
+        }
+    },
 	//init
 	$.VectorMap = new VectorMap, $.VectorMap.Constructor =
 	VectorMap;

@@ -219,3 +219,6 @@
         </div>
     </div>
 @endsection
+@section('js')
+    <script src="/assets/js/index3.js"></script>
+@endsection

@@ -15,9 +15,7 @@ if(!function_exists('_buildUploadFolderPath')){
         $year = date('Y');
         $month = date('m');
         $day = date('d');
-        $hour = date('h');
-        $minute = date('i');
-        return 'uploads/'.$year.'/'.$month.'/'.$day.'/'.$hour.'/'.$minute;
+        return 'uploads/'.$year.'/'.$month.'/'.$day;
     }
 }
 

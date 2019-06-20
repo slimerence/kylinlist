@@ -16,3 +16,23 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// 为上传图片提供的接口
+Route::prefix('images')->group(function(){
+    // 保存图片
+    Route::post('upload','Api\Medias@upload_ajax');
+
+    // 加载所有的图片
+    Route::get('load-all','Api\Medias@load_all');
+    // 加载指定产品的图片
+    Route::post('product','Api\Medias@load_by_product');
+    // 删除图片
+    Route::post('delete','Api\Medias@delete_ajax');
+});
+
+Route::prefix('files')->group(function(){
+    // 保存图片
+    Route::post('upload','Api\Medias@upload_file_ajax');
+    // 加载所有的图片
+    Route::get('load-all','Api\Medias@load_all_files');
+});
