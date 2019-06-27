@@ -83,6 +83,7 @@
                                         <input type="file" name="image" class="dropify" data-height="180"/>
                                     @endif
                                 </div>
+                                    @include('backend.seo.seo_form')
                                 <button type="submit" class="btn btn-primary ">Submit</button>
                             </form>
                         </div>

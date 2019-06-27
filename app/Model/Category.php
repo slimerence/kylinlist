@@ -3,7 +3,11 @@
 namespace App\Model;
 
 use App\Models\Media;
+use Barryvdh\LaravelIdeHelper\Eloquent;
 use Illuminate\Database\Eloquent\Model;
+/**
+ * @mixin Eloquent
+ */
 
 class Category extends Model
 {
@@ -29,6 +33,24 @@ class Category extends Model
     public function getImage(){
         $image = Media::where('for',2)->where('target_id',$this->id)->first();
         return $image;
+    }
+
+    public function getSeo(){
+        $seo = Meta::find($this->seo_id);
+        if($seo==null){
+            $seo = self::createSeo();
+            $this->seo_id = $seo->id;
+            $this->save();
+        }
+        return $seo;
+    }
+
+    public function createSeo(){
+        $seo = new Meta();
+        $seo->type = Meta::$FOR_CATEGORY;
+        $seo->target_id = $this->id;
+        $seo->save();
+        return $seo;
     }
 
     /**

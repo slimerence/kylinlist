@@ -15,4 +15,12 @@ class Meta extends Model
     public static $FOR_CATEGORY = 2;
     public static $FOR_CUSTOMER = 3;
     public static $FOR_GALLERY  = 4;
+
+    public function saveArrayData($data){
+        foreach ($data as $key=>$value){
+            $this->$key = $value;
+        }
+        $this->save();
+        return $this;
+    }
 }

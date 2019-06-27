@@ -16,9 +16,16 @@ class CategoryController extends Controller
         return view('backend.category.list',$this->data_view);
     }
 
+    /**
+     * @param $id
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function edit($id){
         $this->data_view['roots'] = Category::where('level',1)->orderby('position','asc')->get();
-        $this->data_view['category'] = Category::find($id);
+        $category = Category::find($id);
+        $this->data_view['category'] = $category;
+        $this->data_view['seo'] = $category->getSeo();
         return view('backend.category.view',$this->data_view);
     }
 
@@ -36,7 +43,12 @@ class CategoryController extends Controller
 
     public function save(Request $request){
         $data = $request->all();
+        $seoData = $request->get('seo');
         $category = Category::Persistent($data);
+        //save seo data
+        $seo = $category->getSeo();
+        $seo->saveArrayData($seoData);
+
         $image = $request->file('image');
         if($image){
             $storagePath = _buildUploadFolderPath();

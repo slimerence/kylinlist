@@ -10,8 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', 'Frontend\PageController@index');
+
 Route::get('/coming-soon', 'Frontend\PageController@coming');
 Route::get('/about', 'Frontend\PageController@about');
 Route::get('/contact', 'Frontend\PageController@contact');
@@ -55,5 +55,7 @@ Route::prefix('admin')->middleware('auth')->group(function() {
 
 Auth::routes();
 Route::get('/admin/login', 'Backend\Home@login');
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/api/subcategory/{id}','Backend\CategoryController@subcate');
+
+
+Route::get('/{url}', 'Frontend\SupplierController@category_view');

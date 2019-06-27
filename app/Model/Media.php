@@ -2,13 +2,16 @@
 
 namespace App\Models;
 
+use Barryvdh\LaravelIdeHelper\Eloquent;
 use Illuminate\Database\Eloquent\Model;
 use Storage;
 use Image;
 use Ramsey\Uuid\Uuid;
 use App\Models\Utils\MediaTool;
 use Log;
-
+/**
+ * @mixin Eloquent
+ */
 class Media extends Model
 {
     public $timestamps = false;
