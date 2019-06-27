@@ -30,6 +30,7 @@ Route::get('/profile', 'Frontend\SupplierController@profile');
 Route::get('/supplier/join-us', 'Frontend\SupplierController@supplier_join');
 Route::get('/suppliers', 'Frontend\SupplierController@category_supplier');
 Route::get('/supplier-login', 'Frontend\SupplierController@login');
+Route::post('/supplier/register', 'Frontend\SupplierController@register');
 
 
 Route::get('/post-request', 'Frontend\SourceController@index');
@@ -51,10 +52,16 @@ Route::prefix('admin')->middleware('auth')->group(function() {
 
     });
 });
+Route::get('/supplier/login', 'Backend\Supplier\AccountController@login')->name('supplier-login');
+Route::post('/supplier/login', 'Backend\Supplier\AccountController@login_check');
 
+Route::prefix('supplier')->middleware('checksupplier')->group(function() {
+    Route::get('/home', 'Backend\Supplier\AccountController@index');
+
+});
 
 Auth::routes();
-Route::get('/admin/login', 'Backend\Home@login');
+Route::get('/admin/login', 'Backend\Home@login')->name('admin-login');
 Route::get('/api/subcategory/{id}','Backend\CategoryController@subcate');
 
 

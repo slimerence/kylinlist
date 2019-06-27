@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Model\Category;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class SupplierController extends Controller
 {
@@ -41,8 +44,21 @@ class SupplierController extends Controller
     }
 
     public function supplier_join(){
+        $this->data_view['roots'] = Category::where('level',1)->orderby('position','asc')->get();
 
-        return view('frontend.supplier.join_us');
+        return view('frontend.supplier.join_us',$this->data_view);
+    }
+
+    public function register(Request $request){
+        $user_data = $request->get('user');
+        $this->validator($user_data)->validate();
+        $user_data['group_id'] = 2;
+        $user_data['password'] = Hash::make($user_data['password']);
+        $user = User::create($user_data);
+
+        if($user){
+            dd($user);
+        }
     }
 
     public function product(){
@@ -53,5 +69,12 @@ class SupplierController extends Controller
     public function profile(){
 
         return view('frontend.profile.index');
+    }
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        ]);
     }
 }

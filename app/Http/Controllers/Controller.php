@@ -15,7 +15,6 @@ class Controller extends BaseController
 
     public $data_view = [];
 
-
     public function _saveUserInSession(User $user){
        Session::put('user_data',[
            'id'=>$user->id,

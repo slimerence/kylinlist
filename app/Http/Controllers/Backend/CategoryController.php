@@ -41,14 +41,16 @@ class CategoryController extends Controller
         return redirect('admin/category/list');
     }
 
-    public function save(Request $request){
+    public function save(Request $request)
+    {
         $data = $request->all();
         $seoData = $request->get('seo');
         $category = Category::Persistent($data);
-        //save seo data
-        $seo = $category->getSeo();
-        $seo->saveArrayData($seoData);
-
+        if ($seoData) {
+            //save seo data
+            $seo = $category->getSeo();
+            $seo->saveArrayData($seoData);
+        }
         $image = $request->file('image');
         if($image){
             $storagePath = _buildUploadFolderPath();

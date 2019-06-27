@@ -14,6 +14,6 @@
 <!-- Back to top -->
 <a href="#top" id="back-to-top" ><i class="fa fa-rocket"></i></a>
 @include(_get_frontend_layout_path('js'))
-
+@yield('js')
 </body>
 </html>

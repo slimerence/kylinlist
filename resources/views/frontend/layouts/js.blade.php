@@ -44,13 +44,13 @@
 <script src="/assets/plugins/cookie/cookie.js"></script>
 
 <!--Zoom js -->
-<script src="../assets/plugins/ecomerce/jquery.exzoom.js"></script>
-<script src="../assets/plugins/ecomerce/exzoom.js"></script>
+<script src="/assets/plugins/ecomerce/jquery.exzoom.js"></script>
+<script src="/assets/plugins/ecomerce/exzoom.js"></script>
 
 <!-- Form wizard js -->
-<script src="../assets/plugins/bootstrap-wizard/jquery.bootstrap.wizard.js"></script>
-<script src="../assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="../assets/js/wizard.js"></script>
+<script src="/assets/plugins/bootstrap-wizard/jquery.bootstrap.wizard.js"></script>
+<script src="/assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/assets/js/wizard.js"></script>
 
 <!-- Count Down-->
 <script src="/assets/plugins/count-down/jquery.lwtCountdown-1.0.js"></script>
