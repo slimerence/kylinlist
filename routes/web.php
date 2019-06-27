@@ -57,6 +57,8 @@ Route::post('/supplier/login', 'Backend\Supplier\AccountController@login_check')
 
 Route::prefix('supplier')->middleware('checksupplier')->group(function() {
     Route::get('/home', 'Backend\Supplier\AccountController@index');
+    Route::get('/profile', 'Backend\Supplier\AccountController@profile');
+    Route::post('/profile', 'Backend\Supplier\AccountController@profile_update');
 
 });
 

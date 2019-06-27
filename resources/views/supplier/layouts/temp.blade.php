@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en" dir="ltr">
-@include('backend.layouts.head')
+@include('supplier.layouts.head')
 <body class="app sidebar-mini">
 <div id="loading"></div>
 <div class="page">
     <div class="page-main">
-        @include('backend.layouts.elements.top')
-        @include('backend.layouts.elements.menu')
+        @include('supplier.layouts.elements.top')
+        @include('supplier.layouts.elements.menu')
         @yield('content')
     </div>
 
@@ -25,7 +25,7 @@
 <!-- Back to top -->
 <a href="#top" id="back-to-top" ><i class="fa fa-rocket"></i></a>
 
-@include('backend.layouts.js')
+@include('supplier.layouts.js')
 @yield('js')
 </body>
 </html>

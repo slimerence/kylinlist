@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Model\Category;
+use App\Model\Supplier;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -51,14 +52,15 @@ class SupplierController extends Controller
 
     public function register(Request $request){
         $user_data = $request->get('user');
+        //dd($request->all());
         $this->validator($user_data)->validate();
         $user_data['group_id'] = 2;
         $user_data['password'] = Hash::make($user_data['password']);
         $user = User::create($user_data);
-
         if($user){
-            dd($user);
+            $supplier = Supplier::create(['name'=>$request->get('name'),'category_id'=>$request->get('category'),'user_id'=>$user->id]);
         }
+        return redirect('supplier/login');
     }
 
     public function product(){

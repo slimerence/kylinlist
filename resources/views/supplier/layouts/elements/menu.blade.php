@@ -10,30 +10,28 @@
                 </a>
             </div>
             <div class="user-info">
-                <h2>Kylin Admin</h2>
-                <span>Admin</span>
+                <h2>{{ $user->name }}</h2>
             </div>
         </div>
     </div>
     <ul class="side-menu">
         <li>
-            <a class="side-menu__item" href="{{ url('admin/home') }}"><i class="side-menu__icon fa fa-tachometer"></i><span class="side-menu__label">Dashboard</span></a>
+            <a class="side-menu__item" href="{{ url('supplier/home') }}"><i class="side-menu__icon fa fa-tachometer"></i><span class="side-menu__label">Dashboard</span></a>
         </li>
         <li class="slide">
             <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-cogs"></i><span class="side-menu__label">Admin settings</span><i class="angle fa fa-angle-right"></i></a>
             <ul class="slide-menu">
-                <li><a class="slide-item" href="admin-pricing.html">General Setting</a></li>
+                <li><a class="slide-item" href="admin-pricing.html">Frontend Preview</a></li>
+                <li><a class="slide-item" href="{{ url('supplier/profile') }}">Update Profile</a></li>
+
             </ul>
         </li>
         <li class="slide">
-            <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-institution"></i><span class="side-menu__label">Category</span><i class="angle fa fa-angle-right"></i></a>
+            <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-institution"></i><span class="side-menu__label">Product</span><i class="angle fa fa-angle-right"></i></a>
             <ul class="slide-menu">
-                <li><a class="slide-item" href="{{ url('admin/category/list') }}">Category List</a></li>
-                <li><a class="slide-item" href="{{ url('admin/category/create') }}">Create Category</a></li>
+                <li><a class="slide-item" href="{{ url('supplier/product/list') }}">Product List</a></li>
+                <li><a class="slide-item" href="{{ url('supplier/product/create') }}">Upload New Product</a></li>
             </ul>
-        </li>
-        <li>
-            <a class="side-menu__item" href="{{ url('admin/seo') }}"><i class="side-menu__icon fa fa-window-restore"></i><span class="side-menu__label">SEO Management</span></a>
         </li>
     </ul>
     <div class="app-sidebar-footer">
