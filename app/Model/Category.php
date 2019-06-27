@@ -12,8 +12,12 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     protected $fillable = [
-        'name','name_cn', 'url', 'parent_id','level','seo_id','status','position'
+        'name','name_cn', 'url', 'parent_id','level','seo_id','status','position','page_id'
     ];
+
+    public function pageInfo(){
+        return $this->belongsTo(PageInfo::class,'page_id');
+    }
 
     public static $array_category = ['Real Estate','Electronics','Jobs','Vehicles','Mobiles','Services','Fashions','Education'];
 
