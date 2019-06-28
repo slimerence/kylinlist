@@ -24780,6 +24780,7 @@ footer .border-top{
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 	width: 100%;
+    height:18em;
 }
 .item-card .item-card-desc:hover img{
 	-webkit-transform: scale(1.2);

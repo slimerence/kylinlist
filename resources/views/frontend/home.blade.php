@@ -14,7 +14,7 @@
 <section class="sptb">
     <div class="container">
         <div class="section-title center-block text-center">
-            <h1>Testimonials</h1>
+            <h2>Testimonials</h2>
             <p>Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula</p>
         </div>
         <div class="row">
