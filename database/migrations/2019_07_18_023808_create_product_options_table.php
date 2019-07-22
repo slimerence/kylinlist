@@ -15,6 +15,11 @@ class CreateProductOptionsTable extends Migration
     {
         Schema::create('product_options', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('product_id');
+            $table->string('title');
+            $table->string('value');
+            $table->integer('position')->default(0);
+
             $table->timestamps();
         });
     }

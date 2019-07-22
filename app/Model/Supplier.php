@@ -12,7 +12,8 @@ class Supplier extends Model
     public static $High = 2;
 
     protected $fillable = [
-        'name','seo_id','user_id','category_id','type','contact_person','contact_email','avatar_path','contact_number','link','address','about','description'
+        'name','seo_id','user_id','category_id','type','contact_person','contact_email','contact_info','avatar_path','contact_number',
+        'link','street','street2','city','state','post','country','description'
     ];
 
     public function user(){

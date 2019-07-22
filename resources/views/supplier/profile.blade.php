@@ -51,12 +51,8 @@
                                     <input class="form-control" type="number" name="supplier[contact_number]" value="{{ $user->supplier->contact_number }}" required placeholder="01 2456 0512"/>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">Bio</label>
-                                    <textarea class="form-control" rows="5" name="supplier[about]">{!!$user->supplier->about!!}</textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Useful Link</label>
-                                    <input class="form-control" type="text" name="supplier[link]" value="{{ $user->supplier->link }}" placeholder="http://kylinlist.com.au"/>
+                                    <label class="form-label">Contact Info</label>
+                                    <textarea class="form-control" rows="5" name="supplier[contact_info]">{!!$user->supplier->contact_info!!}</textarea>
                                 </div>
                                 <div class="form-footer">
                                     <button type="submit" class="btn btn-primary btn-block">Save</button>
@@ -72,69 +68,60 @@
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-5">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="form-label">Company</label>
-                                        <input type="text" class="form-control"  placeholder="Company" >
+                                        <input type="text" name="supplier[name]" class="form-control"  placeholder="Company" >
                                     </div>
                                 </div>
-                                <div class="col-sm-6 col-md-3">
+                                <div class="col-12">
                                     <div class="form-group">
-                                        <label class="form-label">Username</label>
-                                        <input type="text" class="form-control" placeholder="Username" >
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-label">Email address</label>
-                                        <input type="email" class="form-control" placeholder="Email">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-6">
-                                    <div class="form-group">
-                                        <label class="form-label">First Name</label>
-                                        <input type="text" class="form-control" placeholder="Company">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-6">
-                                    <div class="form-group">
-                                        <label class="form-label">Last Name</label>
-                                        <input type="text" class="form-control" placeholder="Last Name">
+                                        <label class="form-label">Website(Optional)</label>
+                                        <input type="text" name="supplier[link]" class="form-control" placeholder="Company">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label class="form-label">Address</label>
-                                        <input type="text" class="form-control" placeholder="Home Address" >
+                                        <label class="form-label">Address Line 1</label>
+                                        <input type="text" name="supplier[street]" class="form-control" placeholder="Home Address" >
                                     </div>
                                 </div>
-                                <div class="col-sm-6 col-md-4">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Address Line 2</label>
+                                        <input type="text" name="supplier[street2]" class="form-control" placeholder="Home Address" >
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
                                     <div class="form-group">
                                         <label class="form-label">City</label>
-                                        <input type="text" class="form-control" placeholder="City" >
+                                        <input type="text" name="supplier[city]" class="form-control" placeholder="City" >
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-label">State</label>
+                                        <input type="text" name="supplier[state]" class="form-control" placeholder="City" >
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-md-3">
                                     <div class="form-group">
                                         <label class="form-label">Postal Code</label>
-                                        <input type="number" class="form-control" placeholder="ZIP Code">
+                                        <input type="number" name="supplier[post]" class="form-control" placeholder="Post">
                                     </div>
                                 </div>
-                                <div class="col-md-5">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="form-label">Country</label>
-                                        <select class="form-control custom-select">
-                                            <option value="0">--Select--</option>
-                                            <option value="1">Germany</option>
-                                            <option value="2">Canada</option>
-                                            <option value="3">Usa</option>
-                                            <option value="4">Aus</option>
+                                        <select class="form-control custom-select" name="supplier[country]">
+                                            <option value="Australia" selected>Australia</option>
+                                            <option value="China">China</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group mb-0">
-                                        <label class="form-label">About Me</label>
+                                        <label class="form-label" name="supplier[description]">About Me</label>
                                         <textarea rows="5" class="form-control" placeholder="Enter About your description"></textarea>
                                     </div>
                                 </div>

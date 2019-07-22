@@ -23,6 +23,7 @@ class CreateSuppliersTable extends Migration
             $table->text('contact_person')->nullable();
             $table->text('contact_email')->nullable();
             $table->text('contact_number')->nullable();
+            $table->text('contact_info')->nullable();
             $table->text('avatar_path')->nullable();
             $table->text('link')->nullable();
             $table->text('street')->nullable();
