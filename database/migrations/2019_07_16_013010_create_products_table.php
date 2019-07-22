@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->uuid('uuid');
             $table->integer('seo_id')->nullable();
+            $table->integer('supplier_id')->nullable();
             $table->string('name');
             $table->string('sku');
             $table->string('url');

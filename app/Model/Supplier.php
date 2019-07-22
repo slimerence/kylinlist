@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\Model\Catalog\Product;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 
@@ -24,5 +25,8 @@ class Supplier extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function products(){
+        return $this->hasMany(Product::class);
+    }
 
 }

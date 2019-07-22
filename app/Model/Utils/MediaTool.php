@@ -27,6 +27,8 @@ class MediaTool
     public static $FOR_CUSTOMER = 3;
     public static $FOR_GALLERY  = 4;    // 针对 Gallery 类型
     public static $FOR_AVATAR  = 5;
+    public static $FOR_PRODUCT_MAIN  = 6;
+
     /**
      * 根据给定的扩展名， 猜测可能的文件类型
      * @param $extensionName

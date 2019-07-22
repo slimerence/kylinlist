@@ -2,6 +2,7 @@
 
 namespace App\Model\Catalog;
 
+use App\Model\Category;
 use Barryvdh\LaravelIdeHelper\Eloquent;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -27,6 +28,18 @@ class Product extends Model
         'supplier_id',
     ];
 
+    public function category(){
+        return $this->belongsToMany(ProductCategory::class);
+    }
 
+    public function getCategory(){
+        $data = ProductCategory::where('product_id',$this->id)->get();
+        $cat = [];
+        foreach ($data as $value){
+            $cat[] = $value->category_id;
+        }
+        $category = Category::whereIn('id',$cat)->get();
+        return $category;
+    }
 
 }

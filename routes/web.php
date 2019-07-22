@@ -60,6 +60,14 @@ Route::prefix('supplier')->middleware('checksupplier')->group(function() {
     Route::get('/profile', 'Backend\Supplier\AccountController@profile');
     Route::post('/profile', 'Backend\Supplier\AccountController@profile_update');
 
+    Route::get('/product/list', 'Backend\Supplier\ProductController@list');
+    Route::get('/product/view/{id}', 'Backend\Supplier\ProductController@view');
+    Route::get('/product/create', 'Backend\Supplier\ProductController@create');
+
+    Route::post('/product/update', 'Backend\Supplier\ProductController@update');
+
+
+
 });
 
 Auth::routes();

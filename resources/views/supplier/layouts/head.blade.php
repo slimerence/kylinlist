@@ -14,7 +14,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
     <!-- Title -->
-    <title>Kylinlist Admin Dashboard Bootstrap 4  HTML Template</title>
+    <title>Kylinlist Supplier Dashboard</title>
     <link rel="stylesheet" href="{{ asset('assets/fonts/fonts/font-awesome.min.css') }}">
 
     <!-- Sidemenu Css -->

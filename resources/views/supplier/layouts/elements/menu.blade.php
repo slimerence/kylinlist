@@ -5,7 +5,7 @@
         <div class="dropdown user-pro-body">
             <div>
                 <img src="/assets/images/faces/male/25.jpg" alt="user-img" class="avatar avatar-lg brround">
-                <a href="editprofile.html" class="profile-img">
+                <a href="{{ url('supplier/profile') }}" class="profile-img">
                     <span class="fa fa-pencil" aria-hidden="true"></span>
                 </a>
             </div>

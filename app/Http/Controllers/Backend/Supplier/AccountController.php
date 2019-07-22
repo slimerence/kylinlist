@@ -76,24 +76,27 @@ class AccountController extends Controller
             foreach ($supplier_data as $key=>$value){
                 $user->supplier->$key = $value;
             }
-            $image = $data['supplier']['avatar_path'];
-            if($image){
-                $storagePath = _buildUploadFolderPath();
-                $mediaFor = MediaTool::$FOR_AVATAR;
-                //dd($image);
-                $name = str_replace(" ", "_", $image->getClientOriginalName());
-                //get image file.
-                $path = $image->storeAs($storagePath,$name,'public');
-                // 保存到数据库中
-                $avatar = Media::Persistent(
-                    $user->supplier->id,
-                    MediaTool::GuessFileTypeByExtensionName($image->extension()),
-                    _buildFrontendAssertPath($path),
-                    $name,
-                    $mediaFor
-                );
-                $user->supplier->avatar_path = $avatar->url;
-            };
+            if(key_exists('avatar_path',$data['supplier'])){
+                $image = $data['supplier']['avatar_path'];
+                if($image){
+                    $storagePath = _buildUploadFolderPath();
+                    $mediaFor = MediaTool::$FOR_AVATAR;
+                    //dd($image);
+                    $name = str_replace(" ", "_", $image->getClientOriginalName());
+                    //get image file.
+                    $path = $image->storeAs($storagePath,$name,'public');
+                    // 保存到数据库中
+                    $avatar = Media::Persistent(
+                        $user->supplier->id,
+                        MediaTool::GuessFileTypeByExtensionName($image->extension()),
+                        _buildFrontendAssertPath($path),
+                        $name,
+                        $mediaFor
+                    );
+                    $user->supplier->avatar_path = $avatar->url;
+                };
+            }
+
             $user->supplier->save();
         }
         return redirect('/supplier/profile');
