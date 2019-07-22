@@ -24,18 +24,26 @@ class SupplierController extends Controller
 
     public function category_view($url){
         $category = Category::where('url',$url)->first();
+        $this->data_view['roots'] = Category::where('level',1)->orderby('position','asc')->get();
         $this->data_view['category'] = $category;
-        return view('frontend.supplier.category_supplier',$this->data_view);
+        if($category){
+            $this->data_view['suppliers'] = $category->supplier()->paginate(9);
+            return view('frontend.supplier.supplier_list',$this->data_view);
+        }else{
+            return redirect('/category-list');
+        }
     }
 
     public function supplier(){
+        $this->data_view['roots'] = Category::where('level',1)->orderby('position','asc')->get();
 
-        return view('frontend.supplier.supplier');
+        return view('frontend.supplier.supplier',$this->data_view);
     }
 
     public function category_supplier(){
+        $this->data_view['roots'] = Category::where('level',1)->orderby('position','asc')->get();
 
-        return view('frontend.supplier.category_supplier');
+        return view('frontend.supplier.supplier_list',$this->data_view);
 
     }
 

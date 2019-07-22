@@ -8,9 +8,11 @@
             <div class="page-header">
                 <h4 class="page-title">Classifieds list Right</h4>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Classifieds list Right</li>
+                    <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('/category-list') }}">Suppliers</a></li>
+                    @if(isset($category))
+                    <li class="breadcrumb-item active" aria-current="page">{{ $category->name }}</li>
+                    @endif
                 </ol>
             </div>
         </div>
@@ -110,25 +112,25 @@
                                 </div>
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="tab-11">
-                                        @for($i=0;$i<9;$i++)
+                                        @foreach($suppliers as $key=>$supplier)
                                             <div class="card overflow-hidden">
-                                                <div class="ribbon ribbon-top-left text-danger"><span class="{{ $i%4==0?'bg-danger':'bg-primary' }}">featured</span></div>
+                                                <div class="ribbon ribbon-top-left text-danger"><span class="{{ $key%4==0?'bg-danger':'bg-primary' }}">featured</span></div>
                                                 <div class="d-md-flex">
                                                     <div class="item-card9-img">
                                                         <div class="item-card9-imgs">
-                                                            <a href="{{ url('supplier') }}"></a>
-                                                            <img src="{{ asset('images/categories/categories0'.($i+1).'.jpg') }}" alt="img" class="cover-image">
+                                                            <a href="{{ url($supplier->category->url.'supplier/'.$supplier->name) }}"></a>
+                                                            <img src="{{ asset('images/categories/categories0'.($key+1).'.jpg') }}" alt="img" class="cover-image">
                                                         </div>
                                                         <div class="item-card9-icons">
-                                                            <a href="#" class="item-card9-icons1 wishlist {{ $i%4 == 0? 'active':'' }}"> <i class="fa fa fa-heart-o"></i></a>
+                                                            <a href="#" class="item-card9-icons1 wishlist {{ $key%4 == 0? 'active':'' }}"> <i class="fa fa fa-heart-o"></i></a>
                                                         </div>
                                                     </div>
                                                     <div class="card mb-0 border-0">
                                                         <div class="card-body ">
                                                             <div class="item-card9">
-                                                                <a href="classified.html">Animals</a>
-                                                                <a href="classified.html" class="text-dark"><h4 class="font-weight-semibold mt-1">kenco petcenter</h4></a>
-                                                                <p class="mb-0 leading-tight">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit</p>
+                                                                <a href="{{ url($supplier->category->url) }}">{{ $supplier->category->name }}</a>
+                                                                <a href="{{ url($supplier->category->url.'supplier/'.$supplier->name) }}" class="text-dark"><h4 class="font-weight-semibold mt-1">{{ $supplier->name }}</h4></a>
+                                                                <p class="mb-0 leading-tight">{{ $supplier->about }}</p>
                                                             </div>
                                                         </div>
                                                         <div class="card-footer pt-4 pb-4">
@@ -155,7 +157,7 @@
                                                                             <div class="rating-star sm">
                                                                                 <i class="fa fa-star"></i>
                                                                             </div>
-                                                                        </div>({{ ($i+1)*3 }} reviews)
+                                                                        </div>({{ ($key+1)*3 }} reviews)
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -163,18 +165,18 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        @endfor
+                                        @endforeach
                                     </div>
                                     <div class="tab-pane" id="tab-12">
                                         <div class="row">
-                                            @for($i=0;$i<9;$i++)
+                                            @for($key=0;$key<9;$key++)
                                                 <div class="col-lg-6 col-md-12 col-xl-4">
                                                     <div class="card overflow-hidden">
                                                         <div class="item-card9-img">
                                                             <div class="arrow-ribbon bg-primary">Rent</div>
                                                             <div class="item-card9-imgs">
                                                                 <a href="{{ url('supplier') }}"></a>
-                                                                <img src="{{ asset('images/categories/categories0'.($i+1).'.jpg') }}" alt="img" class="cover-image">
+                                                                <img src="{{ asset('images/categories/categories0'.($key+1).'.jpg') }}" alt="img" class="cover-image">
                                                             </div>
                                                             <div class="item-card9-icons">
                                                                 <a href="#" class="item-card9-icons1 wishlist"> <i class="fa fa fa-heart-o"></i></a>

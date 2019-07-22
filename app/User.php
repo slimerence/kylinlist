@@ -41,4 +41,8 @@ class User extends Authenticatable
     public function supplier(){
         return $this->hasOne(Supplier::class);
     }
+
+    public function createRelatedSupplier(){
+        return Supplier::create(['name'=>$this->name,'user_id'=>$this->id]);
+    }
 }

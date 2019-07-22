@@ -15,6 +15,10 @@ class Category extends Model
         'name','name_cn', 'url', 'parent_id','level','seo_id','status','position','page_id'
     ];
 
+    public function supplier(){
+        return $this->hasMany(Supplier::class);
+    }
+
     public function pageInfo(){
         return $this->belongsTo(PageInfo::class,'page_id');
     }

@@ -12,7 +12,7 @@
                     <div class="card">
                         <div class="item-card">
                             <div class="item-card-desc">
-                                <a href="{{ url('/categories/'.$root->url) }}"></a>
+                                <a href="{{ url($root->url) }}"></a>
                                 <div class="item-card-img">
                                     @php
                                         $image = $root->getImage();
@@ -22,10 +22,10 @@
                                             $path = 'images/categories/categories0'.($key%9+1).'.jpg';
                                         }
                                     @endphp
-                                    <img src={{ asset($path) }} alt="img" class="br-tr-7 br-tl-7">
+                                    <img src="{{ asset($path) }}" alt="img" class="br-tr-7 br-tl-7">
                                 </div>
                                 <div class="item-card-text">
-                                    <h4 class="mb-0">{{ $root->name }}<span>({{ $key*6 }})</span></h4>
+                                    <h4 class="mb-0">{{ $root->name }}<span>({{ count($root->supplier) }})</span></h4>
                                 </div>
                             </div>
                         </div>
