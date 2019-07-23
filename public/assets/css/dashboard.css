@@ -26323,3 +26323,18 @@ h1.animated-text {
 .feature .feature-icon{
 
 }
+
+.black{
+    color:#000;
+}
+
+.supplier-card .card-body{
+    padding: 0.8rem 1.5rem;
+}
+.supplier-card .card-footer{
+    padding: 0.8rem 1.5rem;
+}
+
+.supplier-card .card-body ul{
+    margin-bottom: 0;
+}

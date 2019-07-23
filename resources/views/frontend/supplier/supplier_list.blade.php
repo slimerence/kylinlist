@@ -113,7 +113,7 @@
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="tab-11">
                                         @foreach($suppliers as $key=>$supplier)
-                                            <div class="card overflow-hidden">
+                                            <div class="card supplier-card overflow-hidden">
                                                 <div class="ribbon ribbon-top-left text-danger"><span class="{{ $key%4==0?'bg-danger':'bg-primary' }}">featured</span></div>
                                                 <div class="d-md-flex">
                                                     <div class="item-card9-img">
@@ -122,7 +122,7 @@
                                                             @if(is_null($supplier->avatar_path))
                                                             <img src="{{ asset('images/categories/categories0'.($key+1).'.jpg') }}" alt="img" class="cover-image">
                                                                 @else
-                                                            <img src="{{ asset($supplier->avatar_path) }}" alt="img" class="cover-image">
+                                                            <img src="{{ asset($supplier->getProfileImage()->url) }}" alt="img" class="cover-image">
                                                             @endif
                                                         </div>
                                                         <div class="item-card9-icons">
@@ -132,15 +132,18 @@
                                                     <div class="card mb-0 border-0">
                                                         <div class="card-body ">
                                                             <div class="item-card9">
-                                                                <a href="{{ url($supplier->category->url) }}">{{ $supplier->category->name }}</a>
                                                                 <a href="{{ url($supplier->category->url.'/supplier/'.$supplier->name) }}" class="text-dark"><h4 class="font-weight-semibold mt-1">{{ $supplier->name }}</h4></a>
-                                                                <p class="mb-0 leading-tight">{{ $supplier->about }}</p>
+                                                                <ul>
+                                                                    <li>Business Type: <span class="black">{{ $supplier->business_type }}</span></li>
+                                                                    <li>Main Products: <span class="black">{{ $supplier->main_product }}</span></li>
+                                                                    <li>City/Province: &nbsp;<span class="black">{{ $supplier->city.'/'.$supplier->state }}</span></li>
+                                                                </ul>
                                                             </div>
                                                         </div>
-                                                        <div class="card-footer pt-4 pb-4">
+                                                        <div class="card-footer pt-3 pb-3">
                                                             <div class="item-card9-footer d-flex">
                                                                 <div class="item-card9-cost">
-                                                                    <h4 class="text-dark font-weight-semibold mb-0 mt-0">$149.00</h4>
+                                                                    <a class="btn btn-danger" href="{{ url($supplier->category->url.'/supplier/'.$supplier->name) }}">VISIT <i class="fe fe-arrow-right-circle"></i></a>
                                                                 </div>
                                                                 <div class="ml-auto">
                                                                     <div class="rating-stars block">
@@ -161,7 +164,7 @@
                                                                             <div class="rating-star sm">
                                                                                 <i class="fa fa-star"></i>
                                                                             </div>
-                                                                        </div>({{ ($key+1)*3 }} reviews)
+                                                                        </div>({{ ($key+1)*3 }} Enquiries)
                                                                     </div>
                                                                 </div>
                                                             </div>

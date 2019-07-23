@@ -1,7 +1,7 @@
 <div class="app-header1 header py-1 d-flex">
     <div class="container-fluid">
         <div class="d-flex">
-            <a class="header-brand" href="{{ url('admin/home') }}">
+            <a class="header-brand" href="{{ url('supplier/home') }}">
                 <img src="{{ asset('images/branding/logo-full.png') }}" class="header-brand-img" alt="Kylinlist logo">
             </a>
             <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-toggle="sidebar" href="#"></a>

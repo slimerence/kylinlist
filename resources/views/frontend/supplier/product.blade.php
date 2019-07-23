@@ -6,11 +6,11 @@
     <div class="bg-white border-bottom">
         <div class="container">
             <div class="page-header">
-                <h4 class="page-title">E-Commerce</h4>
+                <h4 class="page-title">{{ $product->name }}</h4>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Categories</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">E-Commerce</li>
+                    <li class="breadcrumb-item"><a href="{{'/'}}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url($supplier->buildUrl()) }}">{{ $supplier->name }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ $product->name }}</li>
                 </ol>
             </div>
         </div>
@@ -32,7 +32,7 @@
                                             <div class="exzoom_img_box">
                                                 <ul class='exzoom_img_ul'>
                                                     @for($i=1;$i<5;$i++)
-                                                        <li><img src="{{ asset('images/products/TP0'.$i.'.jpg') }}" alt="img"></li>
+                                                        <li><img src="{{ asset($product->image_path) }}" alt="img"></li>
                                                     @endfor
                                                 </ul>
                                             </div>
@@ -43,16 +43,16 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="product-gallery-data mb-0">
-                                        <h3 class="mb-3 font-weight-semibold">Model  Night T-Shirt</h3>
+                                        <h3 class="mb-3 font-weight-semibold">{{ $product->name }}</h3>
                                         <div class="mb-3">
-                                            <span class="font-weight-bold h1 text-danger">$15 <del class="text-muted h6">$20</del></span>
-                                            <span>/ per kg</span>
+                                            <span class="font-weight-bold text-danger">Min. Order <del class="text-muted h6">{{ $product->min_order }}</del></span>
+                                            <span> {{ $product->unit }}</span>
                                             <span class="text-success ml-2"><i class="fa fa-info-circle"></i> 20% off</span>
                                         </div>
                                         <div><a href=""><i class="fa fa-tag text-success"></i> <span class="text-dark font-weight-bold">Special price</span> get 20% extra off</a></div>
                                         <div><a href=""><i class="fa fa-tag text-success"></i> <span class="text-dark font-weight-bold">Bank offer</span> get 15% off on any Credit Cards</a></div>
                                         <h6 class="font-weight-bold mt-4">Specification</h6>
-                                        <p class="text-dark">labore et dolore magna  enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex  cillum dolore eu fugiat nulla pariatur.</p>
+                                        <p class="text-dark">{{ $product->short_description }}</p>
                                         <dl class="product-gallery-data1">
                                             <dt>Type</dt>
                                             <dd>Normal</dd>
@@ -118,21 +118,13 @@
                                                                 <input type="checkbox" class="custom-control-input" name="scheckbox" value="option1">
                                                                 <span class="custom-control-label">MD</span>
                                                             </label>
-                                                            <label class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" name="scheckbox" value="option1">
-                                                                <span class="custom-control-label">XL</span>
-                                                            </label>
-                                                            <label class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" name="scheckbox" value="option1">
-                                                                <span class="custom-control-label">XXL</span>
-                                                            </label>
                                                         </div>
                                                     </dd>
                                                 </dl>
                                             </div>
                                         </div>
                                         <a href="#quick-contact" class="btn  btn-info"> Contact Supplier </a>
-                                        <a href="{{ url('supplier') }}" class="btn  btn-success">View Supplier </a>
+                                        <a href="{{ url($supplier->buildUrl()) }}" class="btn  btn-success">View Supplier </a>
                                     </div>
                                 </div>
                             </div>
@@ -144,8 +136,7 @@
                         </div>
                         <div class="card-body">
                             <div class="mb-4">
-                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atcorrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-                                <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoraliz the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble thena bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.</p>
+                                {!! $product->description !!}
                             </div>
                             <h4 class="mb-4">Specifications</h4>
                             <div class="row">

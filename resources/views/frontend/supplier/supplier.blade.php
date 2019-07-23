@@ -9,9 +9,9 @@
             <div class="page-header">
                 <h4 class="page-title">Business</h4>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Categories</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Business</li>
+                    <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url($supplier->category->url) }}">Categories</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ $supplier->category->name }}</li>
                 </ol>
             </div>
         </div>
@@ -30,11 +30,15 @@
                         </div>
                         <div class="card-body  item-user">
                             <div class="profile-pic mb-0">
-                                <img src="{{ asset('images/others/portrait02.jpg') }}" class="brround avatar-xxl" alt="user">
+                                @if($supplier->avatar_path !==null)
+                                    <img src="{{ asset($supplier->avatar_path) }}" alt="user-img" class="brround avatar-xxl">
+                                @else
+                                    <img src="{{ asset('images/others/portrait02.jpg') }}" class="brround avatar-xxl" alt="user">
+                                @endif
                                 <div class="">
-                                    <a href="{{ url('profile') }}" class="text-dark"><h4 class="mt-3 mb-1 font-weight-semibold">Robert McLean</h4></a>
+                                    <a href="{{ url('profile') }}" class="text-dark"><h4 class="mt-3 mb-1 font-weight-semibold">{{ $supplier->contact_person }}</h4></a>
                                     <span class="text-gray">Business Director</span><br>
-                                    <span class="text-muted">Member Since November 2008</span>
+                                    <span class="text-muted">Member Since July 2019</span>
                                     <h6 class="mt-2 mb-0"><a href="#" class="btn btn-primary btn-sm">See All Ads</a></h6>
                                 </div>
 
@@ -43,9 +47,11 @@
                         <div class="card-body item-user">
                             <h4 class="mb-4">Contact Info</h4>
                             <div>
-                                <h6><span class="font-weight-semibold"><i class="fa fa-envelope mr-2 mb-2"></i></span><a href="#" class="text-body"> robert123@gmail.com</a></h6>
-                                <h6><span class="font-weight-semibold"><i class="fa fa-phone mr-2  mb-2"></i></span><a href="#" class="text-primary"> 0-235-657-24587</a></h6>
-                                <h6><span class="font-weight-semibold"><i class="fa fa-link mr-2 "></i></span><a href="#" class="text-primary">http://spruko.com/</a></h6>
+                                <h6><span class="font-weight-semibold"><i class="fa fa-envelope mr-2 mb-2"></i></span><a href="mailto:{{$supplier->contact_email}}" class="text-body"> {{ $supplier->contact_email }}</a></h6>
+                                <h6><span class="font-weight-semibold"><i class="fa fa-phone mr-2  mb-2"></i></span><a href="#" class="text-primary"> {{ $supplier->contact_number }}</a></h6>
+                                @if(!is_null($supplier->link))
+                                <h6><span class="font-weight-semibold"><i class="fa fa-link mr-2 "></i></span><a href="{{ $supplier->link }}" class="text-primary">{{ $supplier->link }}</a></h6>
+                                @endif
                             </div>
                             <div class=" item-user-icons mt-4">
                                 <a href="#" class="facebook-bg mt-0"><i class="fa fa-facebook"></i></a>
@@ -99,38 +105,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Search Ads</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="search-text" placeholder="What are you looking for?">
-                            </div>
-                            <div class="form-group">
-                                <select name="country" id="select-countries" class="form-control custom-select select2-show-search">
-                                    <option value="1" selected>All Categories</option>
-                                    <option value="2">RealEstate</option>
-                                    <option value="3">Restaurant</option>
-                                    <option value="4">Beauty</option>
-                                    <option value="5">Jobs</option>
-                                    <option value="6">Services</option>
-                                    <option value="7">Vehicle</option>
-                                    <option value="8">Education</option>
-                                    <option value="9">Electronics</option>
-                                    <option value="10">Pets & Animals</option>
-                                    <option value="11">Computer</option>
-                                    <option value="12">Mobile</option>
-                                    <option value="13">Events</option>
-                                    <option value="14">Travel</option>
-                                    <option value="15">Clothing</option>
-                                </select>
-                            </div>
-                            <div class="">
-                                <a href="#" class="btn  btn-primary">Search</a>
-                            </div>
-                        </div>
-                    </div>
+                    @include('frontend.supplier.elements.search_ad')
                     @include('frontend.supplier.elements.latest_ads')
                 </div>
                 <!--/Left Side Content-->
@@ -141,12 +116,12 @@
                         <div class="ribbon ribbon-top-right text-danger"><span class="bg-danger">featured</span></div>
                         <div class="card-body">
                             <div class="item-det mb-4">
-                                <a href="#" class="text-dark"><h3 class="">Globex</h3></a>
+                                <a href="#" class="text-dark"><h3 class="">{{ $supplier->name }}</h3></a>
                                 <div class="d-flex">
                                     <ul class="d-flex">
-                                        <li class="mr-5"><a href="#" class="icons"><i class="si si-briefcase text-muted mr-1"></i> Restaurant</a></li>
-                                        <li class="mr-5"><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i> USA</a></li>
-                                        <li class="mr-5"><a href="#" class="icons"><i class="si si-calendar text-muted mr-1"></i> 5 hours ago</a></li>
+                                        <li class="mr-5"><a href="#" class="icons"><i class="si si-briefcase text-muted mr-1"></i> {{ $supplier->category->name }}</a></li>
+                                        <li class="mr-5"><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i> {{ $supplier->city }}</a></li>
+                                        <li class="mr-5"><a href="#" class="icons"><i class="si si-calendar text-muted mr-1"></i> {{ $supplier->updated_at->diffForHumans() }}</a></li>
                                         <li class="mr-5"><a href="#" class="icons"><i class="si si-eye text-muted mr-1"></i> 765</a></li>
                                     </ul>
                                     <div class="rating-stars d-flex mr-5">
@@ -183,7 +158,7 @@
                                     <div class="arrow-ribbon bg-primary">Open</div>
                                     <div class="carousel-inner">
                                         @for($i=0;$i<6;$i++)
-                                            <div class="carousel-item {{ $i==0?'active':'' }}"> <img src="{{ asset('images/products/TP0'.($i%4+1).'.jpg') }}" alt="img"> </div>
+                                            <div class="carousel-item {{ $i==0?'active':'' }}"> <img src="{{ asset($supplier->getProfileImage()->url) }}" alt="img"> </div>
                                         @endfor
                                     </div>
                                     <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
@@ -198,18 +173,18 @@
                                     <div id="thumbcarousel" class="carousel slide" data-interval="false">
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
-                                                <div data-target="#carousel" data-slide-to="0" class="thumb"><img src="../assets/images/products/f4.png" alt="img"></div>
-                                                <div data-target="#carousel" data-slide-to="1" class="thumb"><img src="../assets/images/products/f2.png" alt="img"></div>
-                                                <div data-target="#carousel" data-slide-to="2" class="thumb"><img src="../assets/images/products/f3.png" alt="img"></div>
-                                                <div data-target="#carousel" data-slide-to="3" class="thumb"><img src="../assets/images/products/f4.png" alt="img"></div>
-                                                <div data-target="#carousel" data-slide-to="4" class="thumb"><img src="../assets/images/products/f1.png" alt="img"></div>
+                                                <div data-target="#carousel" data-slide-to="0" class="thumb"><img src="/assets/images/products/f4.png" alt="img"></div>
+                                                <div data-target="#carousel" data-slide-to="1" class="thumb"><img src="/assets/images/products/f2.png" alt="img"></div>
+                                                <div data-target="#carousel" data-slide-to="2" class="thumb"><img src="/assets/images/products/f3.png" alt="img"></div>
+                                                <div data-target="#carousel" data-slide-to="3" class="thumb"><img src="/assets/images/products/f4.png" alt="img"></div>
+                                                <div data-target="#carousel" data-slide-to="4" class="thumb"><img src="/assets/images/products/f1.png" alt="img"></div>
                                             </div>
                                             <div class="carousel-item">
-                                                <div data-target="#carousel" data-slide-to="0" class="thumb"><img src="../assets/images/products/f4.png" alt="img"></div>
-                                                <div data-target="#carousel" data-slide-to="1" class="thumb"><img src="../assets/images/products/f2.png" alt="img"></div>
-                                                <div data-target="#carousel" data-slide-to="2" class="thumb"><img src="../assets/images/products/f3.png" alt="img"></div>
-                                                <div data-target="#carousel" data-slide-to="3" class="thumb"><img src="../assets/images/products/f4.png" alt="img"></div>
-                                                <div data-target="#carousel" data-slide-to="4" class="thumb"><img src="../assets/images/products/f1.png" alt="img"></div>
+                                                <div data-target="#carousel" data-slide-to="0" class="thumb"><img src="/assets/images/products/f4.png" alt="img"></div>
+                                                <div data-target="#carousel" data-slide-to="1" class="thumb"><img src="/assets/images/products/f2.png" alt="img"></div>
+                                                <div data-target="#carousel" data-slide-to="2" class="thumb"><img src="/assets/images/products/f3.png" alt="img"></div>
+                                                <div data-target="#carousel" data-slide-to="3" class="thumb"><img src="/assets/images/products/f4.png" alt="img"></div>
+                                                <div data-target="#carousel" data-slide-to="4" class="thumb"><img src="/assets/images/products/f1.png" alt="img"></div>
                                             </div>
                                         </div>
                                         <a class="carousel-control-prev" href="#thumbcarousel" role="button" data-slide="prev">
@@ -241,7 +216,7 @@
                                         <a class="mb-0">Business ID : #8562354</a>
                                     </div>
                                     <div class="col col-auto">
-                                        Posted By <a class="mb-0 font-weight-bold">Individual</a> / 19th Nov 2018
+                                        Posted By <a class="mb-0 font-weight-bold">{{ $supplier->user->name }}</a> / 19th Nov 2019
                                     </div>
                                 </div>
                             </div>
@@ -260,30 +235,29 @@
                     <!--Related Posts-->
                     <div id="myCarousel5" class="owl-carousel owl-carousel-icons3">
                         <!-- Wrapper for carousel items -->
-                        @for($i=0;$i<5;$i++)
+                        @foreach($products as $i=>$product)
                             <div class="item">
                                 <div class="card">
                                     <div class="item-card7-imgs">
-                                        <span class="bdir label label-primary mb-0">Restaurant</span>
-                                        <a href="{{ url('product') }}"></a>
-                                        <img src="{{ asset('images/categories/products0'.($i+1).'.jpg') }}" alt="img" class="cover-image">
+                                        <span class="bdir label label-primary mb-0">{{ $product->getMainCategory()->name }}</span>
+                                        <a href="{{ url('product/'.$product->url) }}"></a>
+                                        <img src="{{ asset($product->image_path) }}" alt="img" class="cover-image">
                                     </div>
                                     <div class="card-body">
                                         <div class="item-card7-desc">
-                                            <a href="{{ url('product') }}" class="text-dark"><h4 class="font-weight-semibold">Globex</h4></a>
+                                            <a href="{{ url('product/'.$product->url) }}" class="text-dark"><h4 class="font-weight-semibold">{{ $product->name }}</h4></a>
                                         </div>
                                         <div class="item-card7-text">
                                             <ul class="icon-card mb-0">
-                                                <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i>  Los Angles</a></li>
-                                                <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i> 5 hours ago</a></li>
-                                                <li class="mb-0"><a href="#" class="icons"><i class="si si-user text-muted mr-1"></i> Sally Peake</a></li>
-                                                <li class="mb-0"><a href="#" class="icons"><i class="si si-phone text-muted mr-1"></i> 5-67987608</a></li>
+                                                <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i>   {{ $supplier->city }}</a></li>
+                                                <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i> {{ $product->updated_at->diffForHumans() }}</a></li>
                                             </ul>
+                                            <p>{{ $product->short_description }}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        @endfor
+                        @endforeach
                     </div>
                     <!--/Related Posts-->
 
@@ -324,7 +298,7 @@
                         <div class="card-body p-0">
                             <div class="media mt-0 p-5">
                                 <div class="d-flex mr-3">
-                                    <a href="#"><img class="media-object brround" alt="64x64" src="../assets/images/faces/male/1.jpg"> </a>
+                                    <a href="#"><img class="media-object brround" alt="64x64" src="/assets/images/faces/male/1.jpg"> </a>
                                 </div>
                                 <div class="media-body">
                                     <h5 class="mt-0 mb-1 font-weight-semibold">Joanne Scott
@@ -340,7 +314,7 @@
                                     <a href="" class="mr-2" data-toggle="modal" data-target="#report"><span class="">Report</span></a>
                                     <div class="media mt-5">
                                         <div class="d-flex mr-3">
-                                            <a href="#"> <img class="media-object brround" alt="64x64" src="../assets/images/faces/female/2.jpg"> </a>
+                                            <a href="#"> <img class="media-object brround" alt="64x64" src="/assets/images/faces/female/2.jpg"> </a>
                                         </div>
                                         <div class="media-body">
                                             <h5 class="mt-0 mb-1 font-weight-semibold">Rose Slater <span class="fs-14 ml-0" data-toggle="tooltip" data-placement="top" title="verified"><i class="fa fa-check-circle-o text-success"></i></span></h5>
@@ -355,7 +329,7 @@
                             </div>
                             <div class="media p-5 border-top mt-0">
                                 <div class="d-flex mr-3">
-                                    <a href="#"> <img class="media-object brround" alt="64x64" src="../assets/images/faces/male/3.jpg"> </a>
+                                    <a href="#"> <img class="media-object brround" alt="64x64" src="/assets/images/faces/male/3.jpg"> </a>
                                 </div>
                                 <div class="media-body">
                                     <h5 class="mt-0 mb-1 font-weight-semibold">Edward

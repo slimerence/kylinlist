@@ -180,56 +180,23 @@
                                     </form>
                                 </div>
                                 <div class="tab-pane " id="tab2">
-                                    <form class="form-horizontal p-5">
+                                    <form class="form-horizontal p-5" id="product_upload">
                                         <div class="form-group ">
                                             <div class="row">
-                                                <div class="col-md-3">
-                                                    <label class="form-label mb-0">Enable Packs</label>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <div class="d-flex">
-                                                        <a href="#"><i class="si si-question mr-4 mt-1 d-block"></i></a>
-                                                        <div class="custom-controls-stacked">
-                                                            <label class="custom-control custom-checkbox mb-0">
-                                                                <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1" checked="">
-                                                                <span class="custom-control-label">Manage Your <a href="#" class="text-primary">Membership Packs</a></span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group ">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <label class="form-label mt-2">Reminders</label>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <div class="d-flex">
-                                                        <a href="#"><i class="si si-question mr-4 mt-3 d-block"></i></a>
-                                                        <div>
-                                                            <input type="text" class="form-control"  placeholder="7">
-                                                            <div class="text-muted">It Will be Affects Both email and website notifications.</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group mb-0">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <label class="form-label mt-2">Price Model</label>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <div class="d-flex">
-                                                        <a href="#"><i class="si si-question mr-4 mt-3 d-block"></i></a>
-                                                        <div>
-                                                            <select class="form-control">
-                                                                <option selected="">Not Required</option>
-                                                                <option>Required</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+                                                <div class="col-md-12">
+                                                    <label class="form-label mb-0">
+                                                        <el-upload
+                                                            action="https://jsonplaceholder.typicode.com/posts/"
+                                                            list-type="picture-card"
+                                                            :on-preview="handlePictureCardPreview"
+                                                            :on-remove="handleRemove">
+                                                            <i class="el-icon-plus"></i>
+                                                        </el-upload>
+                                                        <el-dialog :visible.sync="dialogVisible">
+                                                            <img width="100%" :src="dialogImageUrl" alt="">
+                                                        </el-dialog>
+
+                                                    </label>
                                                 </div>
                                             </div>
                                         </div>
@@ -246,4 +213,27 @@
         </div>
     </div>
 
+@endsection
+
+@section('js')
+    <script>
+    new Vue({
+        el: '#product_upload',
+        data() {
+            return {
+                dialogImageUrl: '',
+                dialogVisible: false
+            };
+        },
+        methods: {
+            handleRemove(file, fileList) {
+                console.log(file, fileList);
+            },
+            handlePictureCardPreview(file) {
+                this.dialogImageUrl = file.url;
+                this.dialogVisible = true;
+            }
+        }
+    })
+    </script>
 @endsection

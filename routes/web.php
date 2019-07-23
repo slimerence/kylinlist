@@ -24,7 +24,7 @@ Route::get('/categories/{url}', 'Frontend\SupplierController@category_view');
 
 
 Route::get('/supplier', 'Frontend\SupplierController@supplier');
-Route::get('/product', 'Frontend\SupplierController@product');
+Route::get('/product/{url}', 'Frontend\SupplierController@product');
 Route::get('/profile', 'Frontend\SupplierController@profile');
 
 Route::get('/supplier/join-us', 'Frontend\SupplierController@supplier_join');

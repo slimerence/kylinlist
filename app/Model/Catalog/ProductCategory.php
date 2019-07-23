@@ -12,8 +12,9 @@ class ProductCategory extends Model
 
     public static function saveData(Product $product,$category){
         self::where('product_id',$product)->delete();
-        $data = $category;
-        if(!($category==[''])) {
+        $data = [];
+        //dd($category);
+        if(!($category==['']) && !is_null($category)) {
             foreach ($category as $key => $cat) {
                 $data[] = self::create(
                     [

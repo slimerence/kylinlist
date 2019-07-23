@@ -3,8 +3,18 @@
 <aside class="app-sidebar doc-sidebar">
     <div class="app-sidebar__user clearfix">
         <div class="dropdown user-pro-body">
+            @php
+                if($user->supplier ==null ){
+                    $user->createRelatedSupplier();
+                }
+            @endphp
             <div>
-                <img src="/assets/images/faces/male/25.jpg" alt="user-img" class="avatar avatar-lg brround">
+
+                @if($user->supplier->avatar_path !==null)
+                    <img src="{{ asset($user->supplier->avatar_path) }}" alt="user-img" class="avatar avatar-lg brround">
+                @else
+                    <img src="/assets/images/faces/male/25.jpg" alt="user-img" class="avatar avatar-lg brround">
+                @endif
                 <a href="{{ url('supplier/profile') }}" class="profile-img">
                     <span class="fa fa-pencil" aria-hidden="true"></span>
                 </a>
@@ -21,7 +31,7 @@
         <li class="slide">
             <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-cogs"></i><span class="side-menu__label">Admin settings</span><i class="angle fa fa-angle-right"></i></a>
             <ul class="slide-menu">
-                <li><a class="slide-item" href="admin-pricing.html">Frontend Preview</a></li>
+                <li><a class="slide-item" href="{{ url($user->supplier->buildUrl()) }}">Frontend Preview</a></li>
                 <li><a class="slide-item" href="{{ url('supplier/profile') }}">Update Profile</a></li>
 
             </ul>

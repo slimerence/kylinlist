@@ -78,6 +78,7 @@ class AccountController extends Controller
             foreach ($supplier_data as $key=>$value){
                 $user->supplier->$key = $value;
             }
+            $user->supplier->url = str_replace(" ", "_", $supplier_data['name']);
             if(key_exists('avatar_path',$data['supplier'])){
                 $image = $data['supplier']['avatar_path'];
                 if($image){

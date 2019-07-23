@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Model\Catalog\Product;
 use App\Model\Category;
 use App\Model\Supplier;
 use App\User;
@@ -13,8 +14,9 @@ use Illuminate\Support\Facades\Validator;
 class SupplierController extends Controller
 {
     public function category(){
+        $this->data_view['roots'] = Category::where('level',1)->orderby('position','asc')->get();
 
-        return view('frontend.supplier.category');
+        return view('frontend.supplier.category',$this->data_view);
     }
 
     public function category_list(){
@@ -37,7 +39,9 @@ class SupplierController extends Controller
     public function supplier_view($url,$uri){
         $supplier = Supplier::where('url',$uri)->first();
         if($supplier){
-
+            $this->data_view['supplier']=$supplier;
+            $products = $supplier->products;
+            $this->data_view['products']=$products;
             return view('frontend.supplier.supplier',$this->data_view);
         }else{
             return back()->with('error','Supplier not found');
@@ -47,13 +51,14 @@ class SupplierController extends Controller
 
     public function supplier(){
         $this->data_view['roots'] = Category::where('level',1)->orderby('position','asc')->get();
+        $this->data_view['suppliers'] = Supplier::orderby('id','asc')->paginate(9);
 
         return view('frontend.supplier.supplier',$this->data_view);
     }
 
     public function category_supplier(){
         $this->data_view['roots'] = Category::where('level',1)->orderby('position','asc')->get();
-
+        $this->data_view['suppliers'] = Supplier::orderby('id','asc')->paginate(9);
         return view('frontend.supplier.supplier_list',$this->data_view);
 
     }
@@ -82,9 +87,11 @@ class SupplierController extends Controller
         return redirect('supplier/login');
     }
 
-    public function product(){
-
-        return view('frontend.supplier.product');
+    public function product($url){
+        $product = Product::where('url',$url)->first();
+        $this->data_view['product'] = $product;
+        $this->data_view['supplier'] = $product->supplier;
+        return view('frontend.supplier.product',$this->data_view);
     }
 
     public function profile(){

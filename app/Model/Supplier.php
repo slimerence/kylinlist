@@ -35,4 +35,12 @@ class Supplier extends Model
         $media = Media::where('for',MediaTool::$FOR_SUPPLIER_PROFILE)->where('target_id',$this->id)->first();
         return $media;
     }
+
+    public function buildUrl(){
+        if(!is_null($this->category) && $this->url !==''){
+            return $this->category->url.'/supplier/'.$this->url;
+        }else{
+            return redirect('supplier/profile');
+        }
+    }
 }
