@@ -9,27 +9,27 @@
     <div class="card-body">
         <div class="form-group">
             <label class="col-form-label">Page Title</label>
-            <input type="text" class="form-control" name="seo[title]" placeholder="Title" required value="{{ $seo->title }}">
+            <input type="text" class="form-control" name="seo[title]" placeholder="Title"  value="{{ $seo->title }}">
         </div>
         <div class="form-group">
             <label class="col-form-label">Keywords</label>
-            <input type="text" class="form-control" name="seo[keywords]" placeholder="Meta Keywords" required value="{{ $seo->keywords }}">
+            <input type="text" class="form-control" name="seo[keywords]" placeholder="Meta Keywords"  value="{{ $seo->keywords }}">
         </div>
         <div class="form-group">
             <label class="col-form-label">Description</label>
-            <input type="text" class="form-control" name="seo[description]" placeholder="Meta Description" required value="{{ $seo->description }}">
+            <input type="text" class="form-control" name="seo[description]" placeholder="Meta Description"  value="{{ $seo->description }}">
         </div>
         <div class="form-group">
             <label class="col-form-label">Page Title CN</label>
-            <input type="text" class="form-control" name="seo[title_cn]" placeholder="Title CN" required value="{{ $seo->title_cn }}">
+            <input type="text" class="form-control" name="seo[title_cn]" placeholder="Title CN"  value="{{ $seo->title_cn }}">
         </div>
         <div class="form-group">
             <label class="col-form-label">Keywords CN</label>
-            <input type="text" class="form-control" name="seo[keywords_cn]" placeholder="Keywords CN" required value="{{ $seo->keywords_cn }}">
+            <input type="text" class="form-control" name="seo[keywords_cn]" placeholder="Keywords CN"  value="{{ $seo->keywords_cn }}">
         </div>
         <div class="form-group">
             <label class="col-form-label">Description CN</label>
-            <input type="text" class="form-control" name="seo[description_cn]" placeholder="Description CN" required value="{{ $seo->description_cn }}">
+            <input type="text" class="form-control" name="seo[description_cn]" placeholder="Description CN"  value="{{ $seo->description_cn }}">
         </div>
     </div>
 </div>

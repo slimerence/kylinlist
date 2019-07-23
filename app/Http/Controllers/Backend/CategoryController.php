@@ -46,7 +46,7 @@ class CategoryController extends Controller
         $data = $request->all();
         $seoData = $request->get('seo');
         $category = Category::Persistent($data);
-        if ($seoData) {
+        if ($seoData && !is_null($seoData['title'])) {
             //save seo data
             $seo = $category->getSeo();
             $seo->saveArrayData($seoData);
