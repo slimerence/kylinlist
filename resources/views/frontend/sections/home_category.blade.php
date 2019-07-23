@@ -25,7 +25,7 @@
                                     <img src="{{ asset($path) }}" alt="img" class="br-tr-7 br-tl-7">
                                 </div>
                                 <div class="item-card-text">
-                                    <h4 class="mb-0">{{ $root->name }}<span>({{ count($root->supplier) }})</span></h4>
+                                    <h4 class="mb-0">{{ $root->name }}<span>({{ count($root->countSupplier()) }})</span></h4>
                                 </div>
                             </div>
                         </div>

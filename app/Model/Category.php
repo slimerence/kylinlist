@@ -92,4 +92,28 @@ class Category extends Model
         return $category;
     }
 
+    public function countSupplier(){
+        $cat = [];
+        $cat[]=$this->id;
+        $children = self::where('parent_id',$this->id)->get();
+        foreach ($children as $child){
+            $cat[]=$child->id;
+        }
+        $suppliers = Supplier::whereIn('category_id',$cat)->get();
+
+        return $suppliers;
+    }
+
+    public function getSupplier(){
+        $cat = [];
+        $cat[]=$this->id;
+        $children = self::where('parent_id',$this->id)->get();
+        foreach ($children as $child){
+            $cat[]=$child->id;
+        }
+        $suppliers = Supplier::whereIn('category_id',$cat);
+
+        return $suppliers;
+    }
+
 }

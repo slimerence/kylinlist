@@ -3,6 +3,8 @@
 namespace App\Model;
 
 use App\Model\Catalog\Product;
+use App\Models\Media;
+use App\Models\Utils\MediaTool;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,8 +15,8 @@ class Supplier extends Model
     public static $High = 2;
 
     protected $fillable = [
-        'name','seo_id','user_id','category_id','type','contact_person','contact_email','contact_info','avatar_path','contact_number',
-        'link','street','street2','city','state','post','country','description'
+        'name','seo_id','user_id','category_id','url','type','contact_person','contact_email','contact_info','avatar_path','contact_number',
+        'link','street','street2','city','state','post','country','description','business_type','main_product'
     ];
 
     public function user(){
@@ -29,4 +31,8 @@ class Supplier extends Model
         return $this->hasMany(Product::class);
     }
 
+    public function getProfileImage(){
+        $media = Media::where('for',MediaTool::$FOR_SUPPLIER_PROFILE)->where('target_id',$this->id)->first();
+        return $media;
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend\Supplier;
 
 use App\Http\Controllers\Auth\CustomizedAuthenticatesUsers;
+use App\Model\Category;
 use App\Models\Media;
 use App\Models\Utils\MediaTool;
 use App\User;
@@ -59,6 +60,7 @@ class AccountController extends Controller
         $data = $request->session()->get('user_data');
         $user = User::find($data['id']);
         $this->data_view['user'] = $user;
+        $this->data_view['cats'] = Category::orderby('id','asc')->get();
         if($user->supplier ==null ){
             $user->createRelatedSupplier();
         }

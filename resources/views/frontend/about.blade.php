@@ -21,7 +21,7 @@
     <section class="sptb">
         <div class="container">
             <div class="text-justify">
-                <h1 class="mb-4">Why Pinlist?</h1>
+                <h1 class="mb-4">Why Kylinlist?</h1>
                 <h4 class="leading-normal">Majority have suffered alteration in some form, by injected humor</h4>
                 <p class="leading-normal">There are many variations of passages of Lorem Ipsum available, but the majority have suffered  by injected humour, or randomised words which don't look even slightly believable.
                     If you are going to use a passage of Lorem Ipsum, you need to as necessary All the Lorem Ipsum generators on the Internet tend to repeat</p>

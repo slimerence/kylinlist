@@ -66,8 +66,6 @@ Route::prefix('supplier')->middleware('checksupplier')->group(function() {
 
     Route::post('/product/update', 'Backend\Supplier\ProductController@update');
 
-
-
 });
 
 Auth::routes();
@@ -75,4 +73,8 @@ Route::get('/admin/login', 'Backend\Home@login')->name('admin-login');
 Route::get('/api/subcategory/{id}','Backend\CategoryController@subcate');
 
 
+
+
 Route::get('/{url}', 'Frontend\SupplierController@category_view');
+Route::get('/{url}/supplier/{uri}', 'Frontend\SupplierController@supplier_view');
+

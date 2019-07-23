@@ -52,5 +52,7 @@
     <link href="/assets/plugins/fileuploads/css/dropify.css" rel="stylesheet" type="text/css" />
     <!---Font icons-->
     <link href="/assets/plugins/iconfonts/plugin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
 
 </head>

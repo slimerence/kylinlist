@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="col-lg-8">
-                    <form class="card" method="post" action="{{ url('supplier/profile') }}">
+                    <form class="card" method="post" action="{{ url('supplier/profile') }}" id="app">
                         @csrf
                         <div class="card-header">
                             <h3 class="card-title">Edit Profile</h3>
@@ -73,6 +73,28 @@
                                     <div class="form-group">
                                         <label class="form-label">Company</label>
                                         <input type="text" name="supplier[name]" class="form-control"  placeholder="Company" value="{{ $user->supplier->name }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Business Type</label>
+                                        <input type="text" name="supplier[business_type]" class="form-control"  placeholder="Type" value="{{ $user->supplier->business_type }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Main Product</label>
+                                        <input type="text" name="supplier[main_product]" class="form-control"  placeholder="Type" value="{{ $user->supplier->main_product }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Main Category</label>
+                                        <select class="form-control custom-select" name="supplier[category_id]">
+                                            @foreach($cats as $cat)
+                                            <option value="{{ $cat->id }}" {{ $user->supplier->category_id == $cat->id? 'selected':'' }}>{{ $cat->name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -120,12 +142,29 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-3">
                                     <div class="form-group mb-0">
-                                        <label class="form-label">About Me</label>
-                                        <textarea rows="5" class="form-control" placeholder="Enter About your description" name="supplier[description]">{!! $user->supplier->description !!} </textarea>
+                                        <label class="form-label">Upload Profile Image</label>
+                                        <el-upload
+                                            class="avatar-uploader"
+                                            action="{{ url('api/supplier/profile/image/'.$user->supplier->id) }}"
+                                            :show-file-list="false"
+                                            :on-success="handleAvatarSuccess"
+                                            :before-upload="beforeAvatarUpload">
+                                            <img v-if="imageUrl" :src="imageUrl" class="el-avatar">
+                                            <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                                        </el-upload>
+
                                     </div>
                                 </div>
+                                <div class="col-md-9">
+                                    <div class="form-group mb-0">
+                                        <label class="form-label">About Me</label>
+                                        <textarea rows="7" class="form-control" placeholder="Enter About your description" name="supplier[description]">{!! $user->supplier->description !!} </textarea>
+                                    </div>
+                                </div>
+
+
                             </div>
                         </div>
                         <div class="card-footer text-right">
@@ -137,5 +176,61 @@
             </div>
         </div>
     </div>
+@endsection
+@section('js')
+    <style scoped>
+        .avatar-uploader .el-upload {
+            border: 1px dashed #d9d9d9;
+            border-radius: 6px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+        .avatar-uploader .el-upload:hover {
+            border-color: #409EFF;
+        }
+        .avatar-uploader-icon {
+            font-size: 28px;
+            color: #8c939d;
+            width: 100%;
+            height: 178px;
+            line-height: 178px;
+            text-align: center;
+        }
+        .el-avatar {
+            width: 100%;
+            height: 178px;
+            display: block;
+        }
+    </style>
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    imageUrl: '{{ $user->supplier->getProfileImage()->url }}'
+                };
+            },
+
+            methods: {
+                handleAvatarSuccess(res, file) {
+                    this.imageUrl = URL.createObjectURL(file.raw);
+                },
+                beforeAvatarUpload(file) {
+                    const isJPG = file.type === 'image/jpeg';
+                    const isLt2M = file.size / 1024 / 1024 < 2;
+
+                    if (!isJPG) {
+                        this.$message.error('上传头像图片只能是 JPG 格式!');
+                    }
+                    if (!isLt2M) {
+                        this.$message.error('上传头像图片大小不能超过 2MB!');
+                    }
+                    return isJPG && isLt2M;
+                }
+            }
+        })
+    </script>
 
 @endsection

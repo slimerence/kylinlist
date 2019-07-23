@@ -27,11 +27,22 @@ class SupplierController extends Controller
         $this->data_view['roots'] = Category::where('level',1)->orderby('position','asc')->get();
         $this->data_view['category'] = $category;
         if($category){
-            $this->data_view['suppliers'] = $category->supplier()->paginate(9);
+            $this->data_view['suppliers'] = $category->getSupplier()->paginate(9);
             return view('frontend.supplier.supplier_list',$this->data_view);
         }else{
             return redirect('/category-list');
         }
+    }
+
+    public function supplier_view($url,$uri){
+        $supplier = Supplier::where('url',$uri)->first();
+        if($supplier){
+
+            return view('frontend.supplier.supplier',$this->data_view);
+        }else{
+            return back()->with('error','Supplier not found');
+        }
+
     }
 
     public function supplier(){

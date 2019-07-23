@@ -17,6 +17,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+Route::prefix('supplier')->group(function(){
+    Route::post('profile/image/{id}','Api\Medias@upload_profile_image');
+});
+
 // 为上传图片提供的接口
 Route::prefix('images')->group(function(){
     // 保存图片
@@ -36,3 +41,4 @@ Route::prefix('files')->group(function(){
     // 加载所有的图片
     Route::get('load-all','Api\Medias@load_all_files');
 });
+

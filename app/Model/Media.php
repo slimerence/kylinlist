@@ -33,7 +33,6 @@ class Media extends Model
             if(isset($filePath['url'])){
                 $filePath = $filePath['url'];
             }
-
             $dimension = self::getImageDimension($filePath);
 
             if($dimension){

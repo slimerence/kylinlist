@@ -246,4 +246,66 @@ class Medias extends Controller
         }
     }
 
+    /**
+     * @param Request $request
+     * @param $id
+     * @return string
+     */
+    public function upload_profile_image(Request $request,$id){
+        $path = '';
+        $storagePath = _buildUploadFolderPath();
+        // 获取上传的内容是针对哪类应用的，比如产品，目录，gallery等
+        $mediaFor = $request->has('for') ? $request->get('for') : MediaTool::$FOR_SUPPLIER_PROFILE;
+        $media = Media::where('for',MediaTool::$FOR_SUPPLIER_PROFILE)->where('target_id',$id)->first();
+        if($media){
+            if(file_exists(public_path().$media->url)){
+                unlink(public_path().$media->url);
+            };
+            $media->delete();
+        }
+        if($request->hasFile('file')){
+            $uploaded = $request->file('file');
+            if(is_array($uploaded)){
+                $result = [];
+                foreach ($uploaded as $key=>$file) {
+                    $name = str_replace(" ", "_", $file->getClientOriginalName());
+                    $path = $file->storeAs($storagePath,$name,'public');
+                    $result['file-'.$key] = [
+                        'id'=>str_random(16),
+                        'url'=>_buildFrontendAssertPath($path)
+                    ];
+                    if(!empty($path)){
+                        // 保存到数据库中
+                        Media::Persistent(
+                            $id,
+                            MediaTool::GuessFileTypeByExtensionName($file->extension()),
+                            _buildFrontendAssertPath($path),
+                            $file->getClientOriginalName(),
+                            $mediaFor
+                        );
+                    }
+                }
+                return _buildFrontendAssertPath($path);
+            }else{
+                if($uploaded){
+                    $name = str_replace(" ", "_", $uploaded->getClientOriginalName());
+                    $path = $uploaded->storeAs($storagePath,$name,'public');
+                    // 保存到数据库中
+                    Media::Persistent(
+                        $id,
+                        MediaTool::GuessFileTypeByExtensionName($uploaded->extension()),
+                        _buildFrontendAssertPath($path),
+                        $uploaded->getClientOriginalName(),
+                        $mediaFor
+                    );
+                }
+                return _buildFrontendAssertPath($path);
+            }
+        }
+
+    }
+
+    public function upload_product_image(Request $request){
+
+    }
 }

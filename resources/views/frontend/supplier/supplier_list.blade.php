@@ -118,8 +118,12 @@
                                                 <div class="d-md-flex">
                                                     <div class="item-card9-img">
                                                         <div class="item-card9-imgs">
-                                                            <a href="{{ url($supplier->category->url.'supplier/'.$supplier->name) }}"></a>
+                                                            <a href="{{ url($supplier->category->url.'/supplier/'.$supplier->name) }}"></a>
+                                                            @if(is_null($supplier->avatar_path))
                                                             <img src="{{ asset('images/categories/categories0'.($key+1).'.jpg') }}" alt="img" class="cover-image">
+                                                                @else
+                                                            <img src="{{ asset($supplier->avatar_path) }}" alt="img" class="cover-image">
+                                                            @endif
                                                         </div>
                                                         <div class="item-card9-icons">
                                                             <a href="#" class="item-card9-icons1 wishlist {{ $key%4 == 0? 'active':'' }}"> <i class="fa fa fa-heart-o"></i></a>
@@ -129,7 +133,7 @@
                                                         <div class="card-body ">
                                                             <div class="item-card9">
                                                                 <a href="{{ url($supplier->category->url) }}">{{ $supplier->category->name }}</a>
-                                                                <a href="{{ url($supplier->category->url.'supplier/'.$supplier->name) }}" class="text-dark"><h4 class="font-weight-semibold mt-1">{{ $supplier->name }}</h4></a>
+                                                                <a href="{{ url($supplier->category->url.'/supplier/'.$supplier->name) }}" class="text-dark"><h4 class="font-weight-semibold mt-1">{{ $supplier->name }}</h4></a>
                                                                 <p class="mb-0 leading-tight">{{ $supplier->about }}</p>
                                                             </div>
                                                         </div>
