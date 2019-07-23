@@ -78,7 +78,7 @@ class AccountController extends Controller
             foreach ($supplier_data as $key=>$value){
                 $user->supplier->$key = $value;
             }
-            if(is_null($supplier_data['name'])){
+            if(!key_exists('name',$supplier_data)){
                 $user->supplier->url = str_replace(" ", "_", $user->name);
             }else{
                 $user->supplier->url = str_replace(" ", "_", $supplier_data['name']);
