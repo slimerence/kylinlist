@@ -209,7 +209,11 @@
             el: '#app',
             data() {
                 return {
-                    imageUrl: '{{ $user->supplier->getProfileImage()->url }}'
+                    @if(!is_null($user->supplier->getProfileImage()))
+                    imageUrl: '{{ $user->supplier->getProfileImage()->url }}',
+                    @else
+                    imageUrl: '',
+                    @endif
                 };
             },
 
