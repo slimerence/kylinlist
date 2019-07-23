@@ -118,7 +118,7 @@
                                                 <div class="d-md-flex">
                                                     <div class="item-card9-img">
                                                         <div class="item-card9-imgs">
-                                                            <a href="{{ url($supplier->category->url.'/supplier/'.$supplier->name) }}"></a>
+                                                            <a href="{{ url($supplier->category->url.'/supplier/'.$supplier->url) }}"></a>
                                                             @if(is_null($supplier->avatar_path))
                                                             <img src="{{ asset('images/categories/categories0'.($key+1).'.jpg') }}" alt="img" class="cover-image">
                                                                 @else
@@ -132,7 +132,7 @@
                                                     <div class="card mb-0 border-0">
                                                         <div class="card-body ">
                                                             <div class="item-card9">
-                                                                <a href="{{ url($supplier->category->url.'/supplier/'.$supplier->name) }}" class="text-dark"><h4 class="font-weight-semibold mt-1">{{ $supplier->name }}</h4></a>
+                                                                <a href="{{ url($supplier->category->url.'/supplier/'.$supplier->url) }}" class="text-dark"><h4 class="font-weight-semibold mt-1">{{ $supplier->name }}</h4></a>
                                                                 <ul>
                                                                     <li>Business Type: <span class="black">{{ $supplier->business_type }}</span></li>
                                                                     <li>Main Products: <span class="black">{{ $supplier->main_product }}</span></li>
@@ -143,7 +143,7 @@
                                                         <div class="card-footer pt-3 pb-3">
                                                             <div class="item-card9-footer d-flex">
                                                                 <div class="item-card9-cost">
-                                                                    <a class="btn btn-danger" href="{{ url($supplier->category->url.'/supplier/'.$supplier->name) }}">VISIT <i class="fe fe-arrow-right-circle"></i></a>
+                                                                    <a class="btn btn-danger" href="{{ url($supplier->category->url.'/supplier/'.$supplier->url) }}">VISIT <i class="fe fe-arrow-right-circle"></i></a>
                                                                 </div>
                                                                 <div class="ml-auto">
                                                                     <div class="rating-stars block">
