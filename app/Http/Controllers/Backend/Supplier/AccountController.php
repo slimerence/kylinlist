@@ -18,6 +18,12 @@ class AccountController extends Controller
         return view('supplier.login',$this->data_view);
     }
 
+    /**
+     * Used for supplier login verification
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @throws \Illuminate\Validation\ValidationException
+     */
     public function login_check(Request $request){
         $this->validateLogin($request);
 
@@ -43,6 +49,7 @@ class AccountController extends Controller
     }
 
     /**
+     * After Success login, Redirect to supplier homepage
      * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -56,6 +63,11 @@ class AccountController extends Controller
         return view('supplier.dashboard',$this->data_view);
     }
 
+    /**
+     * 加载Supplier Profile页面
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function profile(Request $request){
         $data = $request->session()->get('user_data');
         $user = User::find($data['id']);
@@ -68,6 +80,11 @@ class AccountController extends Controller
 
     }
 
+    /**
+     * 获取Post数据，更新Supplier Profile表单
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function profile_update(Request $request){
         $user_data = $request->session()->get('user_data');
         $data = $request->all();

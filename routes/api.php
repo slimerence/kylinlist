@@ -20,6 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::prefix('supplier')->group(function(){
     Route::post('profile/image/{id}','Api\Medias@upload_profile_image');
+    Route::post('product/image','Api\Medias@upload_product_image');
 });
 
 // 为上传图片提供的接口

@@ -37,10 +37,10 @@
     <link href="/assets/plugins/cookie/cookie.css" rel="stylesheet">
 
     <!-- Zoom Plugin -->
-    <link href="../assets/plugins/ecomerce/jquery.exzoom.css" rel="stylesheet" />
+    <link href="/assets/plugins/ecomerce/jquery.exzoom.css" rel="stylesheet" />
 
     <!-- Countdown css-->
-    <link href="../assets/plugins/count-down/flipclock.css" rel="stylesheet" />
+    <link href="/assets/plugins/count-down/flipclock.css" rel="stylesheet" />
 
     <!-- Owl Theme css-->
     <link href="/assets/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" />
