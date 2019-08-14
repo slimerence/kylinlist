@@ -29,6 +29,8 @@ class MediaTool
     public static $FOR_AVATAR  = 5;
     public static $FOR_PRODUCT_MAIN  = 6;
     public static $FOR_SUPPLIER_PROFILE  = 7;
+    public static $FOR_SUPPLIER_PRODUCT  = 8;
+
 
 
     /**

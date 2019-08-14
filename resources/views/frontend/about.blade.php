@@ -2,7 +2,7 @@
 
 @section('content')
     <section>
-        <div class="bannerimg cover-image bg-background3" data-image-src="../assets/images/banners/banner2.jpg" style="background: url(&quot;../assets/images/banners/banner2.jpg&quot;) center center;">
+        <div class="bannerimg cover-image bg-background3" data-image-src="../assets/images/banners/banner2.jpg" style="background: url('assets/images/banners/banner2.jpg') center center;">
             <div class="header-text mb-0">
                 <div class="container">
                     <div class="text-center text-white ">
@@ -21,12 +21,27 @@
     <section class="sptb">
         <div class="container">
             <div class="text-justify">
-                <h1 class="mb-4">Why Kylinlist?</h1>
-                <h4 class="leading-normal">Majority have suffered alteration in some form, by injected humor</h4>
-                <p class="leading-normal">There are many variations of passages of Lorem Ipsum available, but the majority have suffered  by injected humour, or randomised words which don't look even slightly believable.
-                    If you are going to use a passage of Lorem Ipsum, you need to as necessary All the Lorem Ipsum generators on the Internet tend to repeat</p>
-                <p class="leading-normal">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                <p class="leading-normal mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h1 class="mb-4 text-center">关于麒麟榜</h1>
+                <p class="leading-normal">麒麟榜是一个创新的B2B平台，我们联合澳洲每个领域的优质供应商，用最精准的中文把产品和服务全面展示给中国市场，并提供信用验证和中文客服沟通。</p>
+                <p class="leading-normal mb-0">“麒，仁兽也，麋身牛尾一角；麐（麟），牝麒也。”我们用麒麟之名实质是取“麒麟含仁怀义”之意。麒麟榜以“含仁怀义”之理念把澳洲每一个行业最优秀的供应商，用中国的文化和文字语言展现在中国的采购商面前 。
+                </p>
+                <p class="leading-normal">我们创立麒麟榜的初衷，在于我们意识到中国市场上的澳洲品牌良莠不齐，且很多澳洲优质的企业产品和服务并没有得到如实的宣传。
+                </p>
+                <p class="leading-normal">不同于其他平台，我们奉行“实事求是、严格流程、精心挑选、诚信服务”的原则，确保每个供应商在质量和服务检验上统一标准，在榜上排名位置完全按照自然搜索排名结果原则。即便是在广告位置陈列公司也必须经过所有资格验证。我们的目的一是使得麒麟榜成为一个独立公正的第三方平台，为中国采购商提供甄选并联络澳洲供应商的绝佳平台；二是为澳洲的企业提供一个面向中国市场的公平展示平台，并把营销和沟通成本降至最低。
+                </p>
+
+            </div>
+        </div>
+    </section>
+    <!--/section-->
+
+    <!--section-->
+    <section class="sptb">
+        <div class="container">
+            <div class="text-justify">
+                <h2 class="mb-4 text-center">麒麟服务</h2>
+                <p class="leading-normal">麒麟榜当前提供的服务有两类：澳洲产品和澳洲服务业供应商的线上搜索，以及包括翻译和行程安排在内的澳洲供应商线下会面活动安排。</p>
+
             </div>
         </div>
     </section>

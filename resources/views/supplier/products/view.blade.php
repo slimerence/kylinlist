@@ -186,8 +186,9 @@
                                                 <div class="col-md-12">
                                                     <label class="form-label mb-0">
                                                         <el-upload
-                                                            action="https://jsonplaceholder.typicode.com/posts/"
+                                                            action="{{ url('api/supplier/product/image') }}"
                                                             list-type="picture-card"
+                                                            :multiple="true"
                                                             :on-preview="handlePictureCardPreview"
                                                             :on-remove="handleRemove">
                                                             <i class="el-icon-plus"></i>
