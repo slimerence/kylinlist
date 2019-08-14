@@ -32,6 +32,13 @@
                 <li><a class="slide-item" href="{{ url('admin/category/create') }}">Create Category</a></li>
             </ul>
         </li>
+        <li class="slide">
+            <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-institution"></i><span class="side-menu__label">Blog</span><i class="angle fa fa-angle-right"></i></a>
+            <ul class="slide-menu">
+                <li><a class="slide-item" href="{{ url('admin/blog/list') }}">Blog List</a></li>
+                <li><a class="slide-item" href="{{ url('admin/blog/create') }}">Create Blog</a></li>
+            </ul>
+        </li>
         <li>
             <a class="side-menu__item" href="{{ url('admin/seo') }}"><i class="side-menu__icon fa fa-window-restore"></i><span class="side-menu__label">SEO Management</span></a>
         </li>

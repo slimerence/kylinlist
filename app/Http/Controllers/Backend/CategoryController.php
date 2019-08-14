@@ -32,8 +32,8 @@ class CategoryController extends Controller
     public function create(){
         $this->data_view['roots'] = Category::where('level',1)->orderby('position','asc')->get();
         $this->data_view['category'] = new Category();
-        return view('backend.category.view',$this->data_view);
-    }
+    return view('backend.category.view',$this->data_view);
+}
 
     public function delete($id){
         $category = Category::find($id);

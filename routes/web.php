@@ -51,6 +51,15 @@ Route::prefix('admin')->middleware('auth')->group(function() {
         Route::post('/save', 'Backend\CategoryController@save');
 
     });
+    Route::prefix('blog')->group(function() {
+        Route::get('/list', 'Backend\BlogController@list');
+        Route::get('/create', 'Backend\BlogController@create');
+        Route::get('/edit/{id}', 'Backend\BlogController@edit');
+        Route::get('/delete/{id}', 'Backend\BlogController@delete');
+        Route::post('/save', 'Backend\BlogController@save');
+
+    });
+
 });
 Route::get('/supplier/login', 'Backend\Supplier\AccountController@login')->name('supplier-login');
 Route::post('/supplier/login', 'Backend\Supplier\AccountController@login_check');

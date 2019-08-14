@@ -26,6 +26,7 @@
 
     <!-- Dashboard Css -->
     <link href="{{ asset('assets/css/dashboard.css') }}" rel="stylesheet" />
+
     <link href="/assets/css/admin-custom.css" rel="stylesheet" />
 
     <!-- c3.js Charts Plugin -->
