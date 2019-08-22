@@ -35,4 +35,11 @@ class Blog extends Model
         }
         return $blog;
     }
+
+    /**
+     * 获取前端显示用的url
+     */
+    public function getUrl(){
+        return url('industry/'.$this->category->url.'/article/'.$this->url);
+    }
 }

@@ -19,6 +19,10 @@ class Category extends Model
         return $this->hasMany(Supplier::class);
     }
 
+    public function blogs(){
+        return $this->hasMany(Blog::class);
+    }
+
     public function pageInfo(){
         return $this->belongsTo(PageInfo::class,'page_id');
     }
@@ -114,6 +118,21 @@ class Category extends Model
         $suppliers = Supplier::whereIn('category_id',$cat);
 
         return $suppliers;
+    }
+
+    /**
+     * 这个方法用来导出包含有blog的category数组
+     */
+    public static function getBlogCategory(){
+        $newarray = [];
+        $categories = Category::get();
+        foreach ($categories as $key=>$category){
+            $blog = Blog::where('category_id',$category->id)->get();
+            if(count($blog)>0){
+                $newarray[] = $category;
+            }
+        }
+        return $newarray;
     }
 
 }

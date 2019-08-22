@@ -46,7 +46,7 @@
                                             @endif
                                         </td>
                                         <td>@if($blog->feature_image != null)
-                                            <img src="{{ $blog->feature_image}}" alt="{{ $blog->title }}">
+                                            <img style="width: 200px;" src="{{ $blog->feature_image}}" alt="{{ $blog->title }}">
                                                 @else
                                                 <a href="{{ url($blog->url) }}" target="_blank" class="btn btn-primary">View</a>
                                             @endif
