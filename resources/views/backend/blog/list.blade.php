@@ -34,24 +34,27 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($roots as $key=>$root)
+                                    @foreach($blogs as $key=>$blog)
                                     <tr>
                                         <td>{{ $key+1 }}</td>
-                                        <td>{{ $root->name }}</td>
-                                        <td>{{ $root->level }}</td>
-                                        <td>{{ $root->url }}</td>
-                                        <td>{{ $root->position }}</td>
-                                        <td>
-                                            @if($root->status)
+                                        <td>{{ $blog->title }}</td>
+                                        <td>{{ $blog->category->name }}</td>
+                                        <td> @if($blog->status)
                                                 <span class="tag tag-primary">Active</span>
                                             @else
                                                 <span class="tag tag-red">Inactive</span>
                                             @endif
                                         </td>
+                                        <td>@if($blog->feature_image != null)
+                                            <img src="{{ $blog->feature_image}}" alt="{{ $blog->title }}">
+                                                @else
+                                                <a href="{{ url($blog->url) }}" target="_blank" class="btn btn-primary">View</a>
+                                            @endif
+                                        </td>
                                         <td>
                                             <div class="btn-list">
-                                                <a href="{{ url('admin/blog/delete/'.$root->id) }}" class="btn btn-primary"><i class="fe fe-trash mr-2"></i>Delete</a>
-                                                <a href="{{ url('admin/blog/edit/'.$root->id) }}" class="btn btn-danger"><i class="fe fe-play mr-2"></i>Edit</a>
+                                                <a href="{{ url('admin/blog/delete/'.$blog->id) }}" class="btn btn-primary"><i class="fe fe-trash mr-2"></i>Delete</a>
+                                                <a href="{{ url('admin/blog/edit/'.$blog->id) }}" class="btn btn-danger"><i class="fe fe-play mr-2"></i>Edit</a>
                                             </div>
                                         </td>
                                     </tr>

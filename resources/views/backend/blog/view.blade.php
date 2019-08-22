@@ -32,30 +32,33 @@
                                             <label for="url" class="col-form-label">Url</label>
                                             <input id="url" type="text" class="form-control" name="url" placeholder="url" required value="{{ $blog->url }}">
                                         </div>
+                                        <div class="form-group">
+                                            <label for="position" class="col-form-label">Position</label>
+                                            <input id="position" type="number" class="form-control" name="position" placeholder="0" required value="{{ $blog->position }}">
+                                        </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="form-label">Feature Image</label>
-                                            @if(false)
-                                                <input type="file" name="image" class="dropify" data-default-file="{{ asset($category->getImage()->url)}}" data-height="180"/>
+                                            <label for="image" class="form-label">Feature Image</label>
+                                            @if(!$blog->feature_image == null)
+                                                <input id="image" type="file" name="image" class="dropify" data-default-file="{{ asset($blog->feature_image)}}" data-height="210"/>
                                             @else
-                                                <input type="file" name="image" class="dropify" data-height="120"/>
+                                                <input id="image" type="file" name="image" class="dropify" data-height="210"/>
                                             @endif
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label class="col-form-label">Status</label>
-                                        <select class="form-control" name="status" required>
-                                            <option value="0">Unpublished</option>
-                                            <option value="1">Published</option>
+                                        <label for="status" class="col-form-label">Status</label>
+                                        <select id="status" class="form-control" name="status" required>
+                                            <option {{ $blog->status == 0 ? 'selected':'' }} value="0">Unpublished</option>
+                                            <option {{ $blog->status == 1 ? 'selected':'' }} value="1">Published</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="category" class="col-form-label">Category</label>
-                                        <select class="form-control" name="category" id="category">
+                                        <select class="form-control" name="category_id" id="category">
                                             @foreach($categories as $key=>$value)
                                                 <option value="{{ $value->id }}">
                                                     {{ $value->name }}
@@ -67,7 +70,7 @@
                                 <div class="form-row">
                                      <div class="form-group col-md-12">
                                         <label for="content" class="col-form-label">Content</label>
-                                        <textarea class="form-control" id="content" name="content" rows="5" placeholder="content"></textarea>
+                                        <textarea class="form-control" id="content" name="content" rows="5" placeholder="content">{!! $blog->content!!}</textarea>
                                      </div>
                                 </div>
 

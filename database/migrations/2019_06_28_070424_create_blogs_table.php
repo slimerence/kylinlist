@@ -22,6 +22,7 @@ class CreateBlogsTable extends Migration
             $table->integer('seo_id')->nullable();
             $table->smallInteger('status')->default('1');//0 = unpublished, 1 = published
             $table->string('feature_image')->nullable();
+            $table->integer('position')->default(1);
             $table->timestamps();
         });
     }
