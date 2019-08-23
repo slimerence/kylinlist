@@ -91,7 +91,7 @@
 
                 <div class="col-xl-9 col-lg-8 col-md-12">
                     <!--Add Lists-->
-                    <div class="card mb-0">
+                    <div class="card">
                         <div class="card-body">
                             <div class="item2-gl ">
                                 <div class="item2-gl-nav d-flex">
@@ -173,6 +173,7 @@
                                                 </div>
                                             </div>
                                         @endforeach
+                                        {{ $suppliers->links() }}
                                     </div>
                                     <div class="tab-pane" id="tab-12">
                                         <div class="row">
@@ -242,8 +243,6 @@
                                         <a class="page-link" href="#" tabindex="-1">Prev</a>
                                     </li>
                                     <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
                                     <li class="page-item page-next">
                                         <a class="page-link" href="#">Next</a>
                                     </li>
@@ -252,6 +251,12 @@
                         </div>
                     </div>
                     <!--/Add Lists-->
+                    <div class="card mb-0">
+                        <div class="card-body">
+                            <h1 class="h4"><b>{{ $category->name }}</b></h1>
+                            <p>{!! $category->description !!}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

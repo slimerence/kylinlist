@@ -25635,7 +25635,7 @@ footer .border-top{
 	top:0;
 }
 .bg-background-color:before{
-	background:linear-gradient(to right, rgba(59, 162, 255, 0.9), rgb(105, 99, 255, 0.8));
+	background:#006;
 	content:'';
 	position:absolute;
 	width:100%;

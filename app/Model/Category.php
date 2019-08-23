@@ -12,8 +12,12 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     protected $fillable = [
-        'name','name_cn', 'url', 'parent_id','level','seo_id','status','position','page_id'
+        'name','name_cn', 'url', 'parent_id','level','seo_id','status','position','page_id','type','description'
     ];
+
+    public static $SELL = 1;
+    public static $SERVICE = 2;
+    public static $OTHERS = 3;
 
     public function supplier(){
         return $this->hasMany(Supplier::class);
@@ -77,6 +81,9 @@ class Category extends Model
         $info['url']= $data['url'];
         $info['position'] = $data['position'];
         $info['level'] = $data['level'];
+        $info['type'] = $data['type'];
+        $info['description'] = $data['description'];
+
         $info['status'] = 0;
         if($info['level']==1){
             $info['parent_id']= 0;

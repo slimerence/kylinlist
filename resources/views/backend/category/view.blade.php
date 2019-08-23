@@ -66,6 +66,14 @@
                                             <option value="0">Wait For JS</option>
                                         </select>
                                     </div>--}}
+                                    <div class="form-group col-md-4">
+                                        <label for="type" class="col-form-label">Type</label>
+                                        <select id="type" class="form-control" name="type">
+                                            <option {{ $category->type ==1?'selected':'' }} value="1">Manufacturing</option>
+                                            <option {{ $category->type ==2?'selected':'' }} value="2">Service</option>
+                                            <option {{ $category->type ==3?'selected':'' }} value="3">Others</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Status</label>
@@ -82,6 +90,12 @@
                                         @else
                                         <input type="file" name="image" class="dropify" data-height="180"/>
                                     @endif
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="description" class="col-form-label">Description</label>
+                                        <textarea class="form-control" id="description" name="description" rows="5" placeholder="description">{!! $category->description!!}</textarea>
+                                    </div>
                                 </div>
                                     @include('backend.seo.seo_form')
                                 <button type="submit" class="btn btn-primary ">Submit</button>
