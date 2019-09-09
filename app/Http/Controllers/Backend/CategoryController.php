@@ -41,9 +41,14 @@ class CategoryController extends Controller
         return redirect('admin/category/list');
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function save(Request $request)
     {
         $data = $request->all();
+        //dd($data);
         $seoData = $request->get('seo');
         $category = Category::Persistent($data);
         if ($seoData && !is_null($seoData['title'])) {
@@ -53,6 +58,8 @@ class CategoryController extends Controller
         }
         $image = $request->file('image');
         if($image){
+            //如果获取到了新的图片，需要把原数据库中对应的图片删掉
+            $this->_removeDefaultImg($category->id);
             $storagePath = _buildUploadFolderPath();
             $mediaFor = MediaTool::$FOR_CATEGORY;
             //dd($image);
@@ -70,6 +77,11 @@ class CategoryController extends Controller
         }
 
         return redirect('admin/category/list');
+    }
+
+    public function _removeDefaultImg($id){
+        $medias = Media::where('for',MediaTool::$FOR_CATEGORY)->where('target_id',$id);
+        $medias->delete();
     }
 
 }
