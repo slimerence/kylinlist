@@ -26338,3 +26338,14 @@ h1.animated-text {
 .supplier-card .card-body ul{
     margin-bottom: 0;
 }
+
+.line-height-15{
+    line-height: 1.5em!important;
+}
+
+.border-none{
+    border:none;
+}
+.border-none .content_wrapper{
+    border:none!important;
+}

@@ -31,13 +31,22 @@
 <script src="/assets/js/jquery.touchSwipe.min.js"></script>
 
 <!-- Google Maps Plugin -->
-<script src="https://maps.google.com/maps/api/js?key=AIzaSyAykAdIIsNMu0V2wyGOMQcguo8zKngWlyM"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIMn8GQf7_BFqFrq0VgKc-K9Z7Nulp3Hw&callback=initMap" type="text/javascript"></script>
 <script src="/assets/plugins/maps-google/jquery.googlemap.js"></script>
 <script src="/assets/plugins/maps-google/map.js"></script>
 
 <!--Select2 js -->
 <script src="/assets/plugins/select2/select2.full.min.js"></script>
 <script src="/assets/js/select2.js"></script>
+
+<!-- Fullside-menu Js-->
+<script src="../assets/plugins/toggle-sidebar/sidemenu.js"></script>
+
+
+<!---Tabs JS-->
+<script src="../assets/plugins/tabs/jquery.multipurpose_tabcontent.js"></script>
+<script src="../assets/js/tabs.js"></script>
+
 
 <!-- Cookie js -->
 <script src="/assets/plugins/cookie/jquery.ihavecookies.js"></script>

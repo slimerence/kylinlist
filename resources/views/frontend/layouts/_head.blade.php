@@ -45,6 +45,13 @@
     <!-- Owl Theme css-->
     <link href="/assets/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" />
 
+    <!-- Sidemenu Css -->
+    <link href="/assets/plugins/toggle-sidebar/sidemenu2.css" rel="stylesheet" />
+
+    <!-- Tabs Style -->
+    <link href="/assets/plugins/tabs/style.css" rel="stylesheet" />
+
+
     <!-- Custom scroll bar css-->
     <link href="/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css" rel="stylesheet" />
 
