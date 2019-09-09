@@ -60,24 +60,26 @@
                                             $children = $root->getChildren();
                                         @endphp
                                         @foreach($children as $ck => $child)
-                                            <td>{{ ($key+1).'.'.($ck+1) }}</td>
-                                            <td>{{ $child->name }}</td>
-                                            <td>{{ $child->level }}</td>
-                                            <td>{{ $child->url }}</td>
-                                            <td>{{ $child->position }}</td>
-                                            <td>
-                                                @if($child->status)
-                                                    <span class="tag tag-primary">Active</span>
-                                                @else
-                                                    <span class="tag tag-red">Inactive</span>
-                                                @endif
-                                            </td>
-                                            <td>
-                                                <div class="btn-list">
-                                                    <a href="{{ url('admin/category/delete/'.$child->id) }}" class="btn btn-primary"><i class="fe fe-trash mr-2"></i>Delete</a>
-                                                    <a href="{{ url('admin/category/edit/'.$child->id) }}" class="btn btn-danger"><i class="fe fe-play mr-2"></i>Edit</a>
-                                                </div>
-                                            </td>
+                                            <tr>
+                                                <td>{{ ($key+1).'.'.($ck+1) }}</td>
+                                                <td>{{ $child->name }}</td>
+                                                <td>{{ $child->level }}</td>
+                                                <td>{{ $child->url }}</td>
+                                                <td>{{ $child->position }}</td>
+                                                <td>
+                                                    @if($child->status)
+                                                        <span class="tag tag-primary">Active</span>
+                                                    @else
+                                                        <span class="tag tag-red">Inactive</span>
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    <div class="btn-list">
+                                                        <a href="{{ url('admin/category/delete/'.$child->id) }}" class="btn btn-primary"><i class="fe fe-trash mr-2"></i>Delete</a>
+                                                        <a href="{{ url('admin/category/edit/'.$child->id) }}" class="btn btn-danger"><i class="fe fe-play mr-2"></i>Edit</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
                                         @endforeach
                                    @endforeach
                                     </tbody>
