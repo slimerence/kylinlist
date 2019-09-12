@@ -43,3 +43,4 @@ Route::prefix('files')->group(function(){
     Route::get('load-all','Api\Medias@load_all_files');
 });
 
+Route::get('upload-files','Api\Webservice@getUploadFiles');
