@@ -23,9 +23,7 @@
                             Global Business Resources Platform.
                             Connecting Buyers with Australian Suppliers.
                             Global Business Resources Platform. </p>
-
                         <a href="{{ url('post-request') }}" class="btn btn-danger">Post Sourcing Request  <i class="fa fa-arrow-right"></i></a>
-
                     </div>
                 </div>
             </div>

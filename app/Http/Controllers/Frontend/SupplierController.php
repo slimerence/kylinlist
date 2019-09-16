@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Model\Catalog\Product;
 use App\Model\Category;
-use App\Model\Supplier;
+use App\Model\Suppliers\Supplier;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -21,7 +21,7 @@ class SupplierController extends Controller
 
     public function category_list(){
 
-        return view('frontend.supplier.category_list');
+        return view('frontend.supplier.category_list',$this->data_view);
     }
 
     public function category_view($url){

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSourceRequestsTable extends Migration
+class CreateSupplierManagementsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class CreateSourceRequestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('source_requests', function (Blueprint $table) {
+        Schema::create('supplier_managements', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('name');
-            $table->integer('category_id');
-            $table->text('description');
-            $table->string('quantity');
-            $table->string('unit');
-            $table->date('valid_date');
+            $table->integer('supplier_id');
+            $table->boolean('status')->default(0);
+            $table->text('other')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ class CreateSourceRequestsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('source_requests');
+        Schema::dropIfExists('supplier_managements');
     }
 }

@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Model;
+namespace App\Model\Suppliers;
 
 use App\Model\Catalog\Product;
+use App\Model\Category;
 use App\Models\Media;
 use App\Models\Utils\MediaTool;
 use App\User;
@@ -31,6 +32,10 @@ class Supplier extends Model
         return $this->hasMany(Product::class);
     }
 
+    public function status(){
+        return $this->hasOne(SupplierManagement::class);
+    }
+
     public function getProfileImage(){
         $media = Media::where('for',MediaTool::$FOR_SUPPLIER_PROFILE)->where('target_id',$this->id)->first();
         return $media;
@@ -43,4 +48,19 @@ class Supplier extends Model
             return redirect('supplier/profile');
         }
     }
+
+    /**
+     * 用于前端获取Supplier控制类的方法，如果不存在该supplier对应的控制类，就创建一个新的
+     * @return mixed
+     */
+    public function getManagement(){
+        $management = $this->status;
+        //dd($management);
+        if($management == null){
+            $management = SupplierManagement::create(['supplier_id'=>$this->id,'status'=>0]);
+        }
+        return $management;
+    }
+
+
 }

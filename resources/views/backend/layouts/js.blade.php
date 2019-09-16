@@ -11,10 +11,12 @@
 <!-- Fullside-menu Js-->
 <script src="/assets/plugins/toggle-sidebar/sidemenu.js"></script>
 
+@if(isset($data_table))
 <!-- Data tables -->
 <script src="/assets/plugins/datatable/jquery.dataTables.min.js"></script>
 <script src="/assets/plugins/datatable/dataTables.bootstrap4.min.js"></script>
 <script src="/assets/js/datatable.js"></script>
+@endif
 
 <!-- Select2 js -->
 <script src="/assets/plugins/select2/select2.full.min.js"></script>
@@ -50,5 +52,6 @@
 
 <!-- Custom Js-->
 <script src="/assets/js/admin-custom.js"></script>
+<script src="/js/backend.js"></script>
 
 

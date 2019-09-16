@@ -1,6 +1,5 @@
 $(function(e) {
-	$('#example').DataTable();
-	$('#example2').DataTable();
-
+if($('.data-table').length>0){
     $('.data-table').DataTable();
+}
 } );

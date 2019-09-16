@@ -44,6 +44,16 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     Route::get('/home', 'Backend\Home@index');
     Route::get('/seo', 'Backend\Home@index');
 
+    Route::prefix('suppliers')->group(function(){
+        Route::get('/', 'Backend\SupplierController@list');
+        Route::get('/edit/{id}', 'Backend\SupplierController@edit');
+        Route::get('/disable/{id}', 'Backend\SupplierController@disable');
+        Route::get('/enable/{id}', 'Backend\SupplierController@enable');
+        Route::post('/save', 'Backend\SupplierController@save');
+        Route::post('/profile', 'Backend\SupplierController@profile_update');
+    });
+
+
     Route::prefix('category')->group(function() {
         Route::get('/list', 'Backend\CategoryController@list');
         Route::get('/create', 'Backend\CategoryController@create');
