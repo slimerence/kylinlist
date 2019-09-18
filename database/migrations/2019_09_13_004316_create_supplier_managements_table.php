@@ -15,7 +15,8 @@ class CreateSupplierManagementsTable extends Migration
     {
         Schema::create('supplier_managements', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('supplier_id');
+            $table->integer('target_id');
+            $table->integer('type');
             $table->boolean('status')->default(0);
             $table->text('other')->nullable();
             $table->timestamps();

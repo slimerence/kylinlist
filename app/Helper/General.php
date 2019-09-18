@@ -140,3 +140,21 @@ if(!function_exists('_get_backend_theme_prefix')){
 
 
 }
+
+if(!function_exists('_getVerifyStatus')){
+    /**
+     * 一个全局的用于检验相关对象是否经过管理员认证过的方法
+     * @param int $type
+     * @param int $target_id
+     * @return boolean
+     */
+    function _getVerifyStatus(int $type, int $target_id){
+        $management = \App\Model\Suppliers\SupplierManagement::where('type',$type)->where('target_id',$target_id)->first();
+        if($management==null){
+            $management = \App\Model\Suppliers\SupplierManagement::create(['type'=>$type,'target_id'=>$target_id,'status'=>0]);
+            return $management->status;
+        }else{
+            return $management->status;
+        }
+    }
+}

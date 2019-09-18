@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\Model\Supplier;
+use App\Model\Suppliers\Supplier;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;

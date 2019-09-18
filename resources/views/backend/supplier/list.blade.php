@@ -15,7 +15,7 @@
                 <div class="col-md-12 col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <div class="card-title">Category List</div>
+                            <div class="card-title">Supplier List</div>
                             <a href="{{ url('admin/category/create') }}" class="btn btn-primary ml-auto"><i class="fe fe-plus mr-2"></i>Create New</a>
 
                         </div>
@@ -40,13 +40,10 @@
                                             <td>{{ $supplier->category->name }}</td>
                                             <td>{{ $supplier->updated_at->format('Y-m-d H:i') }}</td>
                                             <td>
-                                                @php
-                                                    $management = $supplier->getManagement();
-                                                @endphp
-                                                @if($management->status)
-                                                    <a href="{{ url('admin/suppliers/disable/'.$supplier->id) }}"><span class="tag tag-success">Active</span></a>
+                                                @if(_getVerifyStatus(\App\Model\Suppliers\SupplierManagement::$TYPE_SUPPLIER,$supplier->id))
+                                                    <a class="tag tag-success" href="{{ url('admin/suppliers/toggle/'.$supplier->id) }}">Active</a>
                                                 @else
-                                                    <a href="{{ url('admin/suppliers/enable/'.$supplier->id) }}"><span class="tag tag-red">Inactive</span></a>
+                                                    <a class="tag tag-red" href="{{ url('admin/suppliers/toggle/'.$supplier->id) }}">Inactive</a>
                                                 @endif
                                             </td>
                                             <td>

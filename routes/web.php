@@ -47,10 +47,11 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     Route::prefix('suppliers')->group(function(){
         Route::get('/', 'Backend\SupplierController@list');
         Route::get('/edit/{id}', 'Backend\SupplierController@edit');
-        Route::get('/disable/{id}', 'Backend\SupplierController@disable');
-        Route::get('/enable/{id}', 'Backend\SupplierController@enable');
+        Route::get('/toggle/{id}', 'Backend\SupplierController@toggleStatus');
         Route::post('/save', 'Backend\SupplierController@save');
         Route::post('/profile', 'Backend\SupplierController@profile_update');
+        Route::get('/product/view/{id}', 'Backend\SupplierController@product_view');
+        Route::post('/product/update', 'Backend\SupplierController@product_update');
     });
 
 

@@ -11,11 +11,28 @@ class SupplierManagement extends Model
      * @var array
      */
     protected $fillable = [
-       'supplier_id','status','other'
+       'target_id','status','other','type'
     ];
 
-    public function supplier(){
-        return $this->belongsTo(Supplier::class);
+    public static $TYPE_SUPPLIER=1;
+    public static $TYPE_PRODUCT=2;
+    public static $TYPE_MEDIA=3;
+
+    /**
+     * 一个全局的用于检验相关对象是否经过管理员认证过的方法
+     * @param int $type
+     * @param int $target_id
+     * @return object
+     */
+    public static function getVerifyStatus(int $type, int $target_id){
+        $management = self::where('type',$type)->where('target_id',$target_id)->first();
+        if($management){
+            return $management;
+        }else{
+            $management = self::create(['type'=>$type,'target_id'=>$target_id,'status'=>0]);
+            return $management;
+        }
     }
+
 
 }

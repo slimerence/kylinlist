@@ -32,10 +32,6 @@ class Supplier extends Model
         return $this->hasMany(Product::class);
     }
 
-    public function status(){
-        return $this->hasOne(SupplierManagement::class);
-    }
-
     public function getProfileImage(){
         $media = Media::where('for',MediaTool::$FOR_SUPPLIER_PROFILE)->where('target_id',$this->id)->first();
         return $media;
@@ -51,16 +47,20 @@ class Supplier extends Model
 
     /**
      * 用于前端获取Supplier控制类的方法，如果不存在该supplier对应的控制类，就创建一个新的
-     * @return mixed
+     * @return object
      */
     public function getManagement(){
-        $management = $this->status;
-        //dd($management);
-        if($management == null){
-            $management = SupplierManagement::create(['supplier_id'=>$this->id,'status'=>0]);
-        }
+        $management = SupplierManagement::getVerifyStatus(SupplierManagement::$TYPE_SUPPLIER,$this->id);
         return $management;
     }
 
+    /**
+     * 用于前端获取Supplier控制类的方法，如果不存在该supplier对应的控制类，返回布尔值
+     * @return boolean
+     */
+    public function getStatus(){
+        $management = SupplierManagement::getVerifyStatus(SupplierManagement::$TYPE_SUPPLIER,$this->id);
+        return $management->status;
+    }
 
 }

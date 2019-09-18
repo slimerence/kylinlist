@@ -12,6 +12,7 @@ class CategoryController extends Controller
 {
     public function list(){
         $this->data_view['roots'] = Category::where('level',1)->orderby('position','asc')->get();
+        $this->data_view['data_table'] = true;
 
         return view('backend.category.list',$this->data_view);
     }

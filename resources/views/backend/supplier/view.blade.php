@@ -19,6 +19,7 @@
                                 <ul class="nav panel-tabs">
                                     <li class=""><a href="#tab1" class="active" data-toggle="tab">Profile</a></li>
                                     <li><a href="#tab2" data-toggle="tab">Products</a></li>
+                                    <li style="margin-left: auto;border-left: none;"><a href="{{ url('/admin/suppliers/toggle/'.$supplier->id) }}" class="btn {{ _getVerifyStatus(\App\Model\Suppliers\SupplierManagement::$TYPE_SUPPLIER,$supplier->id)==0?'btn-danger':'btn-primary' }}">Verify</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -26,7 +27,7 @@
 
                     <div class="card">
                         <div class="card-body p-0">
-                            <div class="tab-content">
+                            <div class="tab-content p-5">
                                 <div class="tab-pane active " id="tab1">
                                     <div class="row ">
                                         <div class="col-lg-4">
@@ -46,6 +47,7 @@
                                     </div>
                                 </div>
                                 <div class="tab-pane" id="tab2">
+
                                     @include('backend.supplier.pane.product_list')
                                 </div>
 

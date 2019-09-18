@@ -5,9 +5,7 @@
             <div class="container">
                 <div class="text-center text-white ">
                     <h1>
-                        <a href="" class="typewrite" data-period="2000" data-type='[ "Global Business Resources Platform" ]'>
-                            <span class="wrap"></span>
-                        </a>
+                        <span class="wrap">Global Business Resources Platform</span>
                     </h1>
                     <p>It is a long established fact that a reader will be distracted by the readable content of a page.</p>
                 </div>

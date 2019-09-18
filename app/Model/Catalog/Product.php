@@ -3,7 +3,7 @@
 namespace App\Model\Catalog;
 
 use App\Model\Category;
-use App\Model\Supplier;
+use App\Model\Suppliers\Supplier;
 use Barryvdh\LaravelIdeHelper\Eloquent;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;

@@ -1,5 +1,6 @@
 <form class="card" method="post" action="{{ url('admin/suppliers/profile') }}" id="app">
     @csrf
+    <input type="hidden" name="supplier_id" value="{{ $supplier->id }}">
     <div class="card-header">
         <h3 class="card-title">Edit Profile</h3>
     </div>

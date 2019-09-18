@@ -5,6 +5,7 @@ namespace App\Model;
 use App\Models\Media;
 use Barryvdh\LaravelIdeHelper\Eloquent;
 use Illuminate\Database\Eloquent\Model;
+use App\Model\Suppliers\Supplier;
 /**
  * @mixin Eloquent
  */
@@ -103,6 +104,10 @@ class Category extends Model
         return $category;
     }
 
+    /**
+     * 用来统计该Category以及其子category下面所有的supplier
+     * @return mixed
+     */
     public function countSupplier(){
         $cat = [];
         $cat[]=$this->id;
