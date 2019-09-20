@@ -56,31 +56,6 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="card-header border-top">
-                            <h3 class="card-title">Posted By</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="filter-product-checkboxs">
-                                <label class="custom-control custom-checkbox mb-2">
-                                    <input type="checkbox" class="custom-control-input" name="checkbox1" value="option1">
-                                    <span class="custom-control-label">
-											Dealer
-										</span>
-                                </label>
-                                <label class="custom-control custom-checkbox mb-2">
-                                    <input type="checkbox" class="custom-control-input" name="checkbox2" value="option2">
-                                    <span class="custom-control-label">
-											Individual
-										</span>
-                                </label>
-                                <label class="custom-control custom-checkbox mb-0">
-                                    <input type="checkbox" class="custom-control-input" name="checkbox2" value="option2">
-                                    <span class="custom-control-label">
-											Reseller
-										</span>
-                                </label>
-                            </div>
-                        </div>
                         <div class="card-footer">
                             <a href="#" class="btn btn-pink btn-block">Apply Filter</a>
                         </div>
@@ -95,7 +70,7 @@
                         <div class="card-body">
                             <div class="item2-gl ">
                                 <div class="item2-gl-nav d-flex">
-                                    <h6 class="mb-0 mt-2">Showing 1 to 10 of 30 entries</h6>
+                                    <h6 class="mb-0 mt-2">Showing 1 to 9 of 30 entries</h6>
                                     <ul class="nav item2-gl-menu ml-auto">
                                         <li class=""><a href="#tab-11" class="active show" data-toggle="tab"><i class="fa fa-list"></i></a></li>
                                         <li><a href="#tab-12" data-toggle="tab" class=""><i class="fa fa-th"></i></a></li>
@@ -113,6 +88,7 @@
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="tab-11">
                                         @foreach($suppliers as $key=>$supplier)
+                                            @if(_getVerifyStatus(\App\Model\Suppliers\SupplierManagement::$TYPE_SUPPLIER,$supplier->id))
                                             <div class="card supplier-card overflow-hidden">
                                                 <div class="ribbon ribbon-top-left text-danger"><span class="{{ $key%4==0?'bg-danger':'bg-primary' }}">featured</span></div>
                                                 <div class="d-md-flex">
@@ -172,19 +148,25 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            @endif
                                         @endforeach
                                         {{ $suppliers->links() }}
                                     </div>
                                     <div class="tab-pane" id="tab-12">
                                         <div class="row">
-                                            @for($key=0;$key<9;$key++)
+                                            @foreach($suppliers as $key=>$supplier)
+                                                @if(_getVerifyStatus(\App\Model\Suppliers\SupplierManagement::$TYPE_SUPPLIER,$supplier->id))
                                                 <div class="col-lg-6 col-md-12 col-xl-4">
                                                     <div class="card overflow-hidden">
                                                         <div class="item-card9-img">
-                                                            <div class="arrow-ribbon bg-primary">Rent</div>
+                                                            <div class="arrow-ribbon bg-primary">Tag</div>
                                                             <div class="item-card9-imgs">
-                                                                <a href="{{ url('supplier') }}"></a>
-                                                                <img src="{{ asset('images/categories/categories0'.($key+1).'.jpg') }}" alt="img" class="cover-image">
+                                                                <a href="{{ url($supplier->category->url.'/supplier/'.$supplier->url) }}" style="max-height: "></a>
+                                                                @if(is_null($supplier->avatar_path))
+                                                                    <img src="{{ asset('images/categories/categories0'.($key+1).'.jpg') }}" alt="img" class="cover-image">
+                                                                @else
+                                                                    <img src="{{ asset($supplier->getProfileImage()->url) }}" alt="img" class="cover-image">
+                                                                @endif
                                                             </div>
                                                             <div class="item-card9-icons">
                                                                 <a href="#" class="item-card9-icons1 wishlist"> <i class="fa fa fa-heart-o"></i></a>
@@ -192,64 +174,45 @@
                                                         </div>
                                                         <div class="card-body">
                                                             <div class="item-card9">
-                                                                <a href="classified.html">RealEstate</a>
-                                                                <a href="classified.html" class="text-dark mt-2"><h4 class="font-weight-semibold mt-1">2BK flat </h4></a>
-                                                                <p>Ut enim ad minima veniamq nostrum exerci ullam orisin suscipit laboriosam</p>
-                                                                <div class="item-card9-desc">
-                                                                    <a href="#" class="mr-4"><span class=""><i class="fa fa-map-marker text-muted mr-1"></i> USA</span></a>
-                                                                    <a href="#" class=""><span class=""><i class="fa fa-calendar-o text-muted mr-1"></i> Nov-15-2018</span></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer">
-                                                            <div class="item-card9-footer d-flex">
-                                                                <div class="item-card9-cost">
-                                                                    <h4 class="text-dark font-weight-semibold mb-0 mt-0">$263.99</h4>
-                                                                </div>
-                                                                <div class="ml-auto">
-                                                                    <div class="rating-stars block">
-                                                                        <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value"  value="3">
-                                                                        <div class="rating-stars-container">
-                                                                            <div class="rating-star sm">
-                                                                                <i class="fa fa-star"></i>
-                                                                            </div>
-                                                                            <div class="rating-star sm">
-                                                                                <i class="fa fa-star"></i>
-                                                                            </div>
-                                                                            <div class="rating-star sm">
-                                                                                <i class="fa fa-star"></i>
-                                                                            </div>
-                                                                            <div class="rating-star sm">
-                                                                                <i class="fa fa-star"></i>
-                                                                            </div>
-                                                                            <div class="rating-star sm">
-                                                                                <i class="fa fa-star"></i>
-                                                                            </div>
+                                                                <a href="{{ url($supplier->category->url.'/supplier/'.$supplier->url) }}" class="text-dark mt-2"><h4 class="font-weight-semibold mt-1">{{ $supplier->name }}</h4></a>
+                                                                <div class="rating-stars block">
+                                                                    <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value"  value="3">
+                                                                    <div class="rating-stars-container">
+                                                                        <div class="rating-star sm">
+                                                                            <i class="fa fa-star"></i>
+                                                                        </div>
+                                                                        <div class="rating-star sm">
+                                                                            <i class="fa fa-star"></i>
+                                                                        </div>
+                                                                        <div class="rating-star sm">
+                                                                            <i class="fa fa-star"></i>
+                                                                        </div>
+                                                                        <div class="rating-star sm">
+                                                                            <i class="fa fa-star"></i>
+                                                                        </div>
+                                                                        <div class="rating-star sm">
+                                                                            <i class="fa fa-star"></i>
                                                                         </div>
                                                                     </div>
+                                                                </div>
+                                                                <p>Ut enim ad minima veniamq nostrum exerci ullam orisin suscipit laboriosam</p>
+                                                                <div class="item-card9-desc">
+                                                                    <a href="#" class="mr-4"><span class=""><i class="fa fa-map-marker text-muted mr-1"></i> {{ $supplier->state }}</span></a>
+                                                                    <a href="#" class=""><span class=""><i class="fa fa-calendar-o text-muted mr-1"></i> {{ $supplier->created_at->format('d-M-Y') }}</span></a>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            @endfor
+                                                @endif
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="center-block text-center">
-                                <ul class="pagination mb-0">
-                                    <li class="page-item page-prev disabled">
-                                        <a class="page-link" href="#" tabindex="-1">Prev</a>
-                                    </li>
-                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item page-next">
-                                        <a class="page-link" href="#">Next</a>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
+                    @if(isset($category))
                     <!--/Add Lists-->
                     <div class="card mb-0">
                         <div class="card-body">
@@ -257,6 +220,7 @@
                             <p>{!! $category->description !!}</p>
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>

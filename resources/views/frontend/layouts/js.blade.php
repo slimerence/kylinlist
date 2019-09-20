@@ -30,31 +30,36 @@
 <!--JQuery TouchSwipe js-->
 <script src="/assets/js/jquery.touchSwipe.min.js"></script>
 
-<!-- Google Maps Plugin -->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIMn8GQf7_BFqFrq0VgKc-K9Z7Nulp3Hw&callback=initMap" type="text/javascript"></script>
-<script src="/assets/plugins/maps-google/jquery.googlemap.js"></script>
-<script src="/assets/plugins/maps-google/map.js"></script>
+@if(isset($googlemap))
+    <!-- Google Maps Plugin -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAA1k0eloyEVCHACaBc1QVVULyu2inbDHg&callback=initMap" type="text/javascript"></script>
+    <script src="/assets/plugins/maps-google/jquery.googlemap.js"></script>
+    <script src="/assets/plugins/maps-google/map.js"></script>
+@endif
 
 <!--Select2 js -->
 <script src="/assets/plugins/select2/select2.full.min.js"></script>
 <script src="/assets/js/select2.js"></script>
 
+@if(isset($sidemenu))
 <!-- Fullside-menu Js-->
-<script src="../assets/plugins/toggle-sidebar/sidemenu.js"></script>
-
+<script src="/assets/plugins/toggle-sidebar/sidemenu.js"></script>
+@endif
 
 <!---Tabs JS-->
-<script src="../assets/plugins/tabs/jquery.multipurpose_tabcontent.js"></script>
-<script src="../assets/js/tabs.js"></script>
+<script src="/assets/plugins/tabs/jquery.multipurpose_tabcontent.js"></script>
+<script src="/assets/js/tabs.js"></script>
 
 
 <!-- Cookie js -->
 <script src="/assets/plugins/cookie/jquery.ihavecookies.js"></script>
 <script src="/assets/plugins/cookie/cookie.js"></script>
 
-<!--Zoom js -->
-<script src="/assets/plugins/ecomerce/jquery.exzoom.js"></script>
-<script src="/assets/plugins/ecomerce/exzoom.js"></script>
+@if(isset($zoomjs))
+    <!--Zoom js -->
+    <script src="/assets/plugins/ecomerce/jquery.exzoom.js"></script>
+    <script src="/assets/plugins/ecomerce/exzoom.js"></script>
+@endif
 
 <!-- Form wizard js -->
 <script src="/assets/plugins/bootstrap-wizard/jquery.bootstrap.wizard.js"></script>

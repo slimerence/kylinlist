@@ -1,6 +1,9 @@
 $(function(){
-	 $("#exzoom").exzoom({
-		   autoPlay: false,
-	   });
-	 $("#exzoom").removeClass('hidden')
+    let zoomDom = $("#exzoom");
+    if(zoomDom.length>0){
+        zoomDom.exzoom({
+            autoPlay: false,
+        });
+        zoomDom.removeClass('hidden');
+    }
 });

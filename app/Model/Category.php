@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\Model\Suppliers\SupplierManagement;
 use App\Models\Media;
 use Barryvdh\LaravelIdeHelper\Eloquent;
 use Illuminate\Database\Eloquent\Model;
@@ -129,6 +130,25 @@ class Category extends Model
         }
         $suppliers = Supplier::whereIn('category_id',$cat);
 
+        return $suppliers;
+    }
+
+    /**
+     * 用来获取该分组下面所有被验证过了的Supplier
+     * @param Category $category
+     * @return object
+     */
+    public static function getVerifiedSuppliers(Category $category = null){
+        $array =[];
+        $managements = SupplierManagement::where('type',SupplierManagement::$TYPE_SUPPLIER)->where('status',1)->get();
+        foreach ($managements as $management){
+            $array[]=$management->target_id;
+        }
+        $suppliers = Supplier::whereIn('id',$array);
+        if( $category != null){
+            $suppliers = $suppliers->where('category_id',$category->id);
+        }
+        //dd($suppliers);
         return $suppliers;
     }
 
