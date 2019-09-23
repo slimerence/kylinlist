@@ -7,25 +7,25 @@
             <p>Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula</p>
         </div>
         <div id="feature-carousel" class="owl-carousel owl-carousel-icons">
-            @for($i=0;$i<6;$i++)
+            @foreach($t_products as $i=>$product)
                 <div class="item">
                     <div class="card mb-0">
                         <div class="arrow-ribbon {{ $i%2==1? 'bg-danger':'bg-info' }}">Open</div>
                         <div class="item-card7-imgs">
-                            <a href="business.html"></a>
-                            <img src="{{ asset('images/products/TP0'.($i%4+1).'.jpg') }}" alt="img" class="cover-image">
+                            <a href="{{ url('product/'.$product->url) }}"></a>
+                            <img src="{{ asset($product->image_path) }}" alt="img" style="max-height: 280px;" class="cover-image">
                         </div>
                         <div class="item-card7-overlaytext">
-                            <a href="business.html" class="text-white"> Beauty & Spa </a>
+                            <a href="{{ url('product/'.$product->url) }}" class="text-white"> {{ $product->name }} </a>
                         </div>
                         <div class="card-body">
                             <div class="item-card7-desc">
                                 <div class="item-card7-text">
-                                    <a href="business.html" class="text-dark"><h4 class="font-weight-semibold">Golik Beauty & Spa</h4></a>
+                                    <a href="{{ url('product/'.$product->url) }}" class="text-dark"><h4 class="font-weight-semibold" style="height: 2em;">{{ $product->name }}</h4></a>
                                 </div>
                                 <ul class="d-flex">
                                     <li class=""><a href="#" class="icons"><i class="si si-location-pin text-muted mr-1"></i> USA</a></li>
-                                    <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i>1 min ago</a></li>
+                                    <li><a href="#" class="icons"><i class="si si-event text-muted mr-1"></i>{{ $product->updated_at->format('d M') }}</a></li>
                                     <li class=""><a href="#" class="icons"><i class="si si-phone text-muted mr-1"></i> 14 675 65430</a></li>
                                 </ul>
                                 <p class="mb-0">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                 </div>
-            @endfor
+            @endforeach
         </div>
     </div>
 </section>
