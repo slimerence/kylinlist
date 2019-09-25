@@ -123,7 +123,8 @@
                                                 </dl>
                                             </div>
                                         </div>
-                                        <a href="#quick-contact" class="btn  btn-info"> Contact Supplier </a>
+                                        <button type="button" data-toggle="modal" data-target="#quick-contact" class="btn btn-info"> Contact Supplier </button>
+                                        @include('frontend.supplier.elements.contact')
                                         <a href="{{ url($supplier->buildUrl()) }}" class="btn  btn-success">View Supplier </a>
                                     </div>
                                 </div>

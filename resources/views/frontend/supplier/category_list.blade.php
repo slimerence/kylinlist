@@ -11,7 +11,7 @@
             </div>
             <div class="row">
                 @foreach($roots as $key=>$root)
-                    <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="col-xl-3 col-lg-6 col-md-6">
                         <div class="card">
                             <div class="item-card">
                                 <div class="item-card-desc">

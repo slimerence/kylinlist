@@ -18,6 +18,8 @@ Route::get('/contact', 'Frontend\PageController@contact');
 Route::get('/pricing', 'Frontend\PageController@pricing');
 Route::get('/support-faq', 'Frontend\PageController@faq');
 
+
+
 Route::get('/category-list', 'Frontend\SupplierController@category_list');
 Route::get('/categories', 'Frontend\SupplierController@category');
 Route::get('/categories/{url}', 'Frontend\SupplierController@category_view');
@@ -25,6 +27,7 @@ Route::get('/categories/{url}', 'Frontend\SupplierController@category_view');
 
 Route::get('/supplier', 'Frontend\SupplierController@supplier');
 Route::get('/product/{url}', 'Frontend\SupplierController@product');
+Route::post('/product/inquiry/{uuid}','Frontend\SupplierController@product_inquiry');
 Route::get('/profile', 'Frontend\SupplierController@profile');
 
 Route::get('/supplier/join-us', 'Frontend\SupplierController@supplier_join');

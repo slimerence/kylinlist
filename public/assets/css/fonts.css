@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700');
+
+@font-face {
+    font-family: 'rajdhaniregular';
+    src: url('../../fonts/rajdhani-regular-webfont.woff2') format('woff2'),
+    url('../../fonts/rajdhani-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'rajdhanimedium';
+    src: url('../../fonts/rajdhani-medium-webfont.woff2') format('woff2'),
+    url('../../fonts/rajdhani-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

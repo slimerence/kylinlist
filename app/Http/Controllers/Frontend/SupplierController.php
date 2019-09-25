@@ -55,6 +55,12 @@ class SupplierController extends Controller
 
     }
 
+    /**
+     * 用于浏览当前supplier的landing page的方法
+     * @param $url
+     * @param $uri
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
     public function supplier_view($url,$uri){
         $supplier = Supplier::where('url',$uri)->first();
         if($supplier){
@@ -68,6 +74,10 @@ class SupplierController extends Controller
 
     }
 
+    /**
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function supplier(){
         $this->data_view['roots'] = Category::where('level',1)->orderby('position','asc')->get();
         $this->data_view['suppliers'] = Supplier::orderby('id','asc')->paginate(9);
@@ -104,12 +114,17 @@ class SupplierController extends Controller
         $product = Product::where('url',$url)->first();
         $this->data_view['product'] = $product;
         $this->data_view['supplier'] = $product->supplier;
+        $this->data_view['zoomjs'] = true;
         return view('frontend.supplier.product',$this->data_view);
+    }
+
+    public function product_inquiry($url,Request $request){
+        
     }
 
     public function profile(){
 
-        return view('frontend.profile.index');
+        return view('frontend.profile.index',$this->data_view);
     }
 
     protected function validator(array $data)

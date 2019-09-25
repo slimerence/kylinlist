@@ -16,11 +16,13 @@ class CreateSourceRequestsTable extends Migration
         Schema::create('source_requests', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('name');
+            $table->text('user_id');
             $table->integer('category_id');
             $table->text('description');
             $table->string('quantity');
             $table->string('unit');
             $table->date('valid_date');
+            $table->text('remark')->nullable();
             $table->timestamps();
         });
     }

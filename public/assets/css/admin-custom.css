@@ -62,9 +62,7 @@
  .form-inline .form-control::-webkit-input-placeholder{
 	color:#a7b4c9;
 }
-.form-inline .nav-search .btn{
-	border:2px solid #6963ff;
-}
+
 .nav-search{
 	padding-right: 15px !important;
 	padding-top:5px !important;
@@ -132,7 +130,6 @@
 		display: none;
 	}
 	.search-show .nav-search{
-		background: linear-gradient(to right, rgb(105, 99, 255), rgba(59, 162, 255));
 		padding: 15px !important;
 		left: 0;
 		top: 0;
@@ -209,7 +206,7 @@
 	}
 	.app-content .page-header .page-title {
 		margin-bottom: 5px !important;
-		line-height: 1.5rem !important;
+		line-height:0.90rem !important;
 	}
 }
 .error-img {
@@ -311,19 +308,14 @@
     border-right: none;
   }
 }
-.masthead .masthead-bg{
-	background: linear-gradient(to right, rgba(59, 162, 255), rgb(105, 99, 255)) !important;
-}
+
 .modal-body .select2-container {
     width: 100% !important;
 }
 .richText .richText-editor{
 	height: 200px !important;
 }
-.navtab-wizard.nav-tabs .nav-link.active, .navtab-wizard.nav-tabs .nav-link:hover {
-    color: #fff;
-    background: #6963ff;
-}
+
 @media (min-width: 576px){
 	.modal-dialog {
 		width:800px;
@@ -334,7 +326,7 @@
 		padding: 38px 0px 0 0px !important;
 	}
 }
-@media (min-width: 568px) and (max-width: 992px){
+@media (min-width: 500px){
 	.app-content .side-app{
 		margin-top: 23px;
 	}
@@ -350,4 +342,8 @@
 	height: auto;
 	vertical-align:middle;
 	margin-top: 5px;
+}
+.app-sidebar-footer {
+    background: linear-gradient(to right, rgba(59, 162, 255, 0.9), rgba(105, 99, 255, 0.8)) !important;
+	color: #fff !important;
 }
