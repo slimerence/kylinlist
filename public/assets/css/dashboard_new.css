@@ -90,8 +90,7 @@
 	* More Style Css
 */
 
-@import url('fonts.css');
-
+@import url("fonts.css");
 @import url("color.css");
 @import url("components.css");
 @import url("loaders.css");
@@ -107,8 +106,8 @@
 	  --gray: #868e96;
 	  --gray-dark: #858d97;
 	  --black: #000000;
-	  --azure: #00d6e6;
-	  --lime: #63e600;
+      --azure: #6EC7DB;
+      --lime: #B1CB29;
 	  --lightpink-red: #ff7088;
 	  --lightgreen: #26eda2;
 	  --blue:#4049ec;
@@ -121,7 +120,7 @@
 	  --green: #00e682;
 	  --teal: #05e6e6;
 	  --cyan:  #17a2b8;
-	  --primary:#6963ff;
+      --primary:#34b4d2;
 	  --secondary: #f6f7fb;
 	  --success: #00e682;
 	  --info: #00d6e6;
@@ -129,6 +128,7 @@
 	  --danger: #ff382b;
 	  --light: #f8f9fa;
 	  --dark: #343a40;
+      --claudey:#FAEC34;
 	  --breakpoint-xs: 0;
 	  --breakpoint-sm: 576px;
 	  --breakpoint-md: 768px;
@@ -242,7 +242,7 @@ a {
 	-webkit-text-decoration-skip: objects;
 }
 a:hover {
-	color: #6963ff;
+	color: #34b4d2;
 	text-decoration: underline;
 }
 a:not([href]):not([tabindex]) {
@@ -376,8 +376,7 @@ template {
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	margin-bottom: 0.66em;
-	font-family: 'Quicksand', sans-serif;
-	font-weight: 500;
+    font-family: 'rajdhanimedium';
 	line-height: 1.1;
 }
 h1, .h1 {
@@ -4674,8 +4673,8 @@ ul {
 	height: 19rem;
 }
 .dropshadow{
-	-webkit-filter: drop-shadow(0 -6px 4px rgba(227, 232, 239));
-    filter: drop-shadow(0 -6px 4px rgba(227, 232, 239));
+	-webkit-filter: drop-shadow(0 -6px 4px rgba(227, 232, 239,1));
+    filter: drop-shadow(0 -6px 4px rgba(227, 232, 239,1));
 }
 /*------ Charts styles ------*/
 
@@ -18288,8 +18287,8 @@ footer .border-top{
 }
 .my-dash.app-sidebar .side-menu__item.active{
    background: #f9faff !important;
-    color: #6963ff !important;
-    border-right: 2px solid #6963ff;
+    color: #34b4d2 !important;
+    border-right: 2px solid #34b4d2;
 }
 
 .my-dash .slide.is-expanded [data-toggle='slide']{
@@ -19710,7 +19709,7 @@ a.typewrite{
 }
 
 *::-ms-backdrop,  .gradient-icon{
-	color:#6963ff;
+	color:#34b4d2;
 	background:none;
 }
 *::-ms-backdrop,  .xzoom{
@@ -19743,7 +19742,7 @@ a.typewrite{
     content: "";
     right: -24px;
     border-top: 16px solid transparent;
-    border-left: 24px solid #6963ff;
+    border-left: 24px solid #34b4d2;
     border-bottom: 16px solid transparent;
     width: 0;
 }

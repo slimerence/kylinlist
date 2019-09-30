@@ -1,13 +1,13 @@
 <!--Sliders Section-->
 <section>
-    <div class="banner-1 cover-image sptb-2 bg-background2" style="background-image:url('images/bg/banner01.jpg');" data-image-src="/images/bg/banner01.jpg">
+    <div class="banner-1 cover-image sptb-2" style="background-image:url('images/bg/banner01.jpg');" data-image-src="/images/bg/banner01.jpg">
             <div class="header-text mb-0">
             <div class="container">
-                <div class="text-center text-white ">
+                <div class="text-center">
                     <h1>
-                        <span class="wrap">Global Business Resources Platform</span>
+                        <span class="wrap" style="color: #000;">Global Business Resources Platform</span>
                     </h1>
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a page.</p>
+                    <p style="color: #000;">It is a long established fact that a reader will be distracted by the readable content of a page.</p>
                 </div>
                 <div class="row">
                     <div class="col-xl-8 col-lg-12 col-md-12 d-block mx-auto">
@@ -34,7 +34,7 @@
                                     </select>
                                 </div>
                                 <div class="col-xl-2 col-lg-3 col-md-12 mb-0">
-                                    <a href="#" class="btn btn-lg btn-block btn-pink">Search</a>
+                                    <a href="#" class="btn btn-lg btn-block btn-danger">Search</a>
                                 </div>
                             </div>
                         </div>

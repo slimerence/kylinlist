@@ -27,7 +27,7 @@
     </ul>
     <ul class="mb-0">
         <li aria-haspopup="true" class="mt-5 d-none d-lg-block ">
-            <span><a class="btn btn-pink" href="{{ url('post-request') }}">Post Free Ad</a></span>
+            <span><a class="btn btn-danger" href="{{ url('post-request') }}">Post Free Ad</a></span>
         </li>
     </ul>
 </nav>

@@ -63,7 +63,7 @@ trait CustomizedAuthenticatesUsers
 
         if ($this->attemptLogin($request)) {
             // 把登录的人的信息保存到session中
-            $this->_saveUserInSession(Auth::user());
+            $this->_saveUserInSession(Auth::user(),'admin');
             return $this->sendLoginResponse($request);
         }
 

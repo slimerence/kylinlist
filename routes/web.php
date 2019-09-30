@@ -76,9 +76,18 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     });
 
 });
+
+Route::get('/user/register', 'Frontend\UserController@register_form');
+Route::post('/user/register', 'Frontend\UserController@register');
+Route::get('/user/login', 'Frontend\UserController@login');
+Route::post('/user/login', 'Frontend\UserController@login_check');
+Route::get('/user/logout', 'Frontend\UserController@logout');
+Route::prefix('user')->middleware('checkuser')->group(function() {
+    Route::get('/dashboard', 'Frontend\UserController@index');
+});
+
 Route::get('/supplier/login', 'Backend\Supplier\AccountController@login')->name('supplier-login');
 Route::post('/supplier/login', 'Backend\Supplier\AccountController@login_check');
-
 Route::prefix('supplier')->middleware('checksupplier')->group(function() {
     Route::get('/home', 'Backend\Supplier\AccountController@index');
     Route::get('/profile', 'Backend\Supplier\AccountController@profile');

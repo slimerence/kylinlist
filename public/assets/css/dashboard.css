@@ -2544,7 +2544,7 @@ select.form-control.select-sm {
 	background-color: #fff;
 	border-color: #4c8aec;
 	outline: 0;
-	box-shadow: 0 0 0 2px rgb(105, 99, 255, 0.25);
+	box-shadow: 0 0 0 2px rgba(105, 99, 255, 0.25);
 }
 .select2-container--default .select2-selection--multiple {
     background-color: white;
@@ -26349,3 +26349,4 @@ h1.animated-text {
 .border-none .content_wrapper{
     border:none!important;
 }
+

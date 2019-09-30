@@ -15,12 +15,13 @@ class Controller extends BaseController
 
     public $data_view = [];
 
-    public function _saveUserInSession(User $user){
+    public function _saveUserInSession(User $user,$type = null){
        Session::put('user_data',[
            'id'=>$user->id,
            'name'=>$user->name,
            'email'=>$user->email,
            'group'=>$user->group_id,
+           'type'=>$type,
        ]);
     }
 }

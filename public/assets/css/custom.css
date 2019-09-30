@@ -1,0 +1,84 @@
+.nav-sidebar li ul li:last-child{
+    border-bottom:0;
+}
+.tag-left{
+    line-height: 2em;
+    padding-right: 0.5em;
+
+
+}
+
+/*-- Search--*/
+
+/*-- Post Request --*/
+.pr-list-item {
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 20px;
+    background-color: #efeeee;
+    margin-right: 10em;
+}
+
+.pr-list{
+
+}
+
+.section-title{
+    padding-top:2rem;
+    width:100%;
+    text-align:center;
+}
+
+.pr-list-right{
+    margin-left: 5em;
+}
+.pr-list-item i{
+    margin-right: 1em;
+}
+
+.btn-outline-danger {
+    color: #605e7e;
+    background-color: transparent;
+    background-image: none;
+    border-color: #ff382b;
+}
+.fa-arrow-circle-right:before {
+
+    font-size: 32px;
+    color: #ff382b;
+}
+
+.feature .feature-icon{
+
+}
+
+.black{
+    color:#000;
+}
+
+.supplier-card .card-body{
+    padding: 0.8rem 1.5rem;
+}
+.supplier-card .card-footer{
+    padding: 0.8rem 1.5rem;
+}
+
+.supplier-card .card-body ul{
+    margin-bottom: 0;
+}
+
+.line-height-15{
+    line-height: 1.5em!important;
+}
+
+.border-none{
+    border:none;
+}
+.border-none .content_wrapper{
+    border:none!important;
+}
+
+.item-card  .item-card-desc img{
+    height: 18em;
+}

@@ -33,7 +33,7 @@ class AccountController extends Controller
 
         if($user && Hash::check($request->get('password'), $user->password)){
 
-            $this->_saveUserInSession($user);
+            $this->_saveUserInSession($user,'supplier');
 
             return redirect('/supplier/home');
         }else{

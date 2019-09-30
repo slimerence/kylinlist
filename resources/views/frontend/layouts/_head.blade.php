@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Dashboard Css -->
-    <link href="/assets/css/dashboard.css" rel="stylesheet" />
+    <link href="/assets/css/dashboard_new.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" rel="stylesheet" />
 
     <!-- Font-awesome  Css -->
     <link rel="stylesheet" href="/assets/fonts/fonts/font-awesome.min.css">
@@ -45,8 +46,10 @@
     <!-- Owl Theme css-->
     <link href="/assets/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" />
 
+    @if(isset($sideBar))
     <!-- Sidemenu Css -->
     <link href="/assets/plugins/toggle-sidebar/sidemenu2.css" rel="stylesheet" />
+    @endif
 
     <!-- Tabs Style -->
     <link href="/assets/plugins/tabs/style.css" rel="stylesheet" />

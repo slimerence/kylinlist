@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Model\Suppliers\Supplier;
+use App\Model\UserProfile;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -42,7 +43,13 @@ class User extends Authenticatable
         return $this->hasOne(Supplier::class);
     }
 
+    public function profile(){
+        return $this->hasOne(UserProfile::class);
+    }
+
     public function createRelatedSupplier(){
         return Supplier::create(['name'=>$this->name,'user_id'=>$this->id]);
     }
+
+
 }
