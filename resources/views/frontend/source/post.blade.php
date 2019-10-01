@@ -8,105 +8,78 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-12 col-md-12">
-                    <div class="card mb-lg-0">
-                        <div class="card-header ">
-                            <h3 class="card-title">Tell us what you want to buy</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label class="form-label text-dark">Product Name <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" placeholder="">
+                    <form id="app" method="post"  action="{{ url('post-request') }}" enctype="multipart/form-data">
+                        @csrf
+                        <div class="card mb-lg-0">
+                            <div class="card-header ">
+                                <h3 class="card-title">Tell us what you want to buy</h3>
                             </div>
-                            <div class="form-group">
-                                <label class="form-label text-dark">Category</label>
-                                <select class="form-control custom-select">
-                                    <option value="0">Select Option</option>
-                                    <option value="1">RealEstate</option>
-                                    <option value="2">Restaurant</option>
-                                    <option value="3">Health & Fitness</option>
-                                    <option value="4">Travel</option>
-                                    <option value="5">Computer</option>
-                                    <option value="6">Electronics</option>
-                                    <option value="7">Jobs</option>
-                                    <option value="8">Beauty & Spa</option>
-                                    <option value="9">Clothing</option>
-                                    <option value="10">Home & Furinture</option>
-                                    <option value="11">Vechicles</option>
-                                    <option value="12">Education</option>
-                                    <option value="13">Services</option>
-                                    <option value="14">Events</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label text-dark">Product Description</label>
-                                <textarea class="form-control" name="example-textarea-input" rows="6" placeholder="text here.."></textarea>
-                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label class="form-label text-dark">Product Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" placeholder="" name="source[name]">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label text-dark">Category</label>
+                                    <select class="form-control custom-select" name="source[category_id]">
+                                        @foreach($roots as $key=>$root)
+                                            <option value="{{ $root->id }}">{{ $root->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label text-dark">Product Description</label>
+                                    <textarea class="form-control" name="example-textarea-input" rows="6" placeholder="text here.."></textarea>
+                                </div>
 
-                            <div class="form-group">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="example-file-input-custom">
-                                    <label class="custom-file-label">Upload Images</label>
+                                <div class="form-group">
+                                    <el-upload
+                                        class="upload-demo"
+                                        action="{{ url('api/sourcing-request/attachment') }}"
+                                        :on-preview="handlePreview"
+                                        :on-remove="handleRemove"
+                                        :on-success="handleSuccess"
+                                        :before-remove="beforeRemove"
+                                        multiple
+                                        :limit="3"
+                                        :on-exceed="handleExceed"
+                                        :file-list="fileList">
+                                        <el-button size="small" type="primary">Upload Attachment Files</el-button>
+                                        <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+                                    </el-upload>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Name</label>
+                                            <input type="text" class="form-control" placeholder="Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Email</label>
+                                            <input type="email" class="form-control" placeholder="Email Address">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="form-group mb-0">
+                                            <label class="form-label">Phone Number</label>
+                                            <input type="number" class="form-control" placeholder="Number">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="form-group mb-0">
+                                            <label class="form-label">Address</label>
+                                            <input type="text" class="form-control" placeholder="Address">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="p-2 border mb-4">
-                                <div class="upload-images d-flex">
-                                    <div>
-                                        <img src="../assets/images/products/h1.jpg" alt="img" class="w73 h73 border p-0">
-                                    </div>
-                                    <div class="ml-3 mt-2">
-                                        <h6 class="mb-0 mt-3 font-weight-bold">h1.jpg</h6>
-                                        <small>4.5kb</small>
-                                    </div>
-                                    <div class="float-right ml-auto">
-                                        <a href="#" class="float-right btn btn-icon btn-danger btn-sm mt-5" ><i class="fa fa-trash-o"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="p-2 border mb-4">
-                                <div class="upload-images d-flex">
-                                    <div>
-                                        <img src="../assets/images/products/h5.jpg" alt="img" class="w73 h73 border p-0">
-                                    </div>
-                                    <div class="ml-3 mt-2">
-                                        <h6 class="mb-0 mt-3 font-weight-bold">h5.jpg</h6>
-                                        <small>4.5kb</small>
-                                    </div>
-                                    <div class="float-right ml-auto">
-                                        <a href="#" class="float-right btn btn-icon btn-danger btn-sm mt-5" ><i class="fa fa-trash-o "></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6 col-md-6">
-                                    <div class="form-group">
-                                        <label class="form-label">Name</label>
-                                        <input type="text" class="form-control" placeholder="Name">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-6">
-                                    <div class="form-group">
-                                        <label class="form-label">Email</label>
-                                        <input type="email" class="form-control" placeholder="Email Address">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-6">
-                                    <div class="form-group mb-0">
-                                        <label class="form-label">Phone Number</label>
-                                        <input type="number" class="form-control" placeholder="Number">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-6">
-                                    <div class="form-group mb-0">
-                                        <label class="form-label">Address</label>
-                                        <input type="text" class="form-control" placeholder="Address">
-                                    </div>
-                                </div>
+                            <div class="card-footer ">
+                                <button type="submit" class="btn btn-primary">Submit Now</button>
                             </div>
                         </div>
-                        <div class="card-footer ">
-                            <a href="#" class="btn btn-success">Submit Now</a>
-                        </div>
-                    </div>
+                    </form>
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <div class="card">
@@ -212,4 +185,39 @@
     <!--/Add posts-section-->
 
     @include('frontend.sections.news_letter')
+@endsection
+@section('js')
+    <script>
+        new Vue({
+            el:'#app',
+            data() {
+                return {
+                    fileList: [
+                        {name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'},
+                        {name: 'food2.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}]
+                };
+            },
+            methods: {
+                handleRemove(file, fileList) {
+                    console.log(file, fileList);
+                },
+                handlePreview(file) {
+                    console.log(file);
+                },
+                handleExceed(files, fileList) {
+                    this.$message.warning(`当前限制选择 3 个文件，本次选择了 ${files.length} 个文件，共选择了 ${files.length + fileList.length} 个文件`);
+                },
+                beforeRemove(file, fileList) {
+                    return this.$confirm(`确定移除 ${ file.name }？`);
+                },
+                handleSuccess: function(res, file, fileList){
+                    //console.log(res.error_no);
+                    if(res.error_no === 100){
+                        this.fileList.push(file);
+                    }
+                }
+
+            }
+        })
+    </script>
 @endsection

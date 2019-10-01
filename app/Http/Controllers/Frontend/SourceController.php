@@ -10,6 +10,7 @@ class SourceController extends Controller
 {
     public function index(){
         $this->data_view['roots'] = Category::where('level',1)->orderby('position','asc')->get();
+        $this->data_view['vuejs'] = true;
         return view('frontend.source.post',$this->data_view);
     }
 

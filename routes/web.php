@@ -18,12 +18,9 @@ Route::get('/contact', 'Frontend\PageController@contact');
 Route::get('/pricing', 'Frontend\PageController@pricing');
 Route::get('/support-faq', 'Frontend\PageController@faq');
 
-
-
 Route::get('/category-list', 'Frontend\SupplierController@category_list');
 Route::get('/categories', 'Frontend\SupplierController@category');
 Route::get('/categories/{url}', 'Frontend\SupplierController@category_view');
-
 
 Route::get('/supplier', 'Frontend\SupplierController@supplier');
 Route::get('/product/{url}', 'Frontend\SupplierController@product');
@@ -72,11 +69,11 @@ Route::prefix('admin')->middleware('auth')->group(function() {
         Route::get('/edit/{id}', 'Backend\BlogController@edit');
         Route::get('/delete/{id}', 'Backend\BlogController@delete');
         Route::post('/save', 'Backend\BlogController@save');
-
     });
 
 });
 
+//用于管理Buyer的路由
 Route::get('/user/register', 'Frontend\UserController@register_form');
 Route::post('/user/register', 'Frontend\UserController@register');
 Route::get('/user/login', 'Frontend\UserController@login');
@@ -86,6 +83,8 @@ Route::prefix('user')->middleware('checkuser')->group(function() {
     Route::get('/dashboard', 'Frontend\UserController@index');
 });
 
+
+//用于管理Supplier的路由
 Route::get('/supplier/login', 'Backend\Supplier\AccountController@login')->name('supplier-login');
 Route::post('/supplier/login', 'Backend\Supplier\AccountController@login_check');
 Route::prefix('supplier')->middleware('checksupplier')->group(function() {
@@ -96,17 +95,12 @@ Route::prefix('supplier')->middleware('checksupplier')->group(function() {
     Route::get('/product/list', 'Backend\Supplier\ProductController@list');
     Route::get('/product/view/{id}', 'Backend\Supplier\ProductController@view');
     Route::get('/product/create', 'Backend\Supplier\ProductController@create');
-
     Route::post('/product/update', 'Backend\Supplier\ProductController@update');
 
 });
-
 Auth::routes();
 Route::get('/admin/login', 'Backend\Home@login')->name('admin-login');
 Route::get('/api/subcategory/{id}','Backend\CategoryController@subcate');
-
-
-
 
 Route::get('/{url}', 'Frontend\SupplierController@category_view');
 Route::get('/{url}/supplier/{uri}', 'Frontend\SupplierController@supplier_view');

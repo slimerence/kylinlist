@@ -88,65 +88,14 @@ class Medias extends Controller
      * @return array
      */
     public function upload_ajax(Request $request){
-        // 提交的信息 Content-Disposition: form-data; name="image"; filename="9.jpeg"
-        $path = '';
-        $storagePath = _buildUploadFolderPath();
         // 获取上传的内容是针对哪类应用的，比如产品，目录，gallery等
         $mediaFor = $request->has('for') ? $request->get('for') : MediaTool::$FOR_GENERAL;
-        if($request->hasFile('file')){
-            $uploaded = $request->file('file');
-            if(is_array($uploaded)){
-                $result = [];
-                foreach ($uploaded as $key=>$file) {
-                    $path = $file->store($storagePath,'public');
-                    $result['file-'.$key] = [
-                        'id'=>str_random(16),
-                        'url'=>_buildFrontendAssertPath($path)
-                    ];
-                    if(!empty($path)){
-                        // 保存到数据库中
-                        Media::Persistent(
-                            0,
-                            MediaTool::$TYPE_IMAGE,
-                            _buildFrontendAssertPath($path),
-                            $file->getClientOriginalName(),
-                            $mediaFor
-                        );
-                    }
-                }
-                return $result;
-            }else{
-                if($uploaded){
-                    $path = $uploaded->store($storagePath,'public');
-                    // 保存到数据库中
-                    Media::Persistent(
-                        0,
-                        MediaTool::$TYPE_IMAGE,
-                        _buildFrontendAssertPath($path),
-                        $uploaded->getClientOriginalName(),
-                        $mediaFor
-                    );
-                }
 
-            }
-        }
-        elseif ($request->hasFile('image')){
-            $uploaded = $request->file('image');
-            if($uploaded){
-                $path = $uploaded->store($storagePath,'public');
-                // 保存到数据库中
-                Media::Persistent(
-                    0,
-                    MediaTool::$TYPE_IMAGE,
-                    _buildFrontendAssertPath($path),
-                    $uploaded->getClientOriginalName(),
-                    $mediaFor
-                );
-            }
-        }
+        $media =$this->_handleUploadedFiles($request,$mediaFor,0);
+        $path = $media->url;
         return [
             'id'=>str_random(16),
-            'url'=>_buildFrontendAssertPath($path)
+            'url'=>$path
         ];
     }
 
@@ -252,8 +201,6 @@ class Medias extends Controller
      * @return string
      */
     public function upload_profile_image(Request $request,$id){
-        $path = '';
-        $storagePath = _buildUploadFolderPath();
         // 获取上传的内容是针对哪类应用的，比如产品，目录，gallery等
         $mediaFor = $request->has('for') ? $request->get('for') : MediaTool::$FOR_SUPPLIER_PROFILE;
         $media = Media::where('for',MediaTool::$FOR_SUPPLIER_PROFILE)->where('target_id',$id)->first();
@@ -263,6 +210,40 @@ class Medias extends Controller
             };
             $media->delete();
         }
+        $media = $this->_handleUploadedFiles($request,$mediaFor,$id);
+        $path = $media->url;
+        return $path;
+    }
+
+    public function upload_product_image(Request $request){
+        $mediaFor = $request->has('for') ? $request->get('for') : MediaTool::$FOR_SUPPLIER_PRODUCT;
+        $medias = Media::where('for', MediaTool::$FOR_SUPPLIER_PRODUCT)->where('target_id', 0)->get();
+        if ($medias && count($medias) > 0) {
+            foreach ($medias as $media) {
+                if (file_exists(public_path() . $media->url)) {
+                    unlink(public_path() . $media->url);
+                };
+                $media->delete();
+            }
+        }
+        $media = $this->_handleUploadedFiles($request,$mediaFor,0);
+        $path = $media->url;
+        return [
+            'id'=>str_random(16),
+            'url'=>$path
+        ];
+    }
+
+    public function source_attachments(Request $request){
+        $mediaFor = $request->has('for') ? $request->get('for') : MediaTool::$FOR_SOURCING_REQUEST;
+        $media = $this->_handleUploadedFiles($request,$mediaFor);
+        $path = $media->url;
+    }
+
+    public function _handleUploadedFiles(Request $request,$type,$target_id = 0){
+        $path = '';
+        $storagePath = _buildUploadFolderPath();
+        $media = null;
         if($request->hasFile('file')){
             $uploaded = $request->file('file');
             if(is_array($uploaded)){
@@ -276,91 +257,42 @@ class Medias extends Controller
                     ];
                     if(!empty($path)){
                         // 保存到数据库中
-                        Media::Persistent(
-                            $id,
+                        $media = Media::Persistent($target_id,
                             MediaTool::GuessFileTypeByExtensionName($file->extension()),
                             _buildFrontendAssertPath($path),
                             $file->getClientOriginalName(),
-                            $mediaFor
+                            $type
                         );
                     }
                 }
-                return _buildFrontendAssertPath($path);
             }else{
                 if($uploaded){
                     $name = str_replace(" ", "_", $uploaded->getClientOriginalName());
                     $path = $uploaded->storeAs($storagePath,$name,'public');
                     // 保存到数据库中
-                    Media::Persistent(
-                        $id,
+                    $media = Media::Persistent(
+                        $target_id,
                         MediaTool::GuessFileTypeByExtensionName($uploaded->extension()),
                         _buildFrontendAssertPath($path),
                         $uploaded->getClientOriginalName(),
-                        $mediaFor
-                    );
-                }
-                return _buildFrontendAssertPath($path);
-            }
-        }
-
-    }
-
-    public function upload_product_image(Request $request)
-    {
-        $path = '';
-        $storagePath = _buildUploadFolderPath();
-        $mediaFor = $request->has('for') ? $request->get('for') : MediaTool::$FOR_SUPPLIER_PRODUCT;
-
-        $medias = Media::where('for', MediaTool::$FOR_SUPPLIER_PRODUCT)->where('target_id', 0)->get();
-        if ($medias && count($medias) > 0) {
-            foreach ($medias as $media) {
-                if (file_exists(public_path() . $media->url)) {
-                    unlink(public_path() . $media->url);
-                };
-                $media->delete();
-            }
-        }
-        if ($request->hasFile('file')) {
-            $uploaded = $request->file('file');
-            if (is_array($uploaded)) {
-                $result = [];
-                foreach ($uploaded as $key => $file) {
-                    $name = str_replace(" ", "_", $file->getClientOriginalName());
-                    $path = $file->storeAs($storagePath, $name, 'public');
-                    $result['file-' . $key] = [
-                        'id' => str_random(16),
-                        'url' => _buildFrontendAssertPath($path)
-                    ];
-                    if (!empty($path)) {
-                        // 保存到数据库中
-                        Media::Persistent(
-                            0,
-                            MediaTool::GuessFileTypeByExtensionName($file->extension()),
-                            _buildFrontendAssertPath($path),
-                            $file->getClientOriginalName(),
-                            $mediaFor
-                        );
-                    }
-                }
-                return $result;
-            } else {
-                if ($uploaded) {
-                    $name = str_replace(" ", "_", $uploaded->getClientOriginalName());
-                    $path = $uploaded->storeAs($storagePath, $name, 'public');
-                    // 保存到数据库中
-                    Media::Persistent(
-                        0,
-                        MediaTool::GuessFileTypeByExtensionName($uploaded->extension()),
-                        _buildFrontendAssertPath($path),
-                        $uploaded->getClientOriginalName(),
-                        $mediaFor
+                        $type
                     );
                 }
             }
+        } elseif ($request->hasFile('image')){
+            $uploaded = $request->file('image');
+            if($uploaded){
+                $path = $uploaded->store($storagePath,'public');
+                // 保存到数据库中
+                $media = Media::Persistent(
+                    $target_id,
+                    MediaTool::$TYPE_IMAGE,
+                    _buildFrontendAssertPath($path),
+                    $uploaded->getClientOriginalName(),
+                    $type
+                );
+            }
         }
-        return [
-            'id'=>str_random(16),
-            'url'=>_buildFrontendAssertPath($path)
-        ];
+        return $media;
     }
 }

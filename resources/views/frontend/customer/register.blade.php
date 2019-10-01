@@ -44,16 +44,17 @@
                                     <form method="post" action="{{ url('user/register') }}">
                                         @csrf
                                         <div class="form-group">
-                                            <label class="form-label text-dark" for="buyerName">Name</label>
-                                            <input type="text" class="form-control" name="user[name]" id="buyerName" placeholder="Enter name" required>
-                                        </div>
-                                        <div class="form-group">
                                             <label for="buyerEmail" class="form-label text-dark">Email address</label>
                                             <input type="email" class="form-control" name="user[email]" id="buyerEmail" placeholder="Enter email" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="buyerPassword1" class="form-label text-dark">Password</label>
                                             <input type="password" class="form-control" name="user[password]" id="buyerPassword1" placeholder="Password" required>
+                                        </div>
+                                        <hr class="divider">
+                                        <div class="form-group">
+                                            <label class="form-label text-dark" for="buyerName">Name</label>
+                                            <input type="text" class="form-control" name="user[name]" id="buyerName" placeholder="Enter name" required>
                                         </div>
                                         <div class="form-group">
                                             <label class="custom-control custom-checkbox">

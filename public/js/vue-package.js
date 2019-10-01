@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -72981,10 +72981,10 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./resources/js/backend.js":
-/*!*********************************!*\
-  !*** ./resources/js/backend.js ***!
-  \*********************************/
+/***/ "./resources/js/vue-package.js":
+/*!*************************************!*\
+  !*** ./resources/js/vue-package.js ***!
+  \*************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -73011,14 +73011,14 @@ window.Vue = vue__WEBPACK_IMPORTED_MODULE_0___default.a;
 
 /***/ }),
 
-/***/ 3:
-/*!***************************************!*\
-  !*** multi ./resources/js/backend.js ***!
-  \***************************************/
+/***/ 2:
+/*!*******************************************!*\
+  !*** multi ./resources/js/vue-package.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! E:\Claude\PHP\Laravel\kylinlist\resources\js\backend.js */"./resources/js/backend.js");
+module.exports = __webpack_require__(/*! E:\Claude\PHP\Laravel\kylinlist\resources\js\vue-package.js */"./resources/js/vue-package.js");
 
 
 /***/ })

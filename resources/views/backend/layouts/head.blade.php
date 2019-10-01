@@ -54,5 +54,4 @@
     <!---Font icons-->
     <link href="/assets/plugins/iconfonts/plugin.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-
 </head>

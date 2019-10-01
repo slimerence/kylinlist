@@ -54,12 +54,14 @@
     <!-- Tabs Style -->
     <link href="/assets/plugins/tabs/style.css" rel="stylesheet" />
 
-
     <!-- Custom scroll bar css-->
     <link href="/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css" rel="stylesheet" />
 
     <!--Font icons-->
     <link href="/assets/plugins/iconfonts/plugin.css" rel="stylesheet">
     <link href="/assets/plugins/iconfonts/icons.css" rel="stylesheet">
+    @if(isset($vuejs))
+        <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    @endif
 
 </head>

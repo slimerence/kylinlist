@@ -31,7 +31,7 @@ class MediaTool
     public static $FOR_SUPPLIER_PROFILE  = 7;
     public static $FOR_SUPPLIER_PRODUCT  = 8;
     public static $FOR_BLOG_MAIN = 9;
-
+    public static $FOR_SOURCING_REQUEST = 10;
 
 
     /**

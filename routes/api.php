@@ -44,3 +44,4 @@ Route::prefix('files')->group(function(){
 });
 
 Route::get('upload-files','Api\Webservice@getUploadFiles');
+Route::post('sourcing-request/attachment','Api\Medias@source_attachments');
