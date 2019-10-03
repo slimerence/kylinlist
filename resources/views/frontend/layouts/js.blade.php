@@ -58,6 +58,12 @@
 <script src="/assets/plugins/cookie/jquery.ihavecookies.js"></script>
 <script src="/assets/plugins/cookie/cookie.js"></script>
 
+@if(isset($data_table))
+    <script src="/assets/plugins/datatable/jquery.dataTables.min.js"></script>
+    <script src="/assets/plugins/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="/assets/plugins/datatable/datatable.js"></script>
+@endif
+
 @if(isset($zoomjs))
     <!--Zoom js -->
     <script src="/assets/plugins/ecomerce/jquery.exzoom.js"></script>

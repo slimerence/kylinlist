@@ -17,19 +17,19 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label class="form-label text-dark">Product Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" placeholder="" name="source[name]">
+                                    <input type="text" class="form-control" placeholder="" name="source[name]" required value="{{ session('source.name') }}">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label text-dark">Category</label>
-                                    <select class="form-control custom-select" name="source[category_id]">
+                                    <select class="form-control custom-select" name="source[category_id]" required>
                                         @foreach($roots as $key=>$root)
-                                            <option value="{{ $root->id }}">{{ $root->name }}</option>
+                                            <option {{ session('source.category_id') == $root->id ? 'selected':'' }} value="{{ $root->id }}">{{ $root->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label text-dark">Product Description</label>
-                                    <textarea class="form-control" name="example-textarea-input" rows="6" placeholder="text here.."></textarea>
+                                    <textarea name="source[description]" class="form-control" rows="6" placeholder="text here.." required>{{ session('source.description') }}</textarea>
                                 </div>
 
                                 <div class="form-group">
@@ -48,29 +48,24 @@
                                         <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
                                     </el-upload>
                                 </div>
+                                <input type="hidden" name="attachment" v-model="attachments">
                                 <div class="row">
                                     <div class="col-sm-6 col-md-6">
                                         <div class="form-group">
-                                            <label class="form-label">Name</label>
-                                            <input type="text" class="form-control" placeholder="Name">
+                                            <label class="form-label">Request Quantity</label>
+                                            <input type="text" class="form-control"  placeholder="quantity" name="source[quantity]" value="{{ session('source.quantity') }}" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 col-md-6">
                                         <div class="form-group">
-                                            <label class="form-label">Email</label>
-                                            <input type="email" class="form-control" placeholder="Email Address">
+                                            <label class="form-label">&nbsp;</label>
+                                            <input type="text" class="form-control" placeholder="unit:piece, pair, ton, etc." name="source[unit]" required value="{{ session('source.unit') }}">
                                         </div>
                                     </div>
                                     <div class="col-sm-6 col-md-6">
                                         <div class="form-group mb-0">
-                                            <label class="form-label">Phone Number</label>
-                                            <input type="number" class="form-control" placeholder="Number">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-6">
-                                        <div class="form-group mb-0">
-                                            <label class="form-label">Address</label>
-                                            <input type="text" class="form-control" placeholder="Address">
+                                            <label class="form-label">Valid Date</label>
+                                            <input type="date" class="form-control" name="source[valid_date]" required value="{{ session('source.valid_date') }}">
                                         </div>
                                     </div>
                                 </div>
@@ -173,7 +168,7 @@
                                     <i class="fa fa-check text-success" aria-hidden="true"></i> Pay only after collecting item
                                 </li>
                                 <li class="ml-5 mb-0">
-                                    <a href="tips.html"> View more..</a>
+                                    <a href="" id="test" v-on:click="test"> View more..</a>
                                 </li>
                             </ul>
                         </div>
@@ -192,10 +187,14 @@
             el:'#app',
             data() {
                 return {
-                    fileList: [
-                        {name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'},
-                        {name: 'food2.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}]
+                    fileList: [],
+                    attachments:[],
+                    files: [{!! session('attachment') !!}],
                 };
+            },
+            created: function(){
+                console.log(this.files);
+                this._loadUserAttachments();
             },
             methods: {
                 handleRemove(file, fileList) {
@@ -212,10 +211,30 @@
                 },
                 handleSuccess: function(res, file, fileList){
                     //console.log(res.error_no);
+                    console.log(res);
                     if(res.error_no === 100){
                         this.fileList.push(file);
+                        this.attachments.push(res.data.id);
                     }
-                }
+                },
+                // 获取所有提交过的文档的记录, 然后分别初始化
+                _loadUserAttachments: function(){
+                    // 如果没登录, 那么不需要去获取
+                    axios.post(
+                        '/api/sourcing-request/load',
+                        {lists:this.files}
+                    ).then(res=>{
+                        if(res.data.error_no === 100){
+                            this.fileList = res.data.data;
+                            let medias = [];
+                            this.fileList.forEach(function (media) {
+                                medias.push(media.id);
+                                console.log(medias);
+                            });
+                            this.attachments = medias;
+                        }
+                    });
+                },
 
             }
         })

@@ -34,7 +34,9 @@ Route::post('/supplier/register', 'Frontend\SupplierController@register');
 
 
 Route::get('/post-request', 'Frontend\SourceController@index');
+Route::post('/post-request', 'Frontend\SourceController@post');
 Route::get('/source-list', 'Frontend\SourceController@list');
+Route::get('/source-request/detail/{id}', 'Frontend\SourceController@detail');
 
 Route::get('/industry', 'Frontend\PageController@blog_list');
 Route::get('/industry/{uri}', 'Frontend\PageController@blog_list_spec');

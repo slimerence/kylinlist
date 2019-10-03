@@ -22,7 +22,7 @@ class CreateSourceRequestsTable extends Migration
             $table->string('quantity');
             $table->string('unit');
             $table->date('valid_date');
-            $table->text('remark')->nullable();
+            $table->integer('remark')->default(0);
             $table->timestamps();
         });
     }

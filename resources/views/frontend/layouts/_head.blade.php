@@ -2,6 +2,7 @@
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="msapplication-TileColor" content="#0f75ff">
     <meta name="theme-color" content="#2ddcd3">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
@@ -30,6 +31,12 @@
     <link href="/assets/plugins/Horizontal2/Horizontal-menu/dropdown-effects/fade-down.css" rel="stylesheet" />
     <link href="/assets/plugins/Horizontal2/Horizontal-menu/horizontal.css" rel="stylesheet" />
     <link href="/assets/plugins/Horizontal2/Horizontal-menu/color-skins/color.css" rel="stylesheet" />
+
+    @if(isset($data_table))
+    <!-- Data table css -->
+    <link href="/assets/plugins/datatable/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="/assets/plugins/datatable/jquery.dataTables.min.css" rel="stylesheet" />
+    @endif
 
     <!--Select2 Plugin -->
     <link href="/assets/plugins/select2/select2.min.css" rel="stylesheet" />

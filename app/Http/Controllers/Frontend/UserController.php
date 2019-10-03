@@ -9,6 +9,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -73,6 +74,10 @@ class UserController extends Controller
         }else{
             if($user && Hash::check($request->get('password'), $user->password)){
                 $this->_saveUserInSession($user,'buyer');
+                //如果检查到Session里有临时的Source Request信息 转回post页面重新提交
+                if(Session::get('source')){
+                    return redirect('/post-request');
+                }
                 return redirect('/user/dashboard');
             }else{
                 $errors = ['password' => 'Your password is not correct!'];
@@ -104,7 +109,7 @@ class UserController extends Controller
 
     public function logout(Request $request){
         $request->session()->forget('user_data');
-        return redirect('/');
+        return back();
     }
 
 

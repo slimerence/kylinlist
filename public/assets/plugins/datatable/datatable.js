@@ -1,6 +1,6 @@
 $(function(e) {
-	$('#example').DataTable();
+	$('.data-table').DataTable();
 } );
 $(document).ready(function() {
-	$('#example2').DataTable();
+	$('.data-table').DataTable();
 } );

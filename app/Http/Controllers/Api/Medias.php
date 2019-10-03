@@ -237,7 +237,25 @@ class Medias extends Controller
     public function source_attachments(Request $request){
         $mediaFor = $request->has('for') ? $request->get('for') : MediaTool::$FOR_SOURCING_REQUEST;
         $media = $this->_handleUploadedFiles($request,$mediaFor);
-        $path = $media->url;
+        if($media){
+            $path = $media->url;
+            $data = ['id'=>$media->id,'p'=>$path];
+            return JsonBuilder::Success($data);
+        }
+        return JsonBuilder::Error();
+    }
+
+    public function load_source_attachments(Request $request){
+        $lists = $request->get('lists');
+        $files = [];
+        foreach ( $lists as $key=>$list){
+            $media = Media::find($list);
+            if($media){
+                $media->name = $media->alt;
+                $files[] = $media;
+            }
+        }
+        return JsonBuilder::Success($files);
     }
 
     public function _handleUploadedFiles(Request $request,$type,$target_id = 0){
