@@ -36,6 +36,7 @@ class SupplierController extends Controller
         $this->data_view['category'] = $category;
         if($category){
             $this->data_view['suppliers'] = Category::getVerifiedSuppliers($category)->paginate(9);
+            $this->data_view['seo'] = $category->getSeo();
             return view('frontend.supplier.supplier_list',$this->data_view);
         }else{
             return redirect('/category-list');

@@ -14,8 +14,13 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/branding/fav.png') }}" />
 
     <!-- Title -->
-    <title>Kylinlist</title>
-
+    @if(isset($seo)&& $seo!==null)
+        <title>{{ $seo->title == ''? 'Kylinlist':$seo->title }}</title>
+        <meta name="description" content="{{ $seo->description==''?'':$seo->description }}"/>
+        <meta name="keywords" content="{{ $seo->keywords==''? '': $seo->keywords}}">
+    @else
+        <title>Kylinlist</title>
+    @endif
     <!-- Bootstrap Css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 

@@ -25,7 +25,8 @@ class SourceController extends Controller
     }
 
     public function detail($id){
-
+        $this->data_view['source'] = SourceRequest::find($id);
+        return view('frontend.source.detail',$this->data_view);
     }
 
     public function post(Request $request){
