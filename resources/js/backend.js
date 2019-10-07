@@ -8,5 +8,9 @@ import locale from 'element-ui/lib/locale/lang/en';
 Vue.use(ElementUI,{ locale });
 window.Vue = Vue;
 
+$(document).ready(function() {
+    $('textarea').summernote();
+});
+
 
 

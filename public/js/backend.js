@@ -73008,6 +73008,9 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(element_ui__WEBPACK_IMPORTED_MODU
   locale: element_ui_lib_locale_lang_en__WEBPACK_IMPORTED_MODULE_3___default.a
 });
 window.Vue = vue__WEBPACK_IMPORTED_MODULE_0___default.a;
+$(document).ready(function () {
+  $('textarea').summernote();
+});
 
 /***/ }),
 
