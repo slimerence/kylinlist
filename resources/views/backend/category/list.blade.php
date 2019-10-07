@@ -30,6 +30,7 @@
                                         <th>Level</th>
                                         <th>Url</th>
                                         <th>Position</th>
+                                        <th>SEO</th>
                                         <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
@@ -38,10 +39,20 @@
                                     @foreach($roots as $key=>$root)
                                     <tr>
                                         <td>{{ $key+1 }}</td>
-                                        <td>{{ $root->name }}</td>
+                                        <td><a href="{{ url($root->url) }}" target="_blank">{{ $root->name }}</a></td>
                                         <td>{{ $root->level }}</td>
                                         <td>{{ $root->url }}</td>
                                         <td>{{ $root->position }}</td>
+                                        <td>
+                                            @php
+                                                $seo = $root->getSeo();
+                                            @endphp
+                                            @if($seo && $seo->title!='')
+                                                <span class="tag tag-success">Active</span>
+                                            @else
+                                                <span class="tag tag-red">Inactive</span>
+                                            @endif
+                                        </td>
                                         <td>
                                             @if($root->status)
                                                 <span class="tag tag-primary">Active</span>
@@ -66,6 +77,16 @@
                                                 <td>{{ $child->level }}</td>
                                                 <td>{{ $child->url }}</td>
                                                 <td>{{ $child->position }}</td>
+                                                <td>
+                                                    @php
+                                                        $seo = $child->getSeo();
+                                                    @endphp
+                                                    @if($seo && $seo->title!='')
+                                                        <span class="tag tag-success">Active</span>
+                                                    @else
+                                                        <span class="tag tag-red">Inactive</span>
+                                                    @endif
+                                                </td>
                                                 <td>
                                                     @if($child->status)
                                                         <span class="tag tag-primary">Active</span>
