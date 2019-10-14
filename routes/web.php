@@ -54,6 +54,15 @@ Route::prefix('admin')->middleware('auth')->group(function() {
         Route::post('/profile', 'Backend\SupplierController@profile_update');
         Route::get('/product/view/{id}', 'Backend\SupplierController@product_view');
         Route::post('/product/update', 'Backend\SupplierController@product_update');
+        Route::get('/delete/{id}', 'Backend\SupplierController@delete');
+
+    });
+
+    Route::prefix('source')->group(function(){
+        Route::get('/', 'Backend\SourceController@list');
+        Route::get('/toggle/{id}', 'Backend\SourceController@toggleStatus');
+        Route::get('/delete/{id}', 'Backend\SourceController@delete');
+
     });
 
 

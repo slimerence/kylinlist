@@ -11,7 +11,7 @@
                         <div class="card-body">
                              <div id="profile-log-switch">
                         <div class="media-heading">
-                            <h3><strong>{{ $source->name }}</strong></h3>
+                            <h3><strong>Product Name: </strong>{{ $source->name }}</h3>
                         </div>
                         <div class="table-responsive ">
                             <table class="table row table-borderless">
@@ -54,6 +54,23 @@
                                         <div class="col-md-12 text-justify">
                                             {!! $source->description !!}
                                         </div>
+                                        @php
+                                            $attachments = $source->attachments()->get();
+                                        @endphp
+                                        @if($attachments && $attachments!=null)
+                                        <hr>
+                                        <div class="col-12">
+                                            <h4>Attachment Files</h4>
+                                            <ul class="list-group space-between">
+                                                @foreach($attachments as $key=>$file)
+                                                    <li class="listunorder1">
+                                                        <span>{{ $file->alt }}</span>
+                                                        <a href="{{ asset($file->url) }}" target="_blank" class="text-right btn-sm btn-info">Download</a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="tab-pane" id="info">

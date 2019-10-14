@@ -62,6 +62,10 @@
     <!-- Sidemenu Css -->
     <link href="/assets/plugins/toggle-sidebar/sidemenu2.css" rel="stylesheet" />
     @endif
+    @if(isset($dropify))
+    <!-- file Uploads -->
+    <link href="/assets/plugins/fileuploads/css/dropify.css" rel="stylesheet" type="text/css" />
+    @endif
 
     <!-- Tabs Style -->
     <link href="/assets/plugins/tabs/style.css" rel="stylesheet" />

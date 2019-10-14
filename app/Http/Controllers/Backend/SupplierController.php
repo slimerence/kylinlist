@@ -6,6 +6,7 @@ use App\Model\Catalog\Product;
 use App\Model\Catalog\ProductCategory;
 use App\Model\Category;
 use App\Model\Suppliers\Supplier;
+use App\Model\Suppliers\SupplierManagement;
 use App\Models\Media;
 use App\Models\Utils\MediaTool;
 use App\User;
@@ -53,6 +54,15 @@ class SupplierController extends Controller
                 $status->status = 0;
             }
             $status->save();
+            return back();
+        }
+    }
+
+    public function delete($id){
+        $supplier = Supplier::find($id);
+        if($supplier){
+            $supplier->delete();
+            SupplierManagement::getVerifyStatus(SupplierManagement::$TYPE_SUPPLIER,$id)->delete();
             return back();
         }
     }

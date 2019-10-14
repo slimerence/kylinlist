@@ -43,14 +43,13 @@ trait CustomizedAuthenticatesUsers
     {
         $this->validateLogin($request);
 
-        /*$user = User::where('email',$request->get('email'))->first();
-        if($user && $user->group_id == 5){
-            $errors = ['email'=> 'Your account does not seem to be our landlord'];
+        $user = User::where('email',$request->get('email'))->first();
+        if($user && $user->group_id != 1){
+            $errors = ['email'=> 'This is not the admin account'];
             return redirect()->back()
                 ->withInput($request->only('email', 'remember'))
                 ->withErrors($errors);
-
-        }*/
+        }
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and

@@ -1,6 +1,6 @@
 <!--Sliders Section-->
 <section>
-    <div class="banner-1 cover-image sptb-2" style="background-image:url('images/bg/banner01.jpg');" data-image-src="/images/bg/banner01.jpg">
+    <div class="banner-1 cover-image sptb-2" style="background-image:url('/images/bg/banner01.jpg');" data-image-src="/images/bg/banner01.jpg">
         <div class="header-text mb-0">
             <div class="container">
                 <div class="text-center text-dark ">

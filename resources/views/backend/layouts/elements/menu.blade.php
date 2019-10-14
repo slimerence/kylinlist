@@ -28,6 +28,9 @@
         <li>
             <a class="side-menu__item" href="{{ url('admin/suppliers') }}"><i class="side-menu__icon fa fa-shopping-cart"></i><span class="side-menu__label">Suppliers Management</span></a>
         </li>
+        <li>
+            <a class="side-menu__item" href="{{ url('admin/source') }}"><i class="side-menu__icon fa fa-list"></i><span class="side-menu__label">Source Requests</span></a>
+        </li>
         <li class="slide">
             <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-institution"></i><span class="side-menu__label">Category</span><i class="angle fa fa-angle-right"></i></a>
             <ul class="slide-menu">

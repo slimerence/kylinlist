@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Auth\CustomizedAuthenticatesUsers;
+use App\Model\Category;
 use App\Model\Suppliers\Supplier;
 use App\Model\UserProfile;
 use App\User;
@@ -104,6 +105,7 @@ class UserController extends Controller
             $user->createRelatedSupplier();
         }*/
         $this->data_view['sidemenu'] = true;
+        $this->data_view['roots'] = Category::where('level',1)->orderby('position','asc')->get();
         return view('frontend.customer.my_dash',$this->data_view);
     }
 

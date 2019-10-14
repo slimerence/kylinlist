@@ -17,6 +17,7 @@ class SupplierManagement extends Model
     public static $TYPE_SUPPLIER=1;
     public static $TYPE_PRODUCT=2;
     public static $TYPE_MEDIA=3;
+    public static $TYPE_SOURCE =4;
 
     /**
      * 一个全局的用于检验相关对象是否经过管理员认证过的方法

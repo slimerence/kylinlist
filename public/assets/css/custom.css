@@ -82,3 +82,8 @@
 .item-card  .item-card-desc img{
     height: 18em;
 }
+
+.space-between li{
+    display:flex;
+    justify-content: space-between;
+}

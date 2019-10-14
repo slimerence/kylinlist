@@ -56,7 +56,7 @@ $(document).ready(function() {
    function formatState (state) {
 	  if (!state.id) { return state.text; }
 	  var $state = $(
-		'<span><img src="../assets/images/flags/' +  state.element.value.toLowerCase() +
+		'<span><img src="/assets/images/flags/' +  state.element.value.toLowerCase() +
 	'.svg" class="img-flag" /> ' +
 	state.text +  '</span>'
 	 );

@@ -6,8 +6,8 @@
     <section class="sptb">
         <div class="container">
             <div class="section-title center-block text-center">
-                <h1>Best ICO Offers</h1>
-                <p>Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula</p>
+                <h1>Latest Sourcing Requests</h1>
+                <p>Waiting for Your Quality Quotations</p>
             </div>
             <div class="row">
                 <div class="col-md-12">
@@ -17,6 +17,7 @@
                                 <thead>
                                 <tr class="border-bottom">
                                     <th class="font-weight-bold">Product Name</th>
+                                    <th class="font-weight-bold">Category</th>
                                     <th class="font-weight-bold">Purchase Quantity</th>
                                     <th class="font-weight-bold">Valid to</th>
                                     <th class="font-weight-bold">Total Inquiries</th>
@@ -27,6 +28,7 @@
                                 @foreach($sources as $source)
                                 <tr class="border-bottom">
                                     <td>{{ $source->name }}</td>
+                                    <td>{{ $source->category->name }}</td>
                                     <td>
                                         {{ $source->quantity.' '.$source->unit }}
                                     </td>
