@@ -3,9 +3,7 @@
 	
 	// ______________ Modal
 	$("#myModal").modal('show');
-	
-	
-	
+
 	/*---Owl-carousel----*/
 	
 	// ______________Owl-carousel-icons
@@ -350,4 +348,6 @@
 		e.preventDefault();
 		return false;
 	});
+
+
 })(jQuery);

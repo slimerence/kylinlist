@@ -6,6 +6,8 @@ use App\Http\Controllers\Auth\CustomizedAuthenticatesUsers;
 use App\Model\Category;
 use App\Model\Suppliers\Supplier;
 use App\Model\UserProfile;
+use App\Models\Media;
+use App\Models\Utils\MediaTool;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -33,7 +35,7 @@ class UserController extends Controller
         $user_data['group_id'] = 3;
         $user_data['password'] = Hash::make($user_data['password']);
         $user = User::create($user_data);
-        if($user){
+        if($user->profile == null){
             $user_profile = UserProfile::create(['user_id'=>$user->id]);
         }
         $this->_saveUserInSession($user,'buyer');
@@ -100,12 +102,19 @@ class UserController extends Controller
     public function index(Request $request){
         $data = $request->session()->get('user_data');
         $user = User::find($data['id']);
+        if($user == null){
+            return redirect('user/login');
+        }
         $this->data_view['user'] = $user;
         /*if($user->supplier ==null ){
             $user->createRelatedSupplier();
         }*/
         $this->data_view['sidemenu'] = true;
         $this->data_view['roots'] = Category::where('level',1)->orderby('position','asc')->get();
+        $this->data_view['profile'] = $user->profile;
+
+        $this->data_view['dropify']=true;
+        $this->data_view['vuejs']=true;
         return view('frontend.customer.my_dash',$this->data_view);
     }
 
@@ -114,5 +123,46 @@ class UserController extends Controller
         return back();
     }
 
+    public function save_profile(Request $request){
+        $user_data = $request->session()->get('user_data');
+        $data = $request->all();
+        //dd($data);
+        $user = User::find($user_data['id']);
+        $profile = $request->get('p');
+        if($user->profile) {
+            foreach ($profile as $key => $value) {
+                $user->profile->$key = $value;
+            }
+            if (key_exists('avatar', $data)) {
+                $image = $data['avatar'];
+                if ($image) {
+                    $storagePath = _buildUploadFolderPath();
+                    $mediaFor = MediaTool::$FOR_USER_FEATURE;
+                    //dd($image);
+                    $name = str_replace(" ", "_", $image->getClientOriginalName());
+                    $media = Media::where('for',$mediaFor)->where('target_id',$user->profile->id)->first();
+                    if($media){
+                        if (file_exists(public_path() . $media->url)) {
+                            unlink(public_path() . $media->url);
+                        };
+                        $media->delete();
+                    }
+                    //get image file.
+                    $path = $image->storeAs($storagePath, $name, 'public');
+                    // 保存到数据库中
+                    $avatar = Media::Persistent(
+                        $user->profile->id,
+                        MediaTool::GuessFileTypeByExtensionName($image->extension()),
+                        _buildFrontendAssertPath($path),
+                        $name,
+                        $mediaFor
+                    );
+                    $user->profile->avatar_path = $avatar->url;
+                };
+            }
+            $user->profile->save();
+            return redirect('user/dashboard');
+        }
+    }
 
 }

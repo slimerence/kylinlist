@@ -203,7 +203,7 @@ class Medias extends Controller
     public function upload_profile_image(Request $request,$id){
         // 获取上传的内容是针对哪类应用的，比如产品，目录，gallery等
         $mediaFor = $request->has('for') ? $request->get('for') : MediaTool::$FOR_SUPPLIER_PROFILE;
-        $media = Media::where('for',MediaTool::$FOR_SUPPLIER_PROFILE)->where('target_id',$id)->first();
+        $media = Media::where('for',$mediaFor)->where('target_id',$id)->first();
         if($media){
             if(file_exists(public_path().$media->url)){
                 unlink(public_path().$media->url);

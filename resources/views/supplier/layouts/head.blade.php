@@ -19,6 +19,8 @@
 
     <!-- Sidemenu Css -->
     <link href="{{ asset('assets/plugins/toggle-sidebar/sidemenu.css') }}" rel="stylesheet" />
+    <!-- include summernote css/js -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
 
 
     <!-- Bootstrap Css -->
@@ -53,6 +55,5 @@
     <!---Font icons-->
     <link href="/assets/plugins/iconfonts/plugin.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-
 
 </head>

@@ -2,6 +2,8 @@
 
 namespace App\Model;
 
+use App\Models\Media;
+use App\Models\Utils\MediaTool;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,5 +16,10 @@ class UserProfile extends Model
 
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public function getProfileImage(){
+        $media = Media::where('for',MediaTool::$FOR_USER_AVATAR)->where('target_id',$this->user->id)->first();
+        return $media;
     }
 }

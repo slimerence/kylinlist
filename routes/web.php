@@ -92,6 +92,8 @@ Route::post('/user/login', 'Frontend\UserController@login_check');
 Route::get('/user/logout', 'Frontend\UserController@logout');
 Route::prefix('user')->middleware('checkuser')->group(function() {
     Route::get('/dashboard', 'Frontend\UserController@index');
+    Route::post('/profile/update', 'Frontend\UserController@save_profile');
+
 });
 
 

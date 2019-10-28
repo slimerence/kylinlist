@@ -32,7 +32,8 @@ class MediaTool
     public static $FOR_SUPPLIER_PRODUCT  = 8;
     public static $FOR_BLOG_MAIN = 9;
     public static $FOR_SOURCING_REQUEST = 10;
-
+    public static $FOR_USER_AVATAR = 11;
+    public static $FOR_USER_FEATURE = 12;
 
     /**
      * 根据给定的扩展名， 猜测可能的文件类型

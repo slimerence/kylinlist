@@ -53,9 +53,6 @@
 <script src="/assets/plugins/tabs/jquery.multipurpose_tabcontent.js"></script>
 <script src="/assets/js/tabs.js"></script>
 
-@if(isset($dropify))
-<script src="/assets/plugins/fileuploads/js/dropify.js"></script>
-@endif
 <!-- Cookie js -->
 <script src="/assets/plugins/cookie/jquery.ihavecookies.js"></script>
 <script src="/assets/plugins/cookie/cookie.js"></script>
@@ -88,6 +85,16 @@
 
 <!-- Typewritter Js-->
 <script src="/assets/js/typewritter.js"></script>
-
+@if(isset($dropify))
+    <script src="/assets/plugins/fileuploads/js/dropify.js"></script>
+@endif
 <!-- Custom Js-->
 <script src="/assets/js/custom.js"></script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        if( $('.dropify').length>0){
+            $('.dropify').dropify();
+        }
+    });
+</script>

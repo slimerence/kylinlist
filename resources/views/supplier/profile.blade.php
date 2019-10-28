@@ -154,7 +154,6 @@
                                             <img v-if="imageUrl" :src="imageUrl" class="el-avatar">
                                             <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                                         </el-upload>
-
                                     </div>
                                 </div>
                                 <div class="col-md-9">
@@ -163,7 +162,6 @@
                                         <textarea rows="7" class="form-control" placeholder="Enter About your description" name="supplier[description]">{!! $user->supplier->description !!} </textarea>
                                     </div>
                                 </div>
-
 
                             </div>
                         </div>

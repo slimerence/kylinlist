@@ -7,6 +7,7 @@
 <script src="/assets/js/vendors/jquery.tablesorter.min.js"></script>
 <script src="/assets/js/vendors/circle-progress.min.js"></script>
 <script src="/assets/plugins/rating/jquery.rating-stars.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
 
 <!-- Fullside-menu Js-->
 <script src="/assets/plugins/toggle-sidebar/sidemenu.js"></script>

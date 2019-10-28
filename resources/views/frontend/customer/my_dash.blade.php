@@ -22,7 +22,7 @@
     <!--User Dashboard-->
     <section class="sptb">
         <div class="container">
-            <div class="row">
+            <div class="row" id="app">
                 <div class="col-xl-3 col-lg-12 col-md-12">
                     <div class="card">
                         <div class="card-header">
@@ -31,10 +31,12 @@
                         <div class="card-body text-center item-user">
                             <div class="profile-pic">
                                 <div class="profile-pic-img">
+                                    <a href="#" data-toggle="modal" data-target="#avatar">
                                     <span class="bg-success dots" data-toggle="tooltip" data-placement="top" title="" data-original-title="online"></span>
-                                    <img src="../assets/images/faces/male/25.jpg" class="brround" alt="user">
+                                    <img v-if="imageUrl" :src="imageUrl" class="brround" alt="user">
+                                    </a>
                                 </div>
-                                <a href="userprofile.html" class="text-dark"><h4 class="mt-3 mb-0 font-weight-semibold">Robert McLean</h4></a>
+                                <a href="{{ url('/user/dashboard') }}" class="text-dark"><h4 class="mt-3 mb-0 font-weight-semibold">Robert McLean</h4></a>
                             </div>
                         </div>
                         @include('frontend.customer.elements.side_menu')
@@ -84,114 +86,90 @@
                 </div>
                 <div class="col-xl-9 col-lg-12 col-md-12">
                     <div class="card mb-0">
+                        <form action="{{ url('user/profile/update') }}" method="post" enctype="multipart/form-data">
+                        @csrf
                         <div class="card-header">
                             <h3 class="card-title">Edit Profile</h3>
                         </div>
                         <div class="card-body">
-                            <div class="row">
+                                <div class="row">
                                 <div class="col-sm-6 col-md-6">
+                                    @include('frontend.customer.plugin.avatar_modal')
                                     <div class="form-group">
-                                        <label class="form-label">First Name</label>
-                                        <input type="text" class="form-control" placeholder="First Name">
+                                        <label class="form-label">Contact Person</label>
+                                        <input type="text" class="form-control" placeholder="Contact Name" name="p[contact_person]" value="{{ $profile->contact_person }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Contact Email</label>
+                                        <input type="text" class="form-control" placeholder="Contact Email" name="p[contact_email]" value="{{ $profile->contact_email }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Contact Number</label>
+                                        <input type="number" class="form-control" placeholder="Contact Number" name="p[contact_number]" value="{{ $profile->contact_number }}">
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-md-6">
                                     <div class="form-group">
-                                        <label class="form-label">Last Name</label>
-                                        <input type="text" class="form-control" placeholder="Last Name">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-6">
-                                    <div class="form-group">
-                                        <label class="form-label">Email address</label>
-                                        <input type="email" class="form-control" placeholder="Email">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-6">
-                                    <div class="form-group">
-                                        <label class="form-label">Phone Number</label>
-                                        <input type="number" class="form-control" placeholder="Number">
+                                        <label class="form-label">Display Image</label>
+                                        @if($profile->avatar_path !== null)
+                                            <input type="file" name="avatar" class="dropify" data-default-file="{{ asset($profile->avatar_path)}}" />
+                                        @else
+                                            <input type="file" name="avatar" class="dropify" />
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label class="form-label">Address</label>
-                                        <input type="text" class="form-control" placeholder="Home Address">
+                                        <label class="form-label">Company Name</label>
+                                        <input type="text" class="form-control" placeholder="Company Name" name="p[company_name]" value="{{ $profile->company_name }}">
                                     </div>
                                 </div>
-                                <div class="col-sm-6 col-md-4">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Street 1</label>
+                                        <input type="text" class="form-control" placeholder="Address 1" name="p[street]" value="{{ $profile->street }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Street 2</label>
+                                        <input type="text" class="form-control" placeholder="Address 2" name="p[street2]" value="{{ $profile->street2 }}">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
                                     <div class="form-group">
                                         <label class="form-label">City</label>
-                                        <input type="text" class="form-control" placeholder="City">
+                                        <input type="text" class="form-control" placeholder="City" name="p[city]" value="{{ $profile->city }}">
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-md-3">
                                     <div class="form-group">
                                         <label class="form-label">Postal Code</label>
-                                        <input type="number" class="form-control" placeholder="ZIP Code">
+                                        <input type="number" class="form-control" placeholder="ZIP Code" name="p[post]" value="{{ $profile->post }}">
                                     </div>
                                 </div>
-                                <div class="col-md-5">
+                                    <div class="col-sm-6 col-md-3">
+                                        <div class="form-group">
+                                            <label class="form-label">State</label>
+                                            <input type="text" class="form-control" placeholder="State" name="p[state]" value="{{ $profile->state }}">
+                                        </div>
+                                    </div>
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="form-label">Country</label>
-                                        <select class="form-control select2-show-search border-bottom-0 w-100 select2-show-search" data-placeholder="Select">
-                                            <optgroup label="Categories">
-                                                <option>--Select--</option>
-                                                <option value="1">Germany</option>
-                                                <option value="2">Real Estate</option>
-                                                <option value="3">Canada</option>
-                                                <option value="4">Usa</option>
-                                                <option value="5">Afghanistan</option>
-                                                <option value="6">Albania</option>
-                                                <option value="7">China</option>
-                                                <option value="8">Denmark</option>
-                                                <option value="9">Finland</option>
-                                                <option value="10">India</option>
-                                                <option value="11">Kiribati</option>
-                                                <option value="12">Kuwait</option>
-                                                <option value="13">Mexico</option>
-                                                <option value="14">Pakistan</option>
+                                        <select name="p[country]" class="form-control select2-show-search border-bottom-0 w-100 select2-show-search" data-placeholder="Select">
+                                            <optgroup label="Country">
+                                                <option disabled>--Select--</option>
+                                                <option {{ $profile->country =='Australia'?'selected':'' }} value="Australia">Australia</option>
+                                                <option {{ $profile->country =='China'?'selected':'' }} value="China">China</option>
                                             </optgroup>
                                         </select>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-6">
-                                    <div class="form-group">
-                                        <label class="form-label">Facebook</label>
-                                        <input type="text" class="form-control" placeholder="https://www.facebook.com/">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-6">
-                                    <div class="form-group">
-                                        <label class="form-label">Google</label>
-                                        <input type="text" class="form-control" placeholder="https://www.google.com/">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-6">
-                                    <div class="form-group">
-                                        <label class="form-label">Twitter</label>
-                                        <input type="text" class="form-control" placeholder="https://twitter.com/">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-6">
-                                    <div class="form-group">
-                                        <label class="form-label">Pinterest</label>
-                                        <input type="text" class="form-control" placeholder="https://in.pinterest.com/">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="form-label">About Me</label>
-                                        <textarea rows="5" class="form-control" placeholder="Enter About your description"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group mb-0">
-                                        <label class="form-label">Upload Image</label>
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" name="example-file-input-custom">
-                                            <label class="custom-file-label">Choose file</label>
-                                        </div>
+                                        <textarea rows="5" class="form-control " name="p[description]" placeholder="Enter About your description">{!! $profile->description !!}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -199,10 +177,14 @@
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary">Updated Profile</button>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!--/User Dashboard-->
+@endsection
+@section('js')
+    @include('vuejs.user_profile')
 @endsection
