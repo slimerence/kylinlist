@@ -25,8 +25,14 @@ class SourceController extends Controller
     }
 
     public function detail($id){
-        $this->data_view['source'] = SourceRequest::find($id);
-        return view('frontend.source.detail',$this->data_view);
+        $source =  SourceRequest::find($id);
+        if($source){
+            $this->data_view['source'] =$source;
+            $this->data_view['profile'] = $source->user->profile;
+            return view('frontend.source.detail',$this->data_view);
+        }
+        return redirect('source-list');
+
     }
 
     public function post(Request $request){
@@ -42,6 +48,7 @@ class SourceController extends Controller
             return redirect('source-list');
         }
     }
+
 
     public function _handlePostedData($data,$id){
         $source = $data['source'];

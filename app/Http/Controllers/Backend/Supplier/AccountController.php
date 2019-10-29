@@ -25,22 +25,34 @@ class AccountController extends Controller
      * @throws \Illuminate\Validation\ValidationException
      */
     public function login_check(Request $request){
+        $refer = $request->headers->get('referer');
         $this->validateLogin($request);
-
         $user = User::where('email',$request->get('email'))
             ->where('group_id',2)
             ->first();
 
         if($user && Hash::check($request->get('password'), $user->password)){
-
             $this->_saveUserInSession($user,'supplier');
-
+            if(strpos($refer,'source-request') !==false){
+                return back();
+            }
+            if( $request->session()->has('origin-source')){
+                $url = $request->session()->get('origin-source');
+                $request->session()->forget('origin-source');
+                return redirect($url);
+            }
             return redirect('/supplier/home');
         }else{
             $errors = [$this->username() => trans('auth.failed')];
 
             if ($request->expectsJson()) {
                 return response()->json($errors, 422);
+            }
+            if(strpos($refer,'source-request') !==false){
+                $request->session()->put('origin-source',$refer);
+                return redirect('supplier/login')
+                    ->withInput($request->only($this->username(), 'remember'))
+                    ->withErrors($errors);
             }
             return redirect()->back()
                 ->withInput($request->only($this->username(), 'remember'))

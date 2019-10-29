@@ -158,3 +158,18 @@ if(!function_exists('_getVerifyStatus')){
         }
     }
 }
+
+if(!function_exists('_checkSupplierLogin')){
+    /**
+     * 一个全局的用于检验Supplier是否登录了的方法
+     * @return boolean
+     */
+    function _checkSupplierLogin(){
+       $user = session()->get('user_data');
+       if($user !== null && $user['type'] == 'supplier'){
+           return true;
+       }else{
+           return false;
+       }
+    }
+}
