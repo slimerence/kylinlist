@@ -62,7 +62,11 @@ Route::prefix('admin')->middleware('auth')->group(function() {
         Route::get('/', 'Backend\SourceController@list');
         Route::get('/toggle/{id}', 'Backend\SourceController@toggleStatus');
         Route::get('/delete/{id}', 'Backend\SourceController@delete');
-
+    });
+    Route::prefix('message')->group(function(){
+        Route::get('/', 'Backend\MessageController@index');
+        Route::get('/toggle/{id}', 'Backend\SourceController@toggleStatus');
+        Route::get('/delete/{id}', 'Backend\SourceController@delete');
     });
 
 
@@ -72,8 +76,8 @@ Route::prefix('admin')->middleware('auth')->group(function() {
         Route::get('/edit/{id}', 'Backend\CategoryController@edit');
         Route::get('/delete/{id}', 'Backend\CategoryController@delete');
         Route::post('/save', 'Backend\CategoryController@save');
-
     });
+
     Route::prefix('blog')->group(function() {
         Route::get('/list', 'Backend\BlogController@list');
         Route::get('/create', 'Backend\BlogController@create');

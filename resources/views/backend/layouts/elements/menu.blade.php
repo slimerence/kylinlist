@@ -26,6 +26,9 @@
             </ul>
         </li>
         <li>
+            <a class="side-menu__item" href="{{ url('admin/message') }}"><i class="side-menu__icon fa fa-rocket"></i><span class="side-menu__label">Messages</span></a>
+        </li>
+        <li>
             <a class="side-menu__item" href="{{ url('admin/suppliers') }}"><i class="side-menu__icon fa fa-shopping-cart"></i><span class="side-menu__label">Suppliers Management</span></a>
         </li>
         <li>
